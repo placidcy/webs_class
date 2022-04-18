@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li class="active"><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2 class = "mt05">조건문</h2>
+            <p>조건식이 참(true) 또는 거짓(false)인지를 코드로 나타낸다</p>
+
+            <h3 class = "mt05">if문</h3>
+            <p>조건식을 만족할때 true값을 반환하고 만족하지 않으면 false 값을 반환한다</p>
+            <div class="line mt35">
+                if(조건식){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                }
+            </div>
+
+            <div class="code">
+<pre><code>
+    var num = 100;
+
+    // num &lt; 200 -> true값 반환
+    if(num &lt; 200){ 
+        document.write("조건에 만족합니다"); 
+    }
+</pre></code>
+            </div>
+
+            <h4 class="mt40">조건식에 논리형 데이터가 아닌 다른 형이 오는 경우</h4>
+            <p>true, false 값이 아닌 다른 데이터 형이 입력되어도 true 또는 false 값을 반환한다
+                0, null, 빈문자, undefined 값들은  false를 반환한다
+            </p>
+
+            <div class="code">
+<pre><code>
+    var num1 = 1;
+
+    if(num1){
+        document.write(num1); // 1 출력
+    }
+
+    // 
+
+    var num2 = 0;
+    
+    if(num2){
+        document.write(num2); // 출력되지 않는다
+    }
+</pre></code>
+             </div>
+
+            <h3 class = "mt05">else문</h3>
+            <p>조건식을 만족할 경우(true)와 만족하지 않을 경우(false)에 따라 실행되는 코드가 달라진다
+                두가지 결과가 나올 수 있다
+            </p>
+
+            <div class="line mt35">
+                if(조건식){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드 1;<br>
+                }
+
+                else{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드 2;<br>
+                }
+            </div>
+
+            <div class="code">
+<pre><code>
+    var num = 3;
+
+    if(num % 2 == 0){
+        document.write("현재 값은 짝수");
+    }
+
+    else{
+        document.write("현재 값은 홀수"); // 현재 값은 홀수 출력
+    }
+</pre></code>
+            </div>
+
+            <h3 class = "mt05">if else문</h3>
+            <p>두가지 이상의 조건식과 정해 놓은 조건이 만족하지 않을때 실행되는 코드
+            </p>
+            <div class="line mt35">
+                if(조건식1){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;코드;<br>
+                } else if(조건식2){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;코드;<br>
+                } else if(조건식3){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;코드;<br>
+                } else if(조건식4){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;코드;<br>
+                }
+            </div>
+
+            <div class="code">
+<pre><code>
+    const num = 100;
+
+    if (num == 90) {
+        document.write("실행되었습니다.(num==90)");
+    } else if (num == 100) {
+        document.write("실행되었습니다.(num==100)");         // 실행되었습니다.(num==100) 출력
+    } else if (num == 110) {
+        document.write("실행되었습니다.(num==110)");
+    } else if (num == 120) {
+        document.write("실행되었습니다.(num==120)");
+    } else {
+        document.write("실행되었습니다.(num==값이없음)");
+    }
+</pre></code>
+            </div>
+
+            <h3 class = "mt05">중첩 if문</h3>
+            <p>조건 문 안에 조건문이 추가된 형태</p>
+            <div class="line mt35">
+                if(조건식1){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if(조건식2){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }
+            </div>
+
+            <div class="code">
+<pre><code>
+    var id = "easy1004";
+    var pw = "123456";
+
+    var user_id = prompt("아이디는?", "");
+    var user_pw = prompt("비밀번호는??", "");
+
+    if(id == user_id){
+        if(pw == user_pw){                                      // 아이디가 같으면 아래 if문 실행
+            document.write("user_id+"가 접속했습니다);           // 비밀번호가 같으면 실행
+        } else {                                                // 비밀번호가 다를때 실행
+            document.write("비밀번호가 일치하지 않습니다");
+        }
+    } else {
+        document.write("아이디가 일치하지 않습니다");             // 아이디가 다를때 실행
+    }
+</pre></code>
+            </div>
+
+            <h3 class = "mt05">switch문</h3>
+            <p>변수에 저장된 값이 switch문의 값을 검사해서 변수와 switch문의 값이 일치할때 코드를 실행한다<br>
+                if문과 비슷하지만 if문은 조건이 여러가지일때 사용하고 switch문은 여러 경우의 값들 중에 일치하는 값을 찾아 해당하는 코드를 실행한다
+            </p>
+
+            <div class="line mt35">
+                var 변수 = "초기값";<br>
+
+                switch(변수){<br>
+                    case 해당 값1 : 코드1;<br>
+                    break;<br><br>
+
+                    case 해당 값2 : 코드2;<br>
+                    break;<br><br>
+
+                    case 해당 값3 : 코드3;<br>
+                    break;<br><br>
+
+                    case 해당 값4 : 코드4;<br>
+                    break;<br><br>
+
+                    default: 코드5;<br>
+                }
+            </div>
+
+            <div class="code">
+<pre><code>
+    var siteName = prompt("네이버, 다음, 구글 중 자주 사용하는 사이트는?", "");
+
+    var url;
+
+    switch(siteName){
+        case "네이버": url = "www.naver.com";
+        break;
+
+        case "다음": url = "www.daum.net";
+        break;
+
+        case "구글": url = "www.google.com";
+        break;
+
+        default: document.write("보기 중에 없는 사이트입니다");       // 해당하는 데이터가 없으면 default에 있는 코드가 실행된다
+    }
+</pre></code>
+        </div>
+    </main>
+</body>
+
+</html>

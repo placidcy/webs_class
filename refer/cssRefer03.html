@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+    
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>단위</em></h2></a>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li class="active"><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float 속성 영역 깨짐 현상</a></li>
+                <li><a href="cssRefer07.html">벤더 프리픽스</a></li>
+                <li><a href="cssRefer08.html">웹 사이트에서 이미지를 표현 하는 방법</a></li>
+                <li><a href="cssRefer09.html">IR 효과</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS 단위</h3><br>
+                <p>웹 사이트 내의 범위나 크기를 수치로 나타낸다, 상대 단위 / 절대 단위가 있다</p>
+
+                <!-- 상대 단위 -->
+
+                <h3>상대 단위</h3>
+                <p>고정되지 않고 어떤 기준에 따라 바뀔수 있는 단위</p><br>
+
+                <h5>1. %</h5><br>
+                <p>전체 요소의 특정 비율을 나타내는 단위<br>
+                ex) 한 요소의 높이가 100px일때 50% 적용하면 50px</p><br>
+
+                <h5>2. em</h5><br>
+                <p>폰트의 크기(font-size)를 나타내며 외부로부터 적용받는 폰트의 크기(font-size)에 따라 값이 달라진다<br>
+
+                    ex) 브라우저의 기본 폰트 크기가 10px일때 1em은 10px, 2em은 20px<br><br> 
+                </p>
+
+                <h5>3. rem</h5><br>
+                <p>폰트의 크기(font-size)를 나타내며 최상위 요소(html 요소)에 지정된 크기를 기준으로 값이 달라진다<br>
+
+                    ex) html에서 정해놓은 크기 20px, 부모 요소의 크기는 25px일때 1rem의 값은 20px<br><br>
+                </p>
+
+                <h5>4. vw</h5><br>
+                <p>현재 보이는 브라우저 화면의 가로크기를 기준으로 한 값</p><br>
+
+                <h5>5. vh</h5><br>
+                <p>현재 보이는 브라우저 화면의 세로크기를 기준으로 한 값</p><br>
+
+                <h5>6. vmin</h5><br>
+                <p>현재 보이는 브라우저 화면의 가로크기 또는 세로 크기 중 가장 작은 크기를 기준으로 한 값</p><br>
+
+                <h5>7. vmax</h5><br>
+                <p>현재 보이는 브라우저 화면의 가로크기 또는 세로 크기 중 가장 큰 크기를 기준으로 한 값</p><br>
+
+                <!-- 절대 단위 -->
+
+                <h3>절대 단위</h3><br>
+                <p>정해진 기준값에 의해 고정된 단위</p><br>
+
+                <h5>1. px</h5><br>
+                <p>모니터 화면의 한개의 작은 도트(dot), 1dot = 1 pixel값으로 나타낸다</p><br>
+                
+                <h5>2. cm</h5><br>
+                <p>센치미터 단위</p><br>
+
+                <h5>3. mm</h5><br>
+                <p>밀리미터 단위</p><br>
+
+                <h5>4. pt</h5><br>
+                <p>포인트 단위, 1pt는 1/72 inch</p><br>
+
+                <h5>5. in</h5><br>
+                <p>인치 단위, 1 in = 2.54cm</p><br>
+
+                <h5>6. pc</h5><br>
+                <p>파이커 단위, 1pc = 12pt</p><br>
+
+            </div>
+        </div>
+        <!-- //refer -->
+
+    </main>
+
+    <!-- script 불러오기-->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

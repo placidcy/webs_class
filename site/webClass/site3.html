@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        .ir_pm {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .ir_wa {
+            display: block;
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+        }
+
+        * {
+            margin: 0 auto;
+            padding: 0;
+            font-family: 'Poppins';
+        }
+
+
+        /* wrap */
+        #wrap {
+            width: 1440px;
+            height: 4734px;
+        }
+
+        /* header */
+        #header {
+            width: 1249px;
+            height: 200px;
+        }
+
+        #header .headerContainer {
+            width: 1249px;
+            height: 42px;
+            display: flex;
+            margin-top: 70px;
+        }
+
+        .headerContainer .headerIcon {
+            width: 35px;
+            height: 35px;
+            background: url(../webClass/img/headerIcon.jpg);
+            margin: 0;
+        }
+
+        .headerContainer .title {
+            font-family: 'Poppins';
+            font-size: 20px;
+            font-weight: 1000;
+            margin-left: 20px;
+        }
+
+        .headerContainer .menu {}
+
+        .headerContainer .menu li {
+            display: inline;
+        }
+
+        .headerContainer .menu li a {
+            text-decoration: none;
+            color: #000;
+            font-family: 'Poppins';
+            margin-right: 50px;
+        }
+
+        .headerContainer .sideIcons {
+            display: flex;
+            margin: 0;
+        }
+
+        .headerContainer .sideIcons .search {
+            background: url(img/searchIcon.jpg) no-repeat;
+            width: 24px;
+            height: 24px;
+            margin-right: 30px;
+        }
+
+        .headerContainer .sideIcons .bag {
+            background: url(img/bagIcon.jpg) no-repeat;
+            width: 24px;
+            height: 24px;
+            margin-right: 30px;
+        }
+
+        .headerContainer .sideIcons .account {
+            background: url(img/accountIcon.jpg) no-repeat;
+            width: 24px;
+            height: 24px;
+        }
+
+        /* main */
+
+        .mainContainer {
+            width: 1249px;
+            height: 1065px;
+            position: relative;
+
+        }
+
+        .mainContainer .title {
+            font-size: 80px;
+            text-align: left;
+            color: #292019;
+            margin-bottom: 40px;
+        }
+
+        .mainContainer .desc {
+            font-family: 'Poppins';
+            font-weight: normal;
+            line-height: 1.56;
+            text-align: left;
+        }
+
+        .mainContainer .BtnContainer {
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        .BtnContainer .quoteBtn {
+            float: left;
+            font-size: 16px;
+            background-color: #c4a586;
+            color: #ffffff;
+            font-family: 'Poppins';
+            text-align: center;
+            margin-right: 30px;
+            padding: 30px 40px;
+        }
+
+        .mainContainer .watchBtn {
+            float: left;
+            font-size: 16px;
+            font-family: 'Poppins';
+            color: #c4a586;
+            border: 1px solid #c4a586;
+            text-align: center;
+            padding: 30px 40px;
+        }
+
+        .mainContainer .mainImage {
+            background: url(img/mainImage.jpg) no-repeat;
+            position: absolute;
+            right: -100px;
+            bottom: 0;
+            width: 1022px;
+            height: 853px;
+            z-index: -1;
+        }
+
+        /* banner */
+
+        .bannerContainer {
+            width: 1249px;
+            height: 300px;
+        }
+
+        .bannerContainer .title {
+            font-family: 'Poppins';
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .bannerContainer .clientsList {
+            display: flex;
+            margin: 50px 0 0 0;
+        }
+
+        .bannerContainer .clientsList .stripe {
+            background: url(img/stripe.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        .bannerContainer .clientsList .google {
+            background: url(img/google.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        .bannerContainer .clientsList .deloitte {
+            background: url(img/deloitte.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        .bannerContainer .clientsList .accenture {
+            background: url(img/accenture.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        .bannerContainer .clientsList .ibm {
+            background: url(img/ibm.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        .bannerContainer .clientsList .samsung {
+            background: url(img/samsung.jpg) no-repeat;
+            width: 300px;
+            height: 61px;
+        }
+
+        /* collection */
+
+        .collection .collectionContainer {
+            width: 1249px;
+            display: flex;
+        }
+
+        .collection .leftSide {
+            width: 720px;
+            height: 338px;
+            background-color: #fcefe9;
+            position: relative;
+            z-index: -1;
+        }
+
+        .collection .leftSide .title {
+            font-family: 'Poppins';
+            font-size: 34px;
+            font-weight: bold;
+            color: #777;
+            margin-top: 110px;
+            margin-left: 100px;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+
+        .collection .leftSide .desc {
+            font-size: 20px;
+            margin-left: 100px;
+            z-index: 1;
+        }
+
+        .collection .leftSide .img {
+            background-image: url(img/web3C2L.jpg);
+            width: 400px;
+            height: 350px;
+            position: absolute;
+            top: 0;
+            right: 150px;
+            z-index: 0;
+        }
+
+        .collection .rightSide {
+            background: url(img/rightCollection.jpg)no-repeat;
+            width: 720px;
+            height: 338px;
+            position: relative;
+        }
+
+        .collection .rightSide .title {
+            font-family: 'Poppins';
+            font-size: 34px;
+            font-weight: bold;
+            position: absolute;
+            left: 100px;
+            top: 90px;
+            color: #777;
+        }
+
+        .collection .rightSide .desc {
+            font-family: 'Poppins';
+            font-size: 20px;
+            position: absolute;
+            left: 100px;
+            bottom: 50px;
+        }
+
+        .collection .rightSide .img {}
+
+        /* pruducts */
+        .products {
+            width: 1249px;
+            margin: 0 auto;
+        }
+
+        .titleContainer {
+            display: flex;
+        }
+
+        .titleContainer .title {
+            font-family: 'Poppins';
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .titleContainer .menu {}
+
+        .titleContainer .menu ul {
+            display: flex;
+            list-style: none;
+            margin-top: 30px;
+            position: absolute;
+            right: 40%;
+        }
+
+        .titleContainer .menu ul li:last-child {
+            margin-left: 70px;
+        }
+
+        .titleContainer .menu ul li a {
+            font-family: 'Poppins';
+            font-size: 23px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: none;
+        }
+
+
+        .titleContainer .sideMenu {
+            height: 30px;
+            display: flex;
+            margin-top: 35px;
+            position: absolute;
+            right: 0;
+        }
+
+        .titleContainer .sideMenu a {
+            font-family: 'Poppins';
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        .titleContainer .sideMenu .img {
+            background: url(img/arrow.jpg) no-repeat;
+            width: 34px;
+            height: 19px;
+        }
+
+        /* submenu */
+
+        .subMenu {
+            margin-top: 100px;
+        }
+
+        .subMenu ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        .subMenu ul li {
+            list-style: none;
+        }
+
+        .subMenu ul li a {
+            font-family: 'Poppins';
+            font-size: 18px;
+            color: #a9a7a6;
+            text-decoration: none;
+            margin: 0 65px 0 62px;
+        }
+
+        .CartMenu1 {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 150px;
+        }
+
+        .CartMenu1 .RamenStool {
+            background: url(img/ramenstool.jpg) no-repeat;
+            width: 312px;
+            height: 400px;
+        }
+
+        .CartMenu1 .RamenStool .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu1 .RamenStool .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+            margin-top: 40px;
+        }
+
+        .CartMenu1 .RamenStool .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu1 .RamenStool .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu1 .Flexform {
+            background: url(img/flexform.jpg) no-repeat;
+            width: 312px;
+            height: 330px;
+            position: relative;
+        }
+
+        .CartMenu1 .Flexform .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+            margin-top: 40px;
+        }
+
+        .CartMenu1 .Flexform .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu1 .Flexform .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu1 .Flexform .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu1 .Porada {
+            background: url(img/porada.jpg) no-repeat;
+            width: 312px;
+            height: 330px;
+            position: relative;
+        }
+
+        .CartMenu1 .Porada .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+            margin-top: 40px;
+        }
+
+        .CartMenu1 .Porada .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu1 .Porada .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu1 .Porada .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu1 .RamenStool .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu1 .Flexform .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu1 .Porada .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu1 .AddToCart .text {
+            text-align: left;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .CartMenu1 .AddToCart .bag a {
+            background: url(img/cartIcon.jpg) no-repeat;
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+        }
+
+        .CartMenu2 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .CartMenu2 .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu2 .Taknion {
+            background: url(img/taknion.jpg) no-repeat;
+            width: 312px;
+            height: 400px;
+        }
+
+        .CartMenu2 .Taknion .AddToCart {
+        }
+
+        .CartMenu2 .Taknion .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu2 .Taknion .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .Taknion .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .Taknion .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu2 .Amora {
+            background: url(img/amora.jpg) no-repeat;
+            width: 312px;
+            height: 400px;
+        }
+
+        .CartMenu2 .LiquidContract .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu2 .Amora .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .Amora .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .Amora .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu2 .Amora .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu2 .LiquidContract {
+            background: url(img/liquidContract.jpg) no-repeat;
+            width: 312px;
+            height: 400px;
+        }
+
+        .CartMenu2 .LiquidContract .title {
+            font-family: 'Poppins';
+            font-size: 26px;
+            font-weight: bold;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .LiquidContract .price {
+            font-family: 'Poppins';
+            font-size: 19px;
+            font-weight: 500;
+            color: #3d3d3f;
+        }
+
+        .CartMenu2 .LiquidContract .sale {
+            font-family: 'Poppins';
+            font-size: 15px;
+            font-weight: 500;
+            color: #a9a7a6;
+            text-decoration: line-through;
+        }
+
+        .CartMenu2 .LiquidContract .info {
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        .CartMenu2 .AddToCart {
+            display: flex;
+        }
+
+        .CartMenu2 .AddToCart .text {
+            text-align: left;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .CartMenu2 .AddToCart .bag a {
+            background: url(img/cartIcon.jpg) no-repeat;
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+        }
+
+        .CartMenu2 .Taknion .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu2 .Amora .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .CartMenu2 .LiquidContract .AddToCart {
+            width: 120px;
+            height: 25px;
+            padding: 6px 9px 8px 14px;
+            border-radius: 40px;
+            background-color: #d9ab82;
+            display: flex;
+        }
+
+        .info .priceInfo {
+            display: flex;
+        }
+
+        .info .priceInfo .sale {
+            margin-left: 30px;
+        }
+
+        /* subContents */
+
+        .subContents {
+            width: 1022px;
+            height: 645px;
+        }
+
+        .subContents h3 {
+            font-size: 53px;
+            width: 427px;
+            height: 112px;
+            text-align: start;
+        }
+
+        .subContents .desc {
+            text-align: left;
+        }
+
+        .subMenu {
+        }
+
+        .subMenu_pictures {
+        }
+
+        .womenPictures {
+            display: flex;
+        }
+
+        .subMenu_pictures .mainPicture {
+            background: url(img/manPicture.jpg);
+            width: 502px;
+            height: 588px;
+        }
+
+        .womenPictures .picture1 {
+            background: url(img/womanPicture1.jpg);
+            width: 128px;
+            height: 132px;
+
+        }
+
+        .womenPictures .picture2 {
+            background: url(img/womanPicture2.jpg);
+            width: 128px;
+            height: 132px;
+        }
+
+        .womenPictures .picture3 {
+            background: url(img/womanPicture3.jpg);
+            width: 128px;
+            height: 132px;
+        }
+
+        .subMenu .info {}
+
+        .info .name {}
+
+        .info .date {}
+
+        .info .rate {
+            display: flex;
+        }
+
+        .info .rate div{
+            background: url(img/star.jpg);
+            width: 10.52px;
+            height: 10px;
+            margin: 0, 1px;
+        }
+
+        .mistrium {
+            width: 1440px;
+            height: 746px;
+        }
+
+        #footer {
+            width: 1249px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<div id="wrap">
+    <header id="header">
+        <div class="headerContainer">
+            <div class="headerIcon"></div>
+            <div class="title">MISTRIUM</div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">products</a></li>
+                    <li><a href="#">faqs</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </nav>
+
+            <nav class="sideIcons">
+                <div class="search"><a href="#"></a></div>
+                <div class="bag"><a href="#"></a></div>
+                <div class="account"><a href="#"></a></div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="mainContainer">
+            <div class="title">Modern Furniture For<br>
+                Modern Living Style</div>
+            <span class="desc">In unfeeling existence objection immediate repulsive<br>
+                on he in. Imprudence comparison uncommonly me<br>
+                he difficulty diminution resolution. Likewise proposal<br>
+                differed scarcely dwelling as on raillery<br><br><br>
+                September few dependent extremity own continued<br>
+                and ten prevailed attending. Early to weeks we could.<br>
+                Do commanded an shameless we disposing do.<br>
+                Indulgence ten remarkably nor are impression out.<br>
+                Power is lived means oh every in we quiet.</span>
+            <div class="mainImage"></div>
+            <div class="BtnContainer">
+                <div class="quoteBtn">
+                    <p>Request a Quote</p>
+                </div>
+                <div class="watchBtn">
+                    <p>Watch Video</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="banner">
+        <div class="bannerContainer">
+            <div class="title">
+                SOME OF OUR TRUSTED CLIENTS
+            </div>
+            <div class="clientsList">
+                <div class="stripe"></div>
+                <div class="google"></div>
+                <div class="deloitte"></div>
+                <div class="accenture"></div>
+                <div class="ibm"></div>
+                <div class="samsung"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collection">
+        <div class="collectionContainer">
+            <div class="leftSide">
+                <div class="title">
+                    Residential<br>
+                    Furniture
+                </div>
+                <span class="desc">
+                    Browse Collection
+                </span>
+                <div class="img"></div>
+            </div>
+
+            <div class="rightSide">
+                <div class="title">
+                    Hospitality<br>
+                    Furniture
+                </div>
+                <span class="desc">
+                    Browse Collection
+                </span>
+                <div class="img"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="products">
+        <div class="productContainer">
+            <div class="titleContainer">
+                <div class="title">PRODUCTS</div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Best Selling</a></li>
+                        <li><a href="#">Most Popular</a></li>
+                    </ul>
+
+                    <div class="sideMenu">
+                        <div><a href="#">See All</a></div>
+                        <div class="img"><a href="#"></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subMenu">
+                <ul>
+                    <li><a href="#">All</a></li>
+                    <li><a href="#">Bed</a></li>
+                    <li><a href="#">Sofa</a></li>
+                    <li><a href="#">Chair</a></li>
+                    <li><a href="#">Light</a></li>
+                </ul>
+            </div>
+
+            <div class="CartMenu1">
+                <div class="RamenStool">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Ramen Stool</div>
+                        <div class="priceInfo">
+                            <div class="price">$65.00</div>
+                            <div class="sale">$95.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Flexform">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Flexform</div>
+                        <div class="priceInfo">
+                            <div class="price">$35.00</div>
+                            <div class="sale">$55.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Porada">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Porada</div>
+                        <div class="priceInfo">
+                            <div class="price">$87.00</div>
+                            <div class="sale">$97.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="CartMenu2">
+                <div class="Taknion">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Taknion</div>
+                        <div class="priceInfo">
+                            <div class="price">$45.00</div>
+                            <div class="sale">$55.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Amora">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Amora</div>
+                        <div class="priceInfo">
+                            <div class="price">$65.00</div>
+                            <div class="sale">$95.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="LiquidContract">
+                    <div class="AddToCart">
+                        <span class="text">Add To Cart</span>
+                        <span class="bag"><a href="#" class="ir_pm">카트추가</a></span>
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Liquid contract</div>
+                        <div class="price">$35.00</div>
+                        <div class="sale">$45.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="subContents">
+        <h3>Let's see what our customer's say</h3>
+        <span class="desc">Dwelling and speedily ignorant any steepest.<br>
+            Admiration instrument affronting invitation reasonably<br>
+            up do of prosperous in. Shy saw declared age debating<br>
+            ecstatic man. Call in so want pure rank am dear were.<br>
+            Remarkably to continuing in surrounded diminution on.</span>
+
+        <div class="subMenu">
+            <div class="subMenu_pictures">
+                <div class="mainPicture"></div>
+                <div class="womenPictures">
+                    <div class="picture1"></div>
+                    <div class="picture2"></div>
+                    <div class="picture3"></div>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="name">Mike talyor</div>
+                <div class="date">20 january 2020</div>
+                <div class="rate">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mistrium">추가 영역</section>
+
+    <footer id="footer">푸터</footer>
+</div>
+
+</html>

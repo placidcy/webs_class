@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li class="active"><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>for()문</h2>
+            <p>
+                설정된 조건에 만족하면 반복으로 실행한다, 조건이 만족하지 않으면 실행되지 않는다
+            </p>
+
+            <h2>for()문 문법</h2>
+
+            <div class=code>
+<pre>
+const arr = [100, 200, 300, 400];
+
+for(var i = 0; i &lt; arr.length; i++) // i값은 0이고, arr의 배열길이(5)가 i 값보다 작으면 i값을 1씩 증가, 5번 실행된다<br>
+{
+    document.write(arr[i]); // 배열 0번지부터 4번지 값을 출력(100, 200, 300, 400)
+}
+</pre>
+            </div>
+        </div>
+    </main>
+    <script>
+    </script>
+
+
+</body>
+
+</html>

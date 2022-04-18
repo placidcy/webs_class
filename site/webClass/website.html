@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap {
+            width: 1200px;
+            height: 780px;
+            margin: 0 auto;
+        }
+
+        #header {
+            background: rgb(237, 191, 255);
+            height: 100px;
+        }
+
+        #contents {
+            overflow: hidden;
+        }
+
+        .aside {
+            background: rgb(208, 128, 255);
+            width: 20%;
+            height: 580px;
+            float: left;
+        }
+
+        .main {
+            background: rgb(193, 85, 255);
+            width: 80%;
+            height: 580px;
+            float: left;
+        }
+
+        #footer {
+            background: rgb(151, 42, 214);
+            height: 100px;
+        }
+
+        @media (max-width: 1200px) {
+            #wrap {
+                width: 98%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #wrap {
+                width: 100%;
+            }
+
+            #header {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            #wrap {
+                width: 100%;
+            }
+            
+            #contents {
+                clear: both;
+            }
+
+            .aside {
+                width: 100%;
+            }
+
+            .main {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+    <header id="header"></header>
+    <section id="contents">
+        <aside class="aside"></aside>
+        <main class="main"></main>
+    </section>
+    <footer id="footer"></footer>
+    </div>
+</div>
+    
+</body>
+</html>

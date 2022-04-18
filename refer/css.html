@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2>CSS <em>레퍼런스 북</em></h2>
+
+        <div class="menu">
+            <ul>
+                <li class="active"><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float 속성 영역 깨짐 현상</a></li>
+                <li><a href="cssRefer07.html">벤더 프리픽스</a></li>
+                <li><a href="cssRefer08.html">웹 사이트에서 이미지를 표현 하는 방법</a></li>
+                <li><a href="cssRefer09.html">IR 효과</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="title">
+                <ul>
+                    <li class="active"><a href="css.html">Alpabet</a></li>
+                    <li><a href="cssSelector.html">Selector</a></li>
+                    <li><a href="cssFlex.html">Flex 속성</a></li>
+                    <li><a href="cssGrid.html">Grid</a></li>
+                    <li><a href="cssTransform.html">transform 속성</a></li>
+                    <li><a href="cssAnimation.html">애니메이션 속성</a></li>
+                </ul>
+            </div>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>align-content</th>
+                            <td>콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정</td>
+                        </tr>
+                        <tr>
+                            <th>align-items</th>
+                            <td> 요소의 수직 방향 정렬 방식을 설정
+                                한 줄만을 가지는 플렉스 박스에서는 효과가 없으며, 두 줄 이상을 가지는 플렉스 박스에서만 효과가 있다</td>
+                        </tr>
+                        <tr>
+                            <th>align-self</th>
+                            <td>align-items로 수직 방향으로 특정 요소만 따로 정렬할때 사용한다/td>
+                        </tr>
+                        <tr>
+                            <th>all</th>
+                            <td>요소들에 적용된 값들을 초기화</td>
+                        </tr>
+                        <tr>
+                            <th>background</th>
+                            <td>배경의 전체적인 설정을 나타낸다</td>
+                        </tr>
+                        <tr>
+                            <th>background-attachment</th>
+                            <td>배경의 이미지 고정 여부를 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-blend-mode</th>
+                            <td>배경을 혼합했을때의 상태를 나타낸다</td>
+                        </tr>
+                        <tr>
+                            <th>background-clip</th>
+                            <td>백그라운드 이미지의 위치 기준점을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-color</th>
+                            <td>배경의 색을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-image</th>
+                            <td>백그라운드 이미지의 배경 속성을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-origin</th>
+                            <td>백그라운드 이미지의 위치 기준점을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-position</th>
+                            <td>백그라운드 이미지의 위치를 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-repeat</th>
+                            <td>백그라운드 이미지의 반복 여부 설정</td>
+                        </tr>
+                        <tr>
+                            <th>background-size</th>
+                            <td>백그라운드 이미지의 크기를 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border</th>
+                            <td>테두리 속성의 전체적인 부분을 일괄적으로 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom</th>
+                            <td>테두리의 아래쪽 속성을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-color</th>
+                            <td>테두리 아래쪽의 색을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-left-radius</th>
+                            <td>왼쪽 아래의 모서리 굴곡을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-right-radius</th>
+                            <td>오른쪽 아래의 모서리 굴곡을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-style</th>
+                            <td>테두리 아래쪽 스타일을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-bottom-width</th>
+                            <td>테두리 아래쪽 두계 속성을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-collapse</th>
+                            <td>테두리의 분리 여부를 설정</td>
+                        </tr>
+                        <tr>
+                            <th>border-color</th>
+                            <td>테두리의 색상을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image</th>
+                            <td>요소 테두리에 이미지를 표현한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-outset</th>
+                            <td>요소의 테두리와 테두리 이미지이 거리를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-repeat</th>
+                            <td>이미지의 영역을 테두리 이미지에 맞춰 크기를 조정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-slice</th>
+                            <td>border-image-source의 속성으로 설정한 이미지를 여러개의 영역으로 나눈다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-source</th>
+                            <td>테두리의 이미지로 사용할 원본을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-image-width</th>
+                            <td>테두리의 이미지의 너비를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-left</th>
+                            <td>테두리의 왼쪽 부분을 설정한다, border-left-width, border-left-style, border-left-color의 값을 지정</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-color</th>
+                            <td>왼쪽 테두리의 색상을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-style</th>
+                            <td>왼쪽 테두리의 형태를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-left-width</th>
+                            <td>왼쪽 테두리 너비를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-radius</th>
+                            <td>테두리를 둥근 모양으로 만든다</td>
+                        </tr>
+                        <tr>
+                            <th>border-right</th>
+                            <td>요소의 오른쪽 테두리를 설정한다, border-right-width, border-right-style, border-right-color의 값을 지정</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-color</th>
+                            <td>오른쪽 테두리의 색상을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-style</th>
+                            <td>오른쪽 테두리의 형태를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-right-width</th>
+                            <td>오른쪽 테두리의 너비를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-spacing</th>
+                            <td>근접한 테두리의 간격을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-style</th>
+                            <td>테두리의 모양을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top</th>
+                            <td>테두리의 위쪽 부분을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-color</th>
+                            <td>위쪽 테두리의 색상을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-left-radius</th>
+                            <td>테두리의 왼쪽 위 부분의 굴곡을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-right-radius</th>
+                            <td>테두리의 오른쪽 위 부분의 굴곡을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-style</th>
+                            <td>위쪽 테두리 부분을 설정하는 속성중 border-top-width, border-top-style, border-top-color의 값을 지정</td>
+                        </tr>
+                        <tr>
+                            <th>border-top-width </th>
+                            <td>위쪽 테두리의 너비를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>border-width</th>
+                            <td>테두리의 폭(너비)을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>bottom</th>
+                            <td>하단을 기준으로 어느 높이에 위치시킬지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>box-decoration-break</th>
+                            <td>요소의 다중 선 영역, 행렬 중 열 영역, 페이지를 어떻게 표현할지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>box-shadow</th>
+                            <td>테두리에 그림자 효과를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>box-sizing</th>
+                            <td>박스의 크기를 화면에 표시하는 방식을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>caption-side</th>
+                            <td>표의 캡션(설명)의 위치를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>caret-color</th>
+                            <td>입력 커서의 색상을 지저한다</td>
+                        </tr>
+                        <tr>
+                            <th>clear</th>
+                            <td>float 속성을 사용하고 난 뒤의 요소들의 위치를 조절한다<br>
+                                제대로 위치를 조절할 수 없기 때문에 auto 값을 사용한다
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>clearfix</th>
+                            <td>가상의 요소를 만들고 내용을 넣어 출력하는 기능</td>
+                        </tr>
+                        <tr>
+                            <th>clip</th>
+                            <td>요소의 특정 부분만을 나타낼때 사용한다</td>
+                        </tr>
+                        <tr>
+                            <th>color</th>
+                            <td>문자(텍스트)의 색상을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-count</th>
+                            <td>해당 요소를 몇 개의 열로 나눌지 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-fill</th>
+                            <td>다단 구성 시 단의 너비를 지정하는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>column-gap</th>
+                            <td>요소의 열 구간 사이의 간격을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule </th>
+                            <td>coulum-rule 관련 속성을 한번에 설정하는 단축 속성</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-color</th>
+                            <td>열 사이에 들어갈 선의 색상을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-style</th>
+                            <td>열 사이에 들어갈 선의 형태를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-rule-width</th>
+                            <td>열 사이의 선의 두께를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-span</th>
+                            <td>몇 개의 열을 병합할지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>column-width</th>
+                            <td>열의 너비를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>columns</th>
+                            <td>모든 colume 속성을 한줄로 설정하는 단축 속성</td>
+                        </tr>
+                        <tr>
+                            <th>content</th>
+                            <td>선택한 요소의 내용 앞이나 뒤에 내용을 추가한다</td>
+                        </tr>
+                        <tr>
+                            <th>counter-increment</th>
+                            <td>요소에 일련 번호를 얼마나 증가시킬지 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>counter-reset</th>
+                            <td>일련 번호의 시작 번호를 정한다</td>
+                        </tr>
+                        <tr>
+                            <th>cursor</th>
+                            <td>문서에 마우스커서가 올라갈때의 커서 모양을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>direction</th>
+                            <td>글자의 방향을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>display</th>
+                            <td>웹 사이트의 요소들이 어떻게 화면에 보여질지 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>empty-cells</th>
+                            <td>테이블에서 비어있는 부분을 보이지 않게 할지 보이게 할지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>filter</th>
+                            <td>흐림 효과나 색상 변형 등 그래픽 효과를 요소에 적용한다</td>
+                        </tr>
+                        <tr>
+                            <th>flex</th>
+                            <td>flex-grow, flex-shrink, flex-basis를 한 번에 쓸 수 있는 단축 속성</td>
+                        </tr>
+                        <tr>
+                            <th>flex-basis</th>
+                            <td>요소들의 기본 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>flex-direction</th>
+                            <td>요소들이 배치되는 방향을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>flex-flow</th>
+                            <td>flex-direction과 flex-wrap을 한꺼번에 지정할 수 있는 단축 속성</td>
+                        </tr>
+                        <tr>
+                            <th>flex-grow</th>
+                            <td>flex-basis의 값보다 커질 수 있는지를 결정하는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>flex-shrink</th>
+                            <td>요소가 flex-basis값보다 작아질수 있는지를 설저한다</td>
+                        </tr>
+                        <tr>
+                            <th>flex-wrap</th>
+                            <td>요소들을 한줄로 정렬할 수 없을때 줄바꿈을 결정하는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>float</th>
+                            <td>주어진 요소를 왼쪽 또는 오른쪽으로 이동시킨다</td>
+                        </tr>
+                        <tr>
+                            <th>font</th>
+                            <td>글씨의 색상, 크기, 스타일 등의 전체적인 설정</td>
+                        </tr>
+                        <tr>
+                            <th>font-family</th>
+                            <td>원하는 글꼴을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-size</th>
+                            <td>글씨의 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-size-adjust</th>
+                            <td>특정 장치의 화면에서 텍스트의 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-stretch</th>
+                            <td>글자를 좁게 또는 넓게 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-style</th>
+                            <td>글씨의 형태를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-variant</th>
+                            <td>소문자를 작은 대문자로 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>font-weight</th>
+                            <td>글씨의 두께를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid</th>
+                            <td>요소들을 격자로 나누어 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-areas</th>
+                            <td>각 영역(Grid Area)에 이름을 붙이고, 그 이름을 이용해서 배치한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-columns</th>
+                            <td>그리드의 가로 형태를 자동으로 정의</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-flow</th>
+                            <td>아이템이 자동 배치되는 흐름을 결정하는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>grid-auto-rows</th>
+                            <td>그리드의 세로 형태를 자동으로 정의</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column</th>
+                            <td>컨테이너에 Grid 트랙의 크기들을 지정해주는 속성으로  grid-column-start와 grid-column-end 속성을 한번에 쓰는 축약형</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-end</th>
+                            <td>세로 격자의 끝부분의 구역을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-gap</th>
+                            <td>그리드 셀 사이의 간격을 설정</td>
+                        </tr>
+                        <tr>
+                            <th>grid-column-start</th>
+                            <td>세로 격자의 시작부분의 구역을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-gap</th>
+                            <td>행과 행 사이의 간격, 열과 열 사이의 간격을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row</th>
+                            <td>행의 시작 위치, 끝 위치를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-end</th>
+                            <td>그리드의 행의 끝 위치를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-gap</th>
+                            <td>행과 행 사이의 간격을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-row-start</th>
+                            <td>그리드의 행의 시작 위치를 설정한다</td>
+                        </tr></td>
+                        </tr>
+                        <tr>
+                            <th>grid-template</th>
+                            <td>영역의 이름을 참조해 템플릿을 생성하거나 그리드의 행과 열의 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-areas</th>
+                            <td>영역의 이름을 참조해 템플릿을 생성한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-columns</th>
+                            <td>명시적으로 열의 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>grid-template-rows</th>
+                            <td>명시적으로 행의 크기를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>hanging-punctuation</th>
+                            <td>문장 부호가 텍스트 줄의 시작 또는 끝에 위치하는지에 대한 여부를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>height</th>
+                            <td>요소의 높이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>hyphens</th>
+                            <td>텍스트가 여러 줄에 걸쳐 줄 바꿈될 때 단어에 하이픈을 추가하는 방법을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>isolation</th>
+                            <td>요소가 새 스택 컨텍스트를 생성해야 하는지 여부를 결정한다</td>
+                        </tr>
+                        <tr>
+                            <th>justify-content</th>
+                            <td>가로축을 중심으료 요소들을 정렬한다</td>
+                        </tr>
+                        <tr>
+                            <th>left</th>
+                            <td>요소를 왼쪽으로 얼만큼 위치시킬지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>letter-spacing</th>
+                            <td>글자 사이의 간격을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>line-height</th>
+                            <td>줄 높이를 정하는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>list-style</th>
+                            <td>목록에 숫자나 기호를 나타내는 여부를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-image</th>
+                            <td>목록 항목 마커로 사용할 이미지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-position</th>
+                            <td>목록 항목을 기준으로 표식의 위치를 ​​설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <th>list-style-type</th>
+                            <td>목록의 표시 형태를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th><a href="margin.html">margin</a></th>
+                            <td>문서 요소의 바깥쪽 여백을 확대하거나 축소한다</td>
+                        </tr>
+                        <tr>
+                            <th>margin-bottom</th>
+                            <td>요소의 아래쪽 여백을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>margin-left</th>
+                            <td>요소의 왼쪽 여백을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>margin-right</th>
+                            <td>요소의 오른쪽 여백을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>margin-top</th>
+                            <td>요소의 위쪽 여백을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>max-height</th>
+                            <td>최대 높이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>max-width </th>
+                            <td>최대 폭을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>min-height</th>
+                            <td>최소 높이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>min-width</th>
+                            <td>최소 폭을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>mix-blend-mode</th>
+                            <td>요소의 내용이 요소의 부모 및 요소의 배경 내용과 혼합되는 방법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>object-fit</th>
+                            <td><img> 또는 <video>와 같이 대체된 요소의 콘텐츠가 해당 컨테이너에 맞게 크기가 조정되어야 하는 방법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>object-position</th>
+                            <td>요소 상자 내에서 선택한 대체 요소의 내용 정렬을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>opacity</th>
+                            <td>요소의 투명한 정도를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>outline</th>
+                            <td>각 요소의 경계선의 형태를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>outline-color</th>
+                            <td>경계선의 색상을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>outline-offset</th>
+                            <td>성은 아웃라인과 요소의 가장자리 또는 테두리 사이의 간격을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>outline-style</th>
+                            <td>요소의 아웃라인 스타일을 설정한다 윤곽선은 테두리 외부의 요소 주위에 그려지는 선</td>
+                        </tr>
+                        <tr>
+                            <th>outline-width</th>
+                            <td>요소의 외곽선 두께를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>overflow</th>
+                            <td>문장이 화면을 넘어가는 문제점을 수정하는 기능</td>
+                        </tr>
+                        <tr>
+                            <th>overflow-x</th>
+                            <td>x축(가로)으로 화면이 넘어가는 기능 수정</td>
+                        </tr>
+                        <tr>
+                            <th>overflow-y</th>
+                            <td>y축(가로)으로 화면이 넘어가는 기능 수정</td>
+                        </tr>
+                        <tr>
+                            <th>padding</th>
+                            <td>요소의 내부 여백(안쪽)을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>padding-bottom</th>
+                            <td>요소의 아래쪽 내부 여백을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>padding-left</th>
+                            <td>요소의 왼쪽 내부 여백을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>padding-right</th>
+                            <td>요소의 오른쪽 내부여백을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>padding-top</th>
+                            <td>요소의 위쪽 내부 여백을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-after</th>
+                            <td>현재 요소 뒤의 페이지 나누기를 조정한다</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-before</th>
+                            <td>페이지, 열 또는 영역 나누기가 생성된 상자 전에 동작하는 방식을 설정한다, 생성된 상자가 없으면 속성이 무시된다</td>
+                        </tr>
+                        <tr>
+                            <th>page-break-inside</th>
+                            <td>페이지, 열 또는 영역 나누기가 생성된 상자 내에서 작동하는 방식을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>perspective</th>
+                            <td>웹사이트 내의 물체의 원근법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>perspective-origin</th>
+                            <td>속성은 뷰어가 보고 있는 위치를 결정한다</td>
+                        </tr>
+                        <tr>
+                            <th>pointer-events</th>
+                            <td>특정 그래픽 요소가 포인터 이벤트의 대상이 될 수 있는 상황(있는 경우)을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>position</th>
+                            <td>요소들의 위치를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>quotes</th>
+                            <td>콘텐츠 속성의 열린 따옴표 또는 닫는 따옴표 값을 사용하여 추가된 따옴표를 브라우저에서 렌더링하는 방법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>resize</th>
+                            <td>소의 크기를 조정할 수 있는지 여부와 가능한 경우 방향을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>right</th>
+                            <td>요소를 오른쪽으로 얼마나 위치시킬지를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>tab-size</th>
+                            <td>문자의 너비를 사용자 정의하는 데 사용된다</td>
+                        </tr>
+                        <tr>
+                            <th>table-layout</th>
+                            <td>셀, 행 및 열을 레이아웃하는 데 사용되는 알고리즘을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-align</th>
+                            <td>텍스트의 정렬 방향을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-align-last</th>
+                            <td>강제 줄 바꿈 직전의 블록이나 줄의 마지막 줄을 정렬하는 방법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration</th>
+                            <td>선으로 텍스트를 꾸미는 속성</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-color </th>
+                            <td>텍스트 선의 색상을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-line</th>
+                            <td>밑줄이나 윗줄과 같이 요소의 텍스트에 사용되는 장식의 종류를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-decoration-style</th>
+                            <td>text-decoration-line에 의해 지정된 라인의 스타일을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-indent</th>
+                            <td>블록의 텍스트 줄 앞에 배치되는 빈 공간(들여쓰기)의 길이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-justify</th>
+                            <td>text-align: justify; 요소에 설정된다</td>
+                        </tr>
+                        <tr>
+                            <th>text-overflow</th>
+                            <td>숨겨진 오버플로 콘텐츠가 사용자에게 신호되는 방식을 설정한다 잘리거나 줄임표('...')를 표시하거나 사용자 지정 문자열을 표시할 수 있다</td>
+                        </tr>
+                        <tr>
+                            <th>text-shadow</th>
+                            <td>텍스트에 그림자를 추가한다</td>
+                        </tr>
+                        <tr>
+                            <th>text-transform</th>
+                            <td>요소의 텍스트를 대문자로 표시하는 방법을 지정한다 텍스트를 모두 대문자 또는 소문자로 표시하거나 각 단어를 대문자로 표시하는 데 사용할 수 있다</td>
+                        </tr>
+                        <tr>
+                            <th>top</th>
+                            <td>상단을 기준으로 얼마나 밑에 위치시킬지를 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transform</th>
+                            <td>웹의 요소들을 이동시키거나 크기조절, 회전을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transform-origin</th>
+                            <td>요소 변형의 원점을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transform-style</th>
+                            <td>요소의 자식이 3D 공간에 배치되는지 또는 요소 평면에서 병합되는지 여부를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transition</th>
+                            <td>애니메이션 속도를 조절한다</td>
+                        </tr>
+                        <tr>
+                            <th>transition-delay</th>
+                            <td>값이 변경될 때 속성의 전환 효과를 시작하기 전에 대기할 기간을 지정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transition-duration</th>
+                            <td>환 애니메이션이 완료되는 데 걸리는 시간을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transition-property</th>
+                            <td>속성은 전환 효과를 적용할 CSS 속성을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>transition-timing-function</th>
+                            <td>전환 효과의 영향을 받는 CSS 속성에 대해 중간 값을 계산하는 방법을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>unicode-bidi</th>
+                            <td>방향 속성과 함께 문서의 양방향 텍스트가 처리되는 방식을 결정한다</td>
+                        </tr>
+                        <tr>
+                            <th>user-select</th>
+                            <td>사용자가 텍스트를 선택할 수 있는지 여부를 제어합니다</td>
+                        </tr>
+                        <tr>
+                            <th>vertical-align</th>
+                            <td>인라인, 인라인 블록 또는 테이블 셀 상자의 수직 정렬을 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>visibility</th>
+                            <td>웹 페이지들의 요소들이 표현 여부를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>white-space</th>
+                            <td>스페이스와 탭, 줄바꿈, 자동 줄바꿈을 어떻게 설정할지를 나타낸다</td>
+                        </tr>
+                        <tr>
+                            <th>width</th>
+                            <td>너비(가로)에 대한 길이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>word-break</th>
+                            <td>텍스트가 내용 상자를 넘칠 때마다 줄 바꿈을 표시할지 여부를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>word-spacing</th>
+                            <td>단어 사이 및 태그 사이의 간격 길이를 설정한다</td>
+                        </tr>
+                        <tr>
+                            <th>z-index</th>
+                            <td>요소가 다른 요소들보다 앞이나 뒤로 배치되는 경우를 설정한다</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //refer -->
+
+    </main>
+
+    <!-- script 불러오기-->
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

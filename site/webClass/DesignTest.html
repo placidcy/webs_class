@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0 auto;
+    }
+
+    #siteWrap {
+        width: 1000px;
+    }
+
+    #header {
+        height: 100px;
+        margin-top: 50px;
+        overflow: hidden;
+    }
+
+    #header .LogoImage {
+        background: url(../webClass/siteImg2/Logo.jpg) no-repeat;
+        width: 250px;
+        height: 100px;
+        float: left;
+    }
+
+    #header .navMenu {
+        padding-top: 35px;
+    }
+
+    #header .menu {
+        display: flex;
+        justify-content: center;
+    }
+
+    #header .menu .menuName {
+        list-style: none;
+        font-weight: 700;
+        position: relative;
+    }
+
+    #header .menu .menuName a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #header .menu .menuName .subMenu {
+        position: absolute;
+        left: -50px;
+        z-index: 51;
+        list-style: none;
+        display: none;
+
+    }
+
+    #header .menu .menuName .subMenu li {}
+
+    #header .menu .menuName .subMenu li a {}
+
+    #main {
+        overflow: hidden;
+    }
+
+    /* .mainImage {
+        background: url(../webClass/siteImg2/MainImg.jpg) no-repeat;
+        width: 1000px;
+        height: 400px;
+        margin-bottom: 20px;
+    } */
+
+    .deliveryInfo {
+        overflow: hidden;
+        width: 1000px;
+    }
+
+    .deliveryInfo .leftSide {
+        width: 48%;
+        height: 160px;
+        background-color: #f5f5f5;
+        float: left;
+    }
+
+    .leftSide .textArea {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .leftSide .textArea .locationSearch {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .leftSide .textArea .locationSearch .deliverySearch {
+        margin-left: 5px;
+        margin-right: 0;
+    }
+
+    .leftSide .textArea .locationSearch .deliverySearch a {
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+    }
+
+    .leftSide .textArea .text1 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .leftSide .textArea .text2 {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .leftSide .textArea .locationSearch .img {
+        background: url(../webClass/siteImg2/location.jpg) no-repeat;
+        width: 22px;
+        height: 25px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .leftSide .deliveryImg {
+        background: url(../webClass/siteImg2/deliveryImg1.jpg) no-repeat;
+        width: 90px;
+        height: 120px;
+        margin-right: 20px;
+        margin-top: -90px;
+    }
+
+    .deliveryInfo .rightSide {
+        width: 48%;
+        height: 160px;
+        background-color: #f5f5f5;
+        float: right;
+    }
+
+    .rightSide .textArea {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .rightSide .textArea .text1 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .rightSide .textArea .text2 {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .rightSide .deliveryImg {
+        background: url(../webClass/siteImg2/deliveryImg2.jpg) no-repeat;
+        width: 90px;
+        height: 120px;
+        margin-right: 20px;
+        margin-top: -90px;
+    }
+
+    .rightSide .remainingTime {
+        margin-top: 25px;
+    }
+
+    .rightSide .remainingTime .img {
+        background: url(../webClass/siteImg2/clock.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+
+    .rightSide .remainingTime .time {
+        font-weight: 600;
+    }
+
+    .rightSide .remainingTime .time span {
+        color: #727171;
+        font-size: 13px;
+    }
+
+    .menuTab {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .menuTab .BestMenu {
+        margin-top: 50px;
+        display: flex;
+        display: none;
+    }
+
+    .menuTab .title a {
+        text-decoration: none;
+        color: rgb(110, 110, 110);
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .menuTab .title .BestMenuTitle.active {
+        color: #000;
+    }
+
+    .menuTab .title .reviewTitle.active {
+        color: #000;
+    }
+
+    .menuTab .BestMenu .Menu1 {
+        overflow: hidden;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .menuTab .BestMenu .Menu1 h4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        font-weight: 500;
+        background-color: #000;
+        padding: 5px 5px 5px 15px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .BestMenu .Menu1 .menuImg {
+        background: url(../webClass/siteImg2/newContImage1.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .BestMenu .Menu1 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu1 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu1 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .BestMenu .Menu1 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        float: right;
+        margin-top: -30px;
+    }
+
+    .menuTab .BestMenu .Menu2 {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .menuTab .BestMenu .Menu2 h4 {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        background-color: #000;
+        padding: 7px 5px 3px 5px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .BestMenu .Menu2 .menuImg {
+        background: url(../webClass/siteImg2/newContImage2.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .BestMenu .Menu2 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu2 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu2 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .BestMenu .Menu2 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: -25px;
+        float: right;
+    }
+
+    .menuTab .BestMenu .Menu3 {
+        overflow: hidden;
+        position: relative;
+        margin-right: 0;
+    }
+
+    .menuTab .BestMenu .Menu3 h4 {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        background-color: #000;
+        padding: 7px 5px 3px 5px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .BestMenu .Menu3 .menuImg {
+        background: url(../webClass/siteImg2/newContImage3.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .BestMenu .Menu3 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu3 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .BestMenu .Menu3 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .BestMenu .Menu3 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: -25px;
+        float: right;
+    }
+
+    .menuTab .BestMenu.active {
+        display: flex;
+    }
+
+    .menuTab .review {
+        margin-top: 50px;
+        display: flex;
+        display: none;
+    }
+
+    .menuTab .review a {
+        display: inline-block;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu1 {
+        overflow: hidden;
+        position: relative;
+        margin-left: 0;
+    }
+
+    .menuTab .review .Menu1 h4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        font-weight: 500;
+        background-color: #000;
+        padding: 5px 5px 5px 15px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .review .Menu1 .menuImg {
+        background: url(../webClass/siteImg2/newContImage1.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .review .Menu1 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu1 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu1 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .review .Menu1 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        float: right;
+        margin-top: -30px;
+    }
+
+    .menuTab .review .Menu2 {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .menuTab .review .Menu2 h4 {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        background-color: #000;
+        padding: 7px 5px 3px 5px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .review .Menu2 .menuImg {
+        background: url(../webClass/siteImg2/newContImage2.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .review .Menu2 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu2 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu2 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .review .Menu2 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: -25px;
+        float: right;
+    }
+
+    .menuTab .review .Menu3 {
+        overflow: hidden;
+        position: relative;
+        margin-right: 0;
+    }
+
+    .menuTab .review .Menu3 h4 {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        color: #fff;
+        font-weight: 500;
+        text-align: center;
+        background-color: #000;
+        padding: 7px 5px 3px 5px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .menuTab .review .Menu3 .menuImg {
+        background: url(../webClass/siteImg2/newContImage3.jpg) no-repeat;
+        width: 300px;
+        height: 300px;
+    }
+
+    .menuTab .review .Menu3 .text {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu3 .text p {
+        font-weight: 600;
+    }
+
+    .menuTab .review .Menu3 .text span {
+        color: #727171;
+        font-size: 14px;
+    }
+
+    .menuTab .review .Menu3 .cartImg {
+        background: url(../webClass/siteImg2/Cart.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin-top: -25px;
+        float: right;
+    }
+
+    .menuTab .review.active {
+        display: flex;
+    }
+
+    #footer {
+        background-color: #202020;
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
+    }
+
+    #footer .footerContainer {
+        width: 1000px;
+    }
+
+    #footer .Logo {
+        background: url(../webClass/siteImg2/footerLogo.jpg) no-repeat;
+        width: 250px;
+        height: 100px;
+        margin-top: 5%;
+        float: left;
+    }
+
+    #footer .footerInfo {
+        display: flex;
+        list-style: none;
+        margin-top: 5%;
+        float: right;
+        margin-right: 100px;
+    }
+
+    #footer .footerInfo .useInfo {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #footer .footerInfo .useInfo a {
+        display: inline-block;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    #footer .footerInfo .symbol span {
+        color: rgba(77, 77, 77, 0.4);
+        font-weight: 600;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #footer .siteInfo {
+        margin-top: 20px;
+        margin-right: 40px;
+        float: right;
+    }
+
+    #footer .siteInfo p {
+        margin-top: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #727171;
+    }
+
+    .slideList {
+        position: relative;
+        width: 3000px;
+        height: 450px;
+        z-index: 50;
+    }
+
+    .slideList .slideImg {
+        position: relative;
+        width: 1000px;
+        float: left;
+    }
+
+    .slideList .slideImg h2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 30px;
+        border-radius: 20px;
+    }
+
+    /* layer */
+    .layer_bg {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 900;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .layer {
+        display: none;
+        position: absolute;
+        left: 30px;
+        top: 30px;
+        z-index: 1000;
+        width: 500px;
+        height: 500px;
+        border: 3px solid #000;
+        background: #fff;
+    }
+
+    .layer h2 {
+        padding: 20px;
+        color: #000;
+    }
+
+    .layer .close {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .ir_so {
+        overflow: hidden;
+        position: absolute;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+</style>
+
+<body>
+    <div id="siteWrap">
+        <section id="siteContainer">
+            <header id="header">
+                <div class="LogoImage"></div>
+
+                <nav class="navMenu">
+                    <ul class="menu">
+                        <li class="menuName"><a href="#">COOKIT 소개</a>
+                            <ul class="subMenu">
+                                <li><a href="#">subMenu1</a></li>
+                                <li><a href="#">subMenu2</a></li>
+                                <li><a href="#">subMenu3</a></li>
+                                <li><a href="#">subMenu4</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menuName"><a href="#">COOKIT 메뉴</a>
+                            <ul class="subMenu">
+                                <li><a href="#">subMenu1</a></li>
+                                <li><a href="#">subMenu2</a></li>
+                                <li><a href="#">subMenu3</a></li>
+                                <li><a href="#">subMenu4</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menuName"><a href="#">리뷰</a>
+                            <ul class="subMenu">
+                                <li><a href="#">subMenu1</a></li>
+                                <li><a href="#">subMenu2</a></li>
+                                <li><a href="#">subMenu3</a></li>
+                                <li><a href="#">subMenu4</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menuName"><a href="#">이벤트</a>
+                            <ul class="subMenu">
+                                <li><a href="#">subMenu1</a></li>
+                                <li><a href="#">subMenu2</a></li>
+                                <li><a href="#">subMenu3</a></li>
+                                <li><a href="#">subMenu4</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menuName"><a href="#">MY쿡킷</a>
+                            <ul class="subMenu">
+                                <li><a href="#">subMenu1</a></li>
+                                <li><a href="#">subMenu2</a></li>
+                                <li><a href="#">subMenu3</a></li>
+                                <li><a href="#">subMenu4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- layer -->
+            <div class="layer_bg"></div>
+            <div class="layer">
+                <h2>제목</h2>
+                <a href="#" class="close">닫기</a>
+            </div>
+
+            <main id="main">
+                <!-- <div class="mainImage"></div> -->
+                <div class="slideList">
+                    <div class="slideImg">
+                        <h2 class="ir_so">이미지1</h2>
+                        <img src="../webClass/siteImg2/MainImg.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트1">
+                    </div>
+                    <div class="slideImg">
+                        <h2 class="ir_so">이미지2</h2>
+                        <img src="../webClass/siteImg2/MainImg.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트2">
+                    </div>
+                    <div class="slideImg">
+                        <h2 class="ir_so">이미지3</h2>
+                        <img src="../webClass/siteImg2/MainImg.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트3">
+                    </div>
+                </div>
+
+                <article class="deliveryInfo">
+                    <div class="leftSide">
+                        <div class="textArea">
+                            <p class="text1">우리집도 COOKIT 배송이 되나요?</p>
+                            <p class="text2">배송이 가능한지 알려드려요</p>
+                            <div class="locationSearch">
+                                <div class="img"></div>
+                                <div class="deliverySearch"><a href="#">배송지 검색</a></div>
+                            </div>
+                            <div class="deliveryImg"></div>
+                        </div>
+                    </div>
+
+                    <div class="rightSide">
+                        <div class="textArea">
+                            <p class="text1">7월 30일(화)에 받을 수 있어요</p>
+                            <p class="text2">오전 7시까지 주문하시면 다음날 배송됩니다</p>
+                            <div class="remainingTime">
+                                <div class="img"></div>
+                                <span class="time">63:28:32<span> 남은시간</span></span>
+                            </div>
+                            <div class="deliveryImg"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <section class="menuTab">
+                    <span class="title">
+                        <a href="#menuTab" class="BestMenuTitle active">실시간 베스트</a>
+                        <span class="signal">|</span>
+                        <a href="#menuTab" class="reviewTitle">생생한 리뷰</a>
+                    </span>
+
+                    <div class="BestMenu active">
+                        <div class="Menu1">
+                            <div class="menuImg">
+                                <h4>BEST<br>01</h4>
+                            </div>
+
+                            <div class="text">
+                                <p>평양식 어복쟁반</p>
+                                <p>33,800원<span> / 3인분</span></p>
+                            </div>
+
+                            <a href="#">
+                                <div class="cartImg"></div>
+                            </a>
+                        </div>
+
+                        <div class="Menu2">
+                            <div class="menuImg">
+                                <h4>02</h4>
+                            </div>
+
+                            <div class="text">
+                                <p>새우주꾸미삼겹살</p>
+                                <p>29,800원<span> / 3인분</span></p>
+                            </div>
+
+                            <a href="#">
+                                <div class="cartImg"></div>
+                            </a>
+                        </div>
+
+                        <div class="Menu3">
+                            <div class="menuImg">
+                                <h4>03</h4>
+                            </div>
+
+                            <div class="text">
+                                <p>방풍나물 아귀찜</p>
+                                <p>32,800원<span> / 3인분</span></p>
+                            </div>
+
+                            <a href="#">
+                                <div class="cartImg"></div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="review">
+                        <div class="Menu1">
+                            <h4>BEST<br>01</h4>
+                            <div class="menuImg"></div>
+
+                            <div class="text">
+                                <p>리뷰 테스트1</p>
+                                <p>가격 없음<span> / 첫번째</span></p>
+                            </div>
+
+                            <div class="cartImg"></div>
+                        </div>
+
+                        <div class="Menu2">
+                            <h4>02</h4>
+                            <div class="menuImg"></div>
+
+                            <div class="text">
+                                <p>리뷰 테스트2</p>
+                                <p>가격 없음<span> / 두번째</span></p>
+                            </div>
+
+                            <div class="cartImg"></div>
+                        </div>
+
+                        <div class="Menu3">
+                            <h4>03</h4>
+                            <div class="menuImg"></div>
+
+                            <div class="text">
+                                <p>리뷰 테스트3</p>
+                                <p>가격 없음<span> / 세번째</span></p>
+                            </div>
+
+                            <div class="cartImg"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+    </div>
+    <footer id="footer">
+        <div class="footerContainer">
+            <div class="Logo"></div>
+
+            <div class="footerInfo">
+                <li class="useInfo"><a href="#">이용약관</a></li>
+                <li class="symbol"><span>|</span></li>
+
+                <li class="useInfo"><a href="#">개인정보처리 방침</a></li>
+                <li class="symbol"><span>|</span></li>
+
+                <li class="useInfo"><a href="#">법적고지</a></li>
+                <li class="symbol"><span>|</span></li>
+
+                <li class="useInfo"><a href="#">사업자정보 확인</a></li>
+            </div>
+
+            <article class="siteInfo">
+                <p>씨제이제일제당(주) | 대표자:신현재
+                    <p>주소: 서울 중구 동호로 330 CJ제일제당 센터(우) 04560 | 사업자등록번호 104-86-09535</p>
+                    <p>통신판매업신고 중구 제 07767호 | 개인정보보호책임자:류화정</p>
+            </article>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $(".navMenu .menu .menuName").mouseover(function () {
+                $(this).find(".subMenu").stop().slideDown(500);
+            });
+
+            $(".navMenu .menu .menuName").mouseout(function () {
+                $(this).find(".subMenu").stop().slideUp(500);
+            });
+        })(jQuery);
+
+        var currentIndex = 0;
+        setInterval(function () {
+            var slidePosition = currentIndex * (-1000) + "px";
+
+            if (currentIndex < 2) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+
+            $(".slideList").animate({
+                left: slidePosition
+            });
+        }, 4000);
+
+        (function ($) {
+            $(".deliveryInfo").click(function () {
+                $(".layer").slideDown(300);
+                $(".layer_bg").show();
+            });
+
+            $(".layer .close").click(function () {
+                $(".layer").slideUp(300);
+                $(".layer_bg").hide();
+            });
+        })(jQuery);
+
+        // var bestMenuList = $(".menuTab .BestMenu");
+        // bestMenuList.find(".menuTab .BestMenu").hide();
+        // bestMenuList.find(".menuTab .BestMenu.active").show();
+
+        // var reviewList = $(".menuTab .review");
+        // reviewList.find(".menuTab .review").hide();
+        // reviewList.find(".menuTab .review.active").show();
+
+        // function showBestMenuList(element) {
+        //     element.preventdefault();
+        //     var target = $(this);
+        //     target.parent().next(".BestMenu").addClass("active").show().siblings("review").removeClass("active").hide();
+        // }
+
+        // function showReviewList(element) {
+        //     element.preventdefault();
+        //     var target = $(this);
+        //     target.parent().next(".review").addClass("active").show().siblings("BestMenu").removeClass("active").hide();
+        // }
+
+        // bestMenuList.find(".menuTab .title .BestMenuTitle").click(showBestMenuList());
+        // reviewList.find(".menuTab .title .reviewTitle").click(showReviewList());
+
+        const bestMenuList = document.querySelector(".menuTab .BestMenuTitle");
+        const reviewList = document.querySelector(".menuTab .reviewTitle");
+
+        bestMenuList.addEventListener("click", () => {
+            bestMenuList.classList.add("active");
+            reviewList.classList.remove("active");
+            document.querySelector(".menuTab .BestMenu").classList.add("active");
+            document.querySelector(".menuTab .review").classList.remove("active");
+        });
+
+        reviewList.addEventListener("click", () => {
+            reviewList.classList.add("active");
+            bestMenuList.classList.remove("active");
+            document.querySelector(".menuTab .review").classList.add("active");
+            document.querySelector(".menuTab .BestMenu").classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>

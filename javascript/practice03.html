@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice01-3</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism2.css">
+
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid #222;
+            font-size: 16px;
+            padding: 14px;
+            font-family: "NexonLv1Gothic";
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="back"><a href="practice01.html">Back</a></div>
+
+    <main id="main">
+        <!-- test -->
+
+        <!-- 01 -->
+        <div class="test">
+            <h2>03. 테이블 출력하기</h2>
+
+            <h3>1.1 for문을 이용해서 테이블 만들기 </h3>
+            <p>1부터 25까지 숫자를 넣으시오</p>
+
+            <div class="code">
+                <pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    let table = "&lt;table&gt;";
+
+    for (let i = 1; i &lt;= 5; i++) {
+        table += "&lt;tr&gt;"
+            for(let j = 1; j &lt;= 5; j++){
+                table += "&lt;td&gt;" + num + "&lt;/td&gt;";
+                num++;
+            }
+        table += "&lt;/tr&gt;"
+    }
+    table += "&lt;/table&gt;";
+}</code></pre>
+            </div>
+            <div class="result01"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="test">
+            <h2></h2>
+
+            <h3></h3>
+            <p></p>
+
+            <div class="result02"></div>
+        </div>
+
+
+    </main>
+    <!-- //test -->
+
+    <!-- script -->
+    <script src="assets/js/prism2.js"></script>
+
+    <script>
+        {
+            let num = 1;
+            let table = "<table>";
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>"
+                for (let j = 1; j <= 5; j++) {
+                    table += "<td>" + num + "</td>";
+                    num++;
+                }
+                table += "</tr>"
+            }
+            table += "</table>";
+
+            document.querySelector(".result01").innerHTML = table;
+        }
+
+        {
+            let table = "<table>";
+            let num = 1;
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 5; j++) {
+                    if (num % 2 == 0)
+                        table += "<td></td>";
+                    else
+                        table += "<td>" + num + "</td>";
+                    num++;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            //document.write(table);
+        }
+
+        {
+            let table = "<table>";
+            let num = 1;
+
+            for (let i = 1; i <= 5; i++) {
+                table += "<tr>";
+                for (let j = 1; j <= 5; j++) {
+                    if (num % 2 != 0)
+                        table += "<td></td>";
+                    else
+                        table += "<td>" + num + "</td>";
+                    num++;
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            //document.write(table);
+        }
+
+        {
+            let table = "<table>";
+            let num = 1;
+            for(let row = 1; row <= 5; row++) {
+                table += "<tr>";
+                    for(let col = 1; col <= 5; col++) {
+                        if(num % 2 == 0){
+                            table += "<td>" + num + "</td>";
+                        } else {
+                            table += "<td></td>";
+                        }
+                        num++;
+                    }
+                table += "</tr>";
+            }
+            table += "</table>";
+
+            document.write(table);
+        }
+    </script>
+</body>
+
+</html>

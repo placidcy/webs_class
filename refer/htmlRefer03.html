@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2>HTML <em></em></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li><a href="htmlRefer05.html">그리드 시스템</a></li>
+            </ul>
+        </div>
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>시멘틱 태그</h3>
+                <p>사이트의 레이아웃을 설계하기 위한 태그 / 태그에 의미를 부여해 사이트의 구조를 파악하기 위한 기능</p>
+
+                <h3>종류</h3>
+
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>&lt;section&gt;태그는 주제별 그룹의 콘텐츠 구역을 나타낼때 사용</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;header&gt;</th>
+                                <td>사이트 내용의 제목, 머리글</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td>다른 페이지로의 이동을 위한 링크 공간</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;aside&gt;</th>
+                                <td>왼쪽과 오른쪽 가장자리 위치의 공간을 의미하며 본문 외에 부수적인 내용을 주로 표현</td>
+
+                            <tr>
+                                <th>&lt;section&gt;</th>
+                                <td>주제, 카테고리별로 구역을 구분할때 사용, 같은 테마를 가진 여러개의 콘텐츠를 그룹화한다/td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;article&gt;</th>
+                                <td>기사, 블로그 등 텍스트 위주의 페이지를 구성할때 사용</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;footer&gt;</th>
+                                <td>문서의 하단에 들어가는 정보를 표현</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;main&gt;</th>
+                                <td>문서의 중심 내용 또는 응용 프로그램의 중심 기능이나 관련된 콘텐츠를 나타낸다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;nav&gt;</th>
+                                <td>다른 페이지로의 이동을 위한 링크 공간</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;details&gt;</th>
+                                <td>사용자가 직접 조작하여 보거나 숨길 수 있는 부가적인 세부사항을 나타낸다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;summary&gt;</th>
+                                <td>details 태그 안에서 화살표 표시를 통해 생략된 내용을 보여준다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;address&gt;</th>
+                                <td>문서나 글의 저자 또는 회사와 연락할 수 있는 정보를 명시할때 사용</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3>HTML5에서 없어진 태그</h3>
+
+            <div class="table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>&lt;acronym&gt;</th>
+                            <td>축약어를 표시할때 사용하는 기능</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;applet&gt;</th>
+                            <td>문서에 포함되는 애플릿(웹페이지에 포함되어 작은 기능을 수행하는 프로그램)을 정의할때 사용</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;basefont&gt;</th>
+                            <td>HTML 문서의 기본 글꼴을 정의할때 사용한다</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;big&gt;</th>
+                            <td>텍스트를 더 크게 표시할때 사용한다</td>
+
+                        <tr>
+                            <th>&lt;dir&gt;</th>
+                            <td>디렉토리 목록을 표시할때 사용한다</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;font&gt;</th>
+                            <td>사용 글꼴을 정의할때 사용한다</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;frameset&gt; / &lt;frame&gt; / &lt;noframes&gt;</th>
+                            <td>프레임 구조로 레이아웃을 작성할때 사용한다</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;isindex&gt;</th>
+                            <td>검색어를 입력하는 한줄 입력 필드로 사용</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;strike&gt;</th>
+                            <td>텍스트 취소선을 나타낼때 사용한다</td>
+                        </tr>
+
+                        <tr>
+                            <th>&lt;center&gt;</th>
+                            <td>텍스트를 가운데 정렬할때 사용한다</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>HTML5에서 의미가 변경된태그</h3>
+
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>&lt;a&gt;</th>
+                                <td>html4에서는 비어있는 링크를 나타낼때 href=#으로 사용<br>
+                                html5에서는 href 속성 없이 사용하면 자동으로 비어있는 링크로 설정된다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;address&gt;</th>
+                                <td>이름, 이메일, 전화번호 등 개인정보를 표시할때 사용되었고 html5에서는 실제 우편 주소를 나타낼때 사용된다 </td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;b&gt;</th>
+                                <td>텍스트를 진하게 표시하고 중요하지 않지만 진하게 표시할때 사용된다 </td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;hr&gt;</th>
+                                <td>가로줄을 표현하는 기능, html5에서는 단락 단위로 주제를 바꿀때 사용된다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;i&gt;</th>
+                                <td>텍스트를 기울어지게 표시하고 중요하지 않은 정보를 표시할때 사용된다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;menu&gt;</th>
+                                <td>실제 문서 메뉴 정보를 제공하는데 사용된다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;strong&gt;</th>
+                                <td>텍스트를 진하게 표시하는 기능뿐만 아니라 더 중요한 정보를 표시할때 사용된다</td>
+                            </tr>
+
+                            <tr>
+                                <th>&lt;small&gt;</th>
+                                <td>세부 주석이나 작은 인쇄 정보를 표시할때 사용된다</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+            </div>
+    </main>
+
+    <!-- script -->
+    <script src="assets/js/prism.js"></script>
+
+</body>
+
+</html>

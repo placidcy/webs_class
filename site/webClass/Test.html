@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0 auto;
+    }
+
+    #siteWrap {
+        width: 960px;
+    }
+
+    /* #header {
+        display: flex;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    #header .logo {
+        background: url(../webClass/siteImgs/Logo2.jpg) no-repeat;
+        width: 200px;
+        height: 150px;
+        margin: 0;
+        float: left;
+    }
+
+    #header .nav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 80px;
+        margin-right: 0;
+    }
+
+    #header .nav div a {
+        text-decoration: none;
+        color: black;
+        margin-left: 20px;
+        margin-right: 20px;
+    } */
+
+    #header {
+        height: 100px;
+    }
+
+    #header h1 {
+        float: left;
+        padding-top: 5px;
+    }
+
+    #header h1 img {
+        width: 130px;
+    }
+
+    #header .nav {
+        float: right;
+        z-index: 100;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    #header .nav li {
+        position: relative;
+        float: left;
+        width: 120px;
+        text-align: center;
+        list-style: none;
+    }
+
+    #header .nav li a {
+        display: block;
+        padding: 20px 15px;
+        color: black;
+        text-decoration: none;
+    }
+
+    #header .nav li a:hover {
+        background: #ddd;
+    }
+
+    #header .nav li ul.submenu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 59px;
+    }
+
+    #header .nav li ul.submenu li a {
+        padding: 10px;
+    }
+
+    #header .nav li ul.submenu li a:hover {
+        background: #999;
+    }
+
+
+    #mainContainer {}
+
+    #mainContainer .mainImage {
+        background: url("../webClass/siteImgs/mainImage.jpg") no-repeat;
+        width: 960px;
+        height: 400px;
+    }
+
+    .noticeInfo {
+        width: 960px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+    .notice {
+        position: relative;
+        float: left;
+        width: 480px;
+        padding: 20px;
+        border: 1px solid #dddbdb;
+        height: 200px;
+    }
+
+    .notice ul li {
+        float: left;
+        margin-right: 20px;
+        list-style: none;
+    }
+
+    .notice ul li a {
+        font-size: 24px;
+        color: #999;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .notice ul li.active a {
+        color: #000;
+    }
+
+    .notice ul li ul {
+        position: absolute;
+        display: none;
+        left: 30px;
+        top: 70px;
+    }
+
+    .notice ul li.active ul {
+        display: block;
+    }
+
+    .notice ul li ul li {
+        width: 95%;
+        padding: 5px 0;
+    }
+
+    .notice ul li ul li a {
+        float: left;
+        width: 60%;
+        font-size: 16px;
+        color: #333;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    .notice ul li ul li span {
+        float: right;
+        width: 20%;
+    }
+
+    .notice .more {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+        color: #000;
+        text-decoration: none;
+    }
+
+    .OnMessage {
+        width: 480px;
+        margin: 0;
+        float: right;
+    }
+
+    .OnMessage .img {
+        background: url(../webClass/siteImgs/rightImage.jpg) no-repeat;
+        width: 480px;
+        height: 200px;
+    }
+
+    .OnMessage .textArea {}
+
+    .OnMessage .textArea .text1 {}
+
+    .OnMessage .textArea .text2 {}
+
+    .OnMessage .textArea a {}
+
+    .serviceInfo {}
+
+    .serviceInfo .img1 {}
+
+    .serviceInfo .img2 {}
+
+    .serviceInfo .img3 {}
+
+    .serviceInfo .img4 {}
+
+    #footer {}
+
+    #footer p {}
+</style>
+
+<body>
+    <div id="siteWrap">
+        <header id="header" class="clearfix">
+            <h1><a href="#"><img src="../webClass/siteImgs/Logo2.jpg" alt="롯데월드"></a></h1>
+            <nav class="nav">
+                <ul class="clearfix">
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/우대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- <header id="header">
+            <div class="logo"></div>
+
+            <nav class="nav">
+                <div>
+                    <a href="#">즐길거리</a>
+                </div>
+
+                <div>
+                    <a href="#">요금/우대혜택</a>
+                </div>
+
+                <div>
+                    <a href="#">참여프로그램</a>
+                </div>
+
+                <div>
+                    <a href="#">이용가이드</a>
+                </div>
+
+                <div>
+                    <a href="#">소통서비스</a>
+                </div>
+            </nav>
+        </header> -->
+
+        <section id="mainContainer">
+            <div class="mainImage"></div>
+
+            <section class="noticeInfo">
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
+                </article>
+
+
+                <article class="OnMessage">
+                    <div class="img">
+                        <div class="text1">매시간, 매일밤 롯데ON으로</div>
+                        <div class="text2">온종일 혜택 ON</div>
+                        <a href="#">바로 ON</a>
+                    </div>
+                </article>
+            </section>
+
+            <div class="serviceInfo">
+                <div class="img1">
+                    <p>연간회원안내</p>
+                </div>
+
+                <div class="img2">
+                    <p>프리미엄투어</p>
+                </div>
+
+                <div class="img3">
+                    <p>공연참여 프로그램</p>
+                </div>
+
+                <div class="img4">
+                    <p>단체프로그램</p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer">
+            <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드&nbsp;&nbsp;|&nbsp;&nbsp;대표자:박동기</p>
+            <p>사업자등록번호:219-85-00014&nbsp;|&nbsp;통신판매업신고번호:송파 제5513호&nbsp;&nbsp;|&nbsp;&nbsp;전화:1661-2000</p>
+            <br>
+            <p>COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // $(document).ready(); 
+        //$(".submenu").css("display","block");
+        //asyc = bool형 타입, 
+        //defer = js 파일을 다운로드만 받은 뒤에 페이지 코드를 분석한뒤에 불러운 js 파일을 실행
+        //document.querySelector(".submenu").style.display = "block";
+
+        // 첫번째 유형(자기 자신의 자식만 찾는다)
+        // (function($){
+        //     $(".nav > ul > li").mouseover(function() {
+        //         $(this).find(".submenu").css("display","block");
+        //     });
+
+        //     $(".nav > ul > li").mouseout(function() {
+        //         $(this).find(".submenu").css("display","none");
+        //     });
+        // })(jQuery);
+
+        // 두번째 유형(.submenu를 전부 찾는다, jquery에서는 $(".nav > ul > li")에서 모든 li 태그를 찾는다)
+        // (function($){
+        //     $(".nav > ul > li").mouseover(function() {
+        //         $(".nav > ul > li").find(".submenu").css("display","block");
+        //     });
+
+        //     $(".nav > ul > li").mouseout(function() {
+        //         $(".nav > ul > li").find(".submenu").css("display","none");
+        //     });
+        // })(jQuery);
+
+        // 슬라이딩 형태의 메뉴(사이트의 스택에 저장되어서 차례대로 실행되어 여러번 슬라이딩 되면 지연되어 보여지는 문제)
+        // (function($){
+        //     $(".nav > ul > li").mouseover(function() {
+        //         $(this).find(".submenu").stop().show(500);
+        //     });
+
+        //     $(".nav > ul > li").mouseout(function() {
+        //         $(this).find(".submenu").stop().hide(500);
+        //     });
+        // })(jQuery);
+
+        // 메뉴를 하나씩 보여줌(this 사용)
+        // (function($){
+        //     $(".nav > ul > li").mouseover(function() {
+        //         $(this).find(".submenu").stop().slideDown(500);
+        //     });
+
+        //     $(".nav > ul > li").mouseout(function() {
+        //         $(this).find(".submenu").stop().slideUp(500);
+        //     });
+        // })(jQuery);
+
+        // 메뉴 전체를 보여줌
+        (function ($) {
+            $(".nav > ul > li").mouseover(function () {
+                $(".nav > ul > li").find(".submenu").stop().slideDown(500);
+            });
+
+            $(".nav > ul > li").mouseout(function () {
+                $(".nav > ul > li").find(".submenu").stop().slideUp(500);
+            });
+        })(jQuery);
+
+        // 탭 메뉴
+        var tabMenu = $(".notice ul > li > ul");
+        tabMenu.find("ul > li > ul").hide();
+        tabMenu.find("ul > li.active > ul").show();
+        //document.querySelector("ul > li > ul").style.display = "none";
+
+        function tabList(e) {
+            //e.preventDefault();
+            var target = $(this); // 사용자가 클릭한 메뉴(클릭한 요소의 자기의 자신)
+            target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find("ul")
+                .hide();
+        }
+
+        tabMenu.find("ul > li > a").click(tabList());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li class="active"><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>자바스크립트 선언문</h2>
+            <p>&ltscript&gt 태그를 사용해 선언할 수 있다<br>끝나는 곳을 뜻하는 &lt/stript&gt 까지의 범위를 스크립트 영역이라고 부른다<br><br>
+                &lthead&gt 태그 범위나 &ltbody&gt 태그 범위 안에서 선언한다</p>
+            <div class="code">
+<pre>
+&lt;script&gt;
+  스크립트 내용
+&lt;/script&gt;
+</pre>
+            </div>
+
+            <h2>자바스크립트 주석처리</h2>
+            <p>주석은 코드를 설명하거나 추가된 다른 내용을 남길때 사용한다<br>
+                코드에는 영향을 주지 않는다<br><br>
+
+                한줄 주석을 남길때는 (//) 기호를 사용하고<br>
+                여러 줄의 주석을 남길때는 (/* ~ */) 기호을 사용한다</p>
+
+            <h3>1. //</h3>
+            <div class="code">
+                // 한줄 주석
+            </div>
+
+            <h3>2. /* ~ */ </h3>
+            <div class="code">
+                /* 한줄<br>
+                   두줄<br>
+                   세줄<br>
+                */
+            </div>
+
+            <h2>코드 입력시 주의사항</h2>
+            <h3>1. 대문자와 소문자를 구분한다</h3>
+            <div class="code">
+<pre>
+var num;    // 두 변수의 이름은 다르다                  
+var NuM;
+</pre>
+            </div>
+
+            <h3>2. 코드 한 줄을 작성 한뒤에 코드의 가장 오른쪽에 세미콜론(;)을 추가한다</h3>
+            <div class="code">
+<pre>
+const arr = new Array(10, 20, "javascript")          // 세미콜론(;)이 없어서 오류 발생
+const arr = new Array(10, 20, "javascript");
+</pre>
+            </div>
+
+            <h3>3. 문자형 데이터를 작성할때 작은 따옴표(' ')나 큰 따옴표(" ")가 겹치는지 확인해야 한다</h3>
+            <div class="code">
+<pre>
+var str1 = "javascript';               // 왼쪽에는 큰 따옴표(""), 오른쪽에는 작은 따옴표(' ') -> 오류
+var srt2 = 'javascript";               // 왼쪽에는 작은 따옴표(' '), 오른쪽에는 큰 따옴표("") -> 오류
+</pre>
+            </div>
+
+            <h3>4. 소괄호 (), 중괄호{}, 대괄호[]를 정확하게 작성해야 한다</h3>
+            <div class="code">
+<pre>
+const arr = new Array( ;       // arr, arr2, obj 전부 괄호를 닫지 않아 오류 발생
+const arr2 = [1, 2, 3 ;
+const obj = new Object{;
+</pre>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap {
+            width: 1400px;
+            height: 780px;
+            margin: 0 auto;
+        }
+
+        #header {
+            height: 100px;
+            background: rgb(253, 225, 172);
+        }
+
+        #nav {
+            height: 200px;
+            background: rgb(255, 219, 153);
+        }
+
+        #main {
+            height: 400px;
+            background: rgb(255, 208, 122);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        .gridbox1 {
+            display: flex;
+        }
+
+        .gridbox1 div {
+            background: rgb(226, 186, 111);
+            width: 100px;
+            height: 100px;
+            margin: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .gridbox2 {
+            display: flex;
+        }
+
+        .gridbox2 div {
+            background: rgb(226, 186, 111);
+            width: 100px;
+            height: 100px;
+            margin: 10px 20px;
+            border-radius: 20px;
+        }
+
+        #footer {
+            background: rgb(252, 196, 93);
+            height: 100px;
+        }
+
+        @media (max-width: 1200px) {
+            #wrap {
+                width: 100%;
+            }
+
+            .gridbox1:last-child {
+                width: 0;
+                height: 0;
+            }
+
+            .gridbox2:last-child {
+                width: 0;
+                height: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <div class="gridbox1">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="gridbox2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>

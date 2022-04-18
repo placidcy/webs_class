@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li class="active"><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>연산자</h2>
+            <p>프로그램에서 데이터를 처리하고 그 결과를 산출하는 기능<br>
+                산술, 문자 결합, 대입, 증감, 비교, 논리, 조건 연산자 등이 있다</p>
+
+            <br>
+
+            <h3>산술 연산자</h3>
+            <p>더하기, 빼기, 나누기, 곱하기, 나머지 계산을 수행하는 기호<br>
+                더하기(+), 빼기(-), 나누기(/), 곱하기(*), 나머지(%)기호가 있다</p>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="ce va">기호</td>
+                            <td class="ce va">뜻</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>+</td>
+                            <td>더하기</td>
+                        </tr>
+
+                        <tr>
+                            <td>-</td>
+                            <td>빼기</td>
+                        </tr>
+
+                        <tr>
+                            <td>*</td>
+                            <td>곱하기</td>
+                        </tr>
+
+                        <tr>
+                            <td>/</td>
+                            <td>나누기</td>
+                        </tr>
+
+                        <tr>
+                            <td>%</td>
+                            <td>나머지</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code">
+<pre>
+var num1 = 5, num2 = 2;
+
+var result = num1 + num2; // 7
+var result = num1 - num2; // 3
+var result = num1 * num2; // 10
+var result = num1 / num2; // 2
+var result = num1 % num2; // 1
+</pre>
+            </div>
+
+            <br>
+
+            <h3>문자 결합 연산자</h3>
+            <p>
+                여러개의 문자를 하나로 합치는 연산자<br>
+                문자형 데이터가 적어도 하나가 있을때 다른 데이터는 자동으로 문자형 데이터로 변환되고 문자 결합이 실행된다
+                다시 분리할 수는 없다
+            </p>
+
+            <div class="code">
+<pre>
+var str1 = "java";
+var str2 = "script";
+
+var result = str1 + str2; // "java" + "script"
+var result2 = result - str2; // 값이 NaN으로 바뀐다
+
+document.write(result); // "javascript" 문자열 출력된다
+document.write(result2); // NaN이 출력된다
+</pre>
+            </div>
+
+            <br>
+
+            <h3>대입 연산자</h3>
+            <p>
+                데이터를 저장할때 사용하는 기호로 "=" 기호를 사용한다
+                복합 대입 연산자는 대입과 산술 연산자가 합쳐진 기호이다
+            </p>
+
+            <div class="code">
+<pre>
+// 대입 연산자
+
+var num1 = 5; // num1 변수에 숫자형 값 5 대입
+var num2 = 10; // num2 변수에 숫자형 값 10 대입
+var num3 = 15; // num3 변수에 숫자형 값 15 대입
+var num4 = 20; // num4 변수에 숫자형 값 20 대입
+
+// 복합 대입 연산자
+
+num1 += num2; // num1 = num1(5) + num2(10)
+document.write(num1); // 15 출력
+
+num3 -= num4; // num3 = num3(15) - num4(20)
+document.write(num3); // -5 출력
+</pre>
+            </div>
+
+            <br><br>
+
+            <h3>증감 연산자</h3>
+            <p>
+                "++", "--" 기호를 사용하며 해당 값을 1 증가시키거나 1 감소시킨다
+                기호의 위치에 따라 처리 방식이 달라진다
+            </p>
+
+            <div class="code">
+<pre>
+var num1 = 1;
+var num2 = 1;
+
+document.write(num1++); // num의 값 1을 불러온 뒤에 1 증가(1 출력)
+document.write(++num2); // num의 값을 1 증가시킨 뒤에 불러온다(2 출력)
+</pre>
+            </div>
+
+            <br>
+
+            <h3>비교 연산자</h3>
+            <p>
+                두 값에 대한 비교를 나타내는 연산자로 값이 크거나 작거나 같음을 확인할때 사용한다
+            </p>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="ce va">기호</td>
+                            <td class="ce va">뜻</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>A > B</td>
+                            <td>A값이 B값보다 크다</td>
+                        </tr>
+
+                        <tr>
+                            <td>A &lt; B</td>
+                            <td>A값이 B값보다 작다</td>
+                        </tr>
+
+                        <tr>
+                            <td>A &lt;= B</td>
+                            <td>A값이 B값보다 작거나 같다</td>
+                        </tr>
+
+                        <tr>
+                            <td>A >= B</td>
+                            <td>A값이 B값보다 크거나 같다</td>
+                        </tr>
+
+                        <tr>
+                            <td>A == B</td>
+                            <td>A와 B의 값은 같다</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br><br>
+
+            <h3>논리 연산자</h3>
+            <p>
+                논리형 데이터 true 또는 false 값을 반환한다
+            </p>
+
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="ce va">기호</td>
+                            <td class="ce va">뜻</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>||</td>
+                            <td>or 연산자, 두 값중 하나라도 true일때 true값을 반환한다</td>
+                        </tr>
+
+                        <tr>
+                            <td>&&</td>
+                            <td>and 연산자, 두 값이 모두 true일때 true값을 반환한다, 하나의 값이 false이면 false값을 반환한다</td>
+                        </tr>
+
+                        <tr>
+                            <td>!</td>
+                            <td>not 연산자, 값이 true일때 반대값 false를 반환하고 반대로 false값일때 true값을 반환한다</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code">
+                <pre>
+var num1 = 10;
+var num2 = 20;
+
+var result;
+
+result = num1 > num2 && num &lt; num2;               // num1 &lt; num2(10 > 20) 조건이 거짓
+document.write(result);                           // false 출력
+
+result = num1 &lt; num2 || num1 > num2;              // num1 > num2(10 > 20) 조건이 거짓이지만 
+                                                                  // num1 &lt; num2(10 &lt; 20) 조건이 참
+document.write(result);                           // true 출력
+
+result = num1 >= num2;
+document.write(result);
+</pre>
+            </div>
+    </main>
+</body>
+
+</html>

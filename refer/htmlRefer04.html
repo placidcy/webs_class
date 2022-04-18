@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2>HTML <em></em></h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li class="active"><a href="htmlRefer04.html">SEO</a></li>
+                <li><a href="htmlRefer05.html">그리드 시스템</a></li>
+            </ul>
+        </div>
+
+        <!-- refer -->
+        <div class="refer">
+            <div class="doc">
+                <h3>Search Engine Optimization</h3>
+                <p>검색 엔진이 이해하기 쉽도록 웹사이트의 구조와 페이지를 개발해 검색 결과 상위에 노출시키는 작업<br>
+                    특정 검색어를 웹페이지에 적절하게 배치하고 다른 웹페이지에서 링크가 많이 연결되도록 하는 것</p>
+
+                <h3>1. 문법에 맞는 HTML 작성</h3>
+                <p>title 태그로 사이트의 제목을 설정하고 div 태그를 사용해 줄을 바꾸거나 strong 태그와 em 태그로<br>
+                    강조하고 싶은 텍스트에 붙이는 등 적절하게 HTML 소스로 웹사이트를 구성하는것</p>
+
+                <h3>2. 구체적인 페이지 제목 만들기</h3>
+                <p>HTML 문서의 헤더 부분에 들어가는 페이지의 제목은 구체적이고 간결하게 구성해서 검색 화면에서<br>
+                    잘리지 않게 한다</p>
+
+                <h3>3. meta 태그 활용</h3>
+                <p>기본적인 키워드나 서술(description)에 대한 키워드는 검색 결과에 표시되기 때문에 포함하는 것이 좋다</p><br>
+
+                <div class="code">
+<pre>
+    &lt;meta name="keywords" contents="키워드1, 키워드2">
+    &lt;meta name="description" contents="페이지 내용에 대한 소개글">
+</pre>
+                </div>
+                <br>
+
+                <p>4. 모든 페이지에 같은 개요(description)을 설정하지 않는 것이 좋다</p>
+                <p>해당 페이지의 제목과 중복되는 정보는 제외하고 모든 페이지를 작성할수 없을때는 홈페이지 내 페이지에 우선순위를 두고 주요 페이지만 작성</p>
+
+                <h3>5. 이미지에 alt 속성 기재</h3>
+                <p>이미지가 로딩되지 못할때 텍스트가 대신 표시되는 기능을 하는 alt 태그를 사용한다</p>
+
+                <h3>6. 이미지 맵에 중요한 링크 사용 피하기</h3>
+                <p>이미지 맵은 map 태그나 area태그를 이용해 한장의 사진에 여러개의 링크를 추가하는 것으로 검색 엔진이 링크를 따라 이동할때<br>
+                    방해가 될 수 있기 때문에 피한다</p>
+
+                <h3>7. 플래시 전용 페이지 피하기</h3>
+                <p>대부분의 검색 엔진은 플래시 애니메이션의 텍스트를 수집할 수 없기 때문에 플래시 전용 페이지는 피한다<br>
+                    홈페이지에 플래시를 추가하고 a 태그만 추가하고 작성하지 않는 경우 엔진은 앞 페이지나 뒷 페이지로 이동할 수 없다</p>
+
+                <h3>8. anchor 태그를 활용한 적절한 키워드 배치</h3>
+                <p>키워드가 본문에 작성되지 않은 홈페이지는 검색 결과에 나타나기 어렵다, anchor태그(a 태그)로<br>
+                    주요한 키워드에 a 태그를 추가한다  </p>
+
+                <div class="code">
+<pre>
+    &lt;a href=“https://ko.wikipedia.org/wiki/”>위키백과 바로가기&lt;/a>
+    &lt;a href=“https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8F%84%EC%9B%80%EB%A7%90>위키백과 도움말&lt;/a>
+</pre>
+                </div>
+
+                <h3>9. 여러 개의 페이지로 나누어진 컨텐츠 검색 최적화</h3>
+                <p>시리즈 및 연재 등과 같이 한 주제로 글이 길어질 경우 같은 제목을 가진 페이지를 여러 페이지로 나누어 만들게 되는데<br>
+                    이때 해당 페이지를 검색 엔진에게 알리기 위해 rel="canonical" 링크를 삽입해 전체보기 페이지를 표시한다</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2>CSS <em>margin</em></h2>
+        <div class="refer">
+            <div class="doc">
+                <h3>margin</h3>
+                <p class="line">요소의 바깥쪽 여백을 설정한다</p>
+
+                <h3>문법</h3>
+                <p>margin : length;<br>
+                    margin : %;<br>
+                    margin : auto;</p>
+
+                <h3>정의</h3>
+                <ul>
+                    <li>margin-top 속성은 요소의 위쪽의 바깥쪽 여백을 설정</li>
+                    <li>margin-right 속성은 요소의 오른쪽의 바깥쪽 여백을 설정</li>
+                    <li>margin-bottom 속성은 요소의 아래쪽의 바깥쪽 여백을 설정</li>
+                    <li>margin-left 속성은 요소의 왼쪽의 바깥쪽 여백을 설정</li>
+                </ul>
+
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>margin 값</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="test">
+                            <tr>
+                                <th>margin: 10px</th>
+                                <td>위쪽, 오른쪽, 아래쪽, 왼쪽 여백 모두 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin: 10px 11px</th>
+                                <td>위쪽, 아래쪽 여백 10px / 왼쪽, 오른쪽 여백11px</td>
+                            </tr>
+                            <tr>
+                                <th>margin: 10px 11px 12px</th>
+                                <td>위쪽 여백 10px / 왼쪽 오른쪽 여백11px / 아래쪽 여백12px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin: auto</th>
+                                <td>자동값, 기본값</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin : 0 auto</th>
+                                <td>가운데 정렬(블록구조)</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin-top: 10px</th>
+                                <td>위쪽 바깥 여백 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin-right: 11px</th>
+                                <td>오른쪽 바깥 여백 11px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin-bottom: 12px</th>
+                                <td>아래쪽 바깥 여백 12px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin-right: 11px</th>
+                                <td>오른쪽 바깥 여백 11px</td>
+                            </tr>
+
+                            <tr>
+                                <th>margin-left: 11px</th>
+                                <td>왼쪽 바깥 여백 11px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding-top: 10px</th>
+                                <td>위쪽 여백 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding-right: 10px</th>
+                                <td>오른쪽 여백 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding-bottom: 10px</th>
+                                <td>아래쪽 여백 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding-left: 10px</th>
+                                <td>왼쪽 여백 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding: 10px</th>
+                                <td>왼쪽, 오른쪽, 위, 아래 여백 모두 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding: 10px</th>
+                                <td>왼쪽, 오른쪽, 위, 아래 여백 모두 10px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding: 10px 11px</th>
+                                <td>위, 아래 여백 10px / 왼쪽, 오른쪽 여백11px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding: 10px 11px 12px</th>
+                                <td>왼쪽 여백 10px / 위, 아래 여백 11px / 오른쪽 여백 12px</td>
+                            </tr>
+
+                            <tr>
+                                <th>padding: 10px 11px 12px 13px</th>
+                                <td>위 10px / 오른쪽 11px / 아래 12px / 왼쪽 13px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+    <!-- script 불러오기-->
+    <script src="assets/js/prism.js"></script>
+</body>
+
+</html>

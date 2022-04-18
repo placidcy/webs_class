@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li class="active"><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="doc">
+            <h2>함수</h2>
+            <P>특정 기능을 수행하는 코드 부분</p>
+
+            <h3>선언적 함수</h3>
+            <div class="line mt20">
+                function 함수명(){<br>
+                // 함수 내용;<br>
+                }
+            </div>
+            <p>1. function 키워드를 이용해 선언한다</p>
+            <p>2. function 옆에 함수명을 입력하고 소괄호, 중괄호를 붙인다</p>
+            <p>3. 중괄호 안에 함수에 대한 코드가 들어간다</p>
+            <p>4. " 함수명( ); " 형태로 함수를 호출해 실행한다</p>
+            <div class="code">
+                <pre>
+{
+    function func(){
+        document.write("func 함수 실행");
+    }
+
+    func(); // func 함수 실행 출력
+}
+</pre>
+            </div>
+
+            <h3>익명 함수</h3>
+            <p>변수를 선언해서 함수에 대한 내용을 저장하고 변수명을 통해 호출</p>
+            <div class="line mt20">
+                변수 = function 함수명(){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;함수 내용;<br>
+                }<br>
+                변수명();
+            </div>
+            <p>1. 함수를 저장할 test 변수를 선언한다</p>
+            <p>2. 선언적 함수와 동일한 문법으로 함수를 작성한다</p>
+            <p>3. test 변수에 func()함수를 저장한다</p>
+            <p>4. 변수명 " test(); " 으로 호출한다 </p>
+            <div class="code">
+<pre>{
+    const test = function func(){
+        document.write("함수 실행");
+    }
+    test(); // 함수 실행 출력
+}
+</pre>
+            </div>
+
+            <h3>매개변수 함수</h3>
+            <p>함수가 실행되기 위해 필요한 데이터 값을 외부로부터 전달 받는 매개변수를 가진 함수</p>
+            <div class="line mt20">
+                function 함수 이름(매개변수){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;함수 내용;<br>
+                }
+            </div>
+            <p>1. 소괄호에 함수 실행에 필요한 데이터를 저장할 str 변수를 함수 안에 선언</p>
+            <p>2. func함수를 호출할때 st를 대입</p>
+
+            <div class="code">
+<pre>{
+    let st = "ABC";
+
+    function func(str){
+        document.write(str);
+    }
+
+    func(st);   // st 데이터를 대입, ABC 출력
+}
+</pre>
+            </div>
+
+            <h3>리턴값 함수</h3>
+            <p>함수의 결과값을 반환하는 함수, return문을 사용한다</p>
+            <p>- return문은 함수에서 결과값을 반환하고 함수 실행을 종료한다</p>
+            <p>- 배열로 숫자형 값을 전달받아 평균을 계산하는 함수</p>
+            <div class="code">
+<pre>
+    function testAvg(arrData){
+        var sum = 0;
+
+        for(var count = 0; count &lt; arrData.length; count++){
+            sum = sum + Number(arrData[count]);
+        }
+
+        var avg = sum / arrData.length;
+        return avg;   // sum(더한 값)                                  // sum / arrData.length(배열 크기) 식의 결과값을 반환한다
+    }
+
+    var arr = [30, 40, 50, 60];
+    var result = testAvg(arr);                                  // testAvg 함수의 반환값을 result 변수에 저장
+
+    document.write("평균 점수는" + result + "점입니다");                // 45 출력
+</pre>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        {
+            // var count = 0;
+
+            // Func();
+
+            // function Func(){
+            //     count++;
+            //     document.write("hello" + count, "<br>");
+            // }
+
+            // Func();
+            
+            // var theFnc = function(){
+            //     count++;
+            //     document.write("bye" + count, "<br>");
+            // }
+
+            // theFnc();
+
+            // function testAvg(arrData){
+            //     var sum = 0;
+
+            //     for(var count = 0; count < arrData.length; count++){
+            //         sum = sum + Number(arrData[count]);
+            //     }
+
+            //     var avg = sum / arrData.length;
+            //     return avg;
+            // }
+
+            // var arrSubject = [30, 40,50,60];
+            // var result = testAvg(arrSubject);
+
+            // document.write("평균 점수는" + result + "점입니다");
+        }
+    </script>
+</body>
+
+</html>

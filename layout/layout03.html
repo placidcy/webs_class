@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin : 0;
+            padding: 0;
+        }
+        #container{
+            width: 1200px;
+            margin: 0 auto; 
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #E3F2FD;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #BBDEFB;
+        }
+        #contents {
+            width: 1200px;
+            height: 780px;
+            background-color: #E5F4FD;
+
+            display: flex;
+        }
+        #contents .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #5db5fd;
+        }
+        #contents .content .article1 {
+            width: 800px;
+            height: 260px;
+            background-color: #3FC3FF;
+        }
+        #contents .content .article2 {
+            width: 800px;
+            height: 260px;
+            background-color: #00ACFA;
+        }
+        #contents .content .article3 {
+            width: 800px;
+            height: 260px;
+            background-color: #007BB7;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #014D98;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header"></header>
+        
+        <nav id="nav"></nav>
+
+        <section id="contents">
+            <aside class="aside"></aside>
+
+            <section class="content">
+                <article class="article1"></article>
+                <article class="article2"></article>
+                <article class="article3"></article>
+            </section>
+
+        </section>
+        <footer id="footer"></footer>
+    </div>
+
+</body>
+
+</html>

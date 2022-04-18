@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/page.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <div class="title"></div>
+            </div>
+        </header>
+
+        <main id="mainContainer">
+            <aside class="nav">
+                <div class="container">
+                    <div class="asideMenu"></div>
+                    <div class="icons"></div>
+                    <div class="Uni_icon"></div>
+                </div>
+            </aside>
+
+            <section class="contents">
+                <div class="container1">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                    <div class="img3"></div>
+                    <div class="img4"></div>
+                    <div class="img5"></div>
+                </div>
+
+                <div class="container2">
+                    <div class="img6"></div>
+                    <div class="img7"></div>
+                    <div class="img8"></div>
+                    <div class="img9"></div>
+                    <div class="img10"></div>
+                </div>
+
+                <div class="container3">
+                    <div class="img11"></div>
+                    <div class="img12"></div>
+                    <div class="img13"></div>
+                    <div class="img14"></div>
+                    <div class="img15"></div>
+                </div>
+
+                <div class="container4">
+                    <div class="img16"></div>
+                    <div class="img17"></div>
+                    <div class="img18"></div>
+                    <div class="img19"></div>
+                    <div class="img20"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <script>
+        const containerBox1 = document.querySelectorAll(".contents .container1 div");
+        const containerBox2 = document.querySelectorAll(".contents .container2 div");
+        const containerBox3 = document.querySelectorAll(".contents .container3 div");
+        const containerBox4 = document.querySelectorAll(".contents .container4 div");
+
+        containerBox1.forEach((ele, index) => {
+            ele.style.backgroundImage = "url(pictures/img" + (index + 1) + ".jpg)";
+            ele.style.width = "200px";
+            ele.style.height = "288px";
+            ele.style.margin = "10px 10px";
+        });
+
+        containerBox2.forEach((ele, index) => {
+            ele.style.backgroundImage = "url(pictures/img" + (index + 6) + ".jpg)";
+            ele.style.width = "200px";
+            ele.style.height = "288px";
+            ele.style.margin = "10px 10px";
+        });
+
+        containerBox3.forEach((ele, index) => {
+            ele.style.backgroundImage = "url(pictures/img" + (index + 11) + ".jpg)";
+            ele.style.width = "200px";
+            ele.style.height = "288px";
+            ele.style.margin = "10px 10px";
+        });
+
+        containerBox4.forEach((ele, index) => {
+            ele.style.backgroundImage = "url(pictures/img" + (index + 16) + ".jpg)";
+            ele.style.width = "200px";
+            ele.style.height = "288px";
+            ele.style.margin = "10px 10px";
+        });
+
+        // containerBox1[0].style.backgroundImage = "url(pictures/img1.jpg)";
+        // containerBox1[0].style.width = "200px";
+        // containerBox1[0].style.height = "288px";
+
+    </script>
+</body>
+
+</html>

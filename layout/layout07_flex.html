@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+</head>
+
+<style>
+    * {
+        margin: 0 auto;
+    }
+
+    body {
+        background-color: #E8F5F8;
+    }
+
+    #wrap {
+        width: 1200px;
+    }
+
+    #header {
+        width: 100%;
+        height: 100px;
+        background-color: #C8E6C9;
+    }
+
+    #nav {
+        width: 100%;
+        height: 100px;
+        background-color: #A5D6A7;
+    }
+
+    #main {
+        display: flex;
+    }
+
+    #main .aside1 {
+        width: 20%;
+        height: 780px;
+        background-color: #81C784;
+    }
+
+    #main .content {
+        width: 60%;
+        height: 780px;
+        background-color: #66BB6A;
+    }
+
+    #main .aside2 {
+        width: 20%;
+        height: 780px;
+        background-color: #4CAF50;
+    }
+
+    #footer {
+        width: 100%;
+        height: 100px;
+        background-color: #43A047;
+    }
+
+    @media (max-width: 1220px) {
+        #wrap {
+            width: 96%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #wrap {
+            width: 100%;
+        }
+
+        #main {
+        }
+
+        #main .aside1 {
+            height: 630px;
+        }
+
+        #main .content {
+            height: 630px;
+        }
+
+        #main .aside2 {
+            width: 100%;
+            height: 150px;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+        #main {
+            flex-direction: column;
+        }
+
+        #main .content {
+            width: 100%;
+            height: 600px;
+        }
+
+        #main .aside1 {
+            width: 100%;
+            height: 300px;
+        }
+
+        #main .aside2 {
+            width: 100%;
+            height: 300px;
+        }
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside class="aside1"></aside>
+            <section class="content"></section>
+            <aside class="aside2"></aside>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "aside cont1"
+                "aside cont2"
+                "aside cont3"
+                "footer footer";
+
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 100px 260px 260px 260px 100px;
+        }
+
+        #header {
+            grid-area: header;
+            background-color: rgb(169, 221, 255);
+        }
+
+        #nav {
+            grid-area: nav;
+            background-color: rgb(150, 211, 252);
+        }
+
+        .aside {
+            grid-area: aside;
+            background-color: rgb(123, 201, 253);
+        }
+
+        #contents .cont1 {
+            grid-area: cont1;
+            background-color: rgb(98, 192, 255);
+        }
+
+        #contents .cont2 {
+            grid-area: cont2;
+            background-color: rgb(80, 185, 255);
+        }
+
+        #contents .cont3 {
+            grid-area: cont3;
+            background-color: rgb(60, 176, 253);
+        }
+
+        #footer {
+            grid-area: footer;
+            background-color: rgb(40, 169, 255);
+        }
+
+        @media (max-width : 1220px) {
+            #wrap {
+                width: 96%;
+            }
+
+        }
+
+        @media (max-width : 768px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .aside {
+                width: 100%;
+                height: 200px;
+            }
+
+            .subConts {
+                width: 100%;
+            }
+
+            #contents .cont1 {
+                width: 100%;
+                height: 430px;
+            }
+
+            #contents .cont2 {
+                width: 100%;
+                height: 150px;
+            }
+
+            #contents .cont3 {
+                width: 0;
+                height: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <aside class="aside"></aside>
+        <div class="cont1"></div>
+        <div class="cont2"></div>
+        <div class="cont3"></div>
+        <footer id="footer"></footer>
+    </div>
+
+</body>
+
+</html>

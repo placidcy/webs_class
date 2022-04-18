@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href="css.html">CSS <em>벤더 프리픽스</em></h2></a>
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float 속성 영역 깨짐 현상</a></li>
+                <li class="active"><a href="cssRefer07.html">벤더 프리픽스</a></li>
+                <li><a href="cssRefer08.html">웹 사이트에서 이미지를 표현 하는 방법</a></li>
+                <li><a href="cssRefer09.html">IR 효과</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+        <div class="refer">
+            <div class="doc">
+                <h3>벤더 프리픽스</h3>
+                <p>W3C의 CSS 권고안으로 확정되지 않은 속성들을 사용하거나 브라우저가 실험적으로 제공하는 기능을 쓸 때<br>
+                    특정 접두어를 붙여 해당 브라우저에서 인식할 수 있게 하는 기능</p>
+
+                <h3>접두어</h3>
+                <ul>
+                    <li>-webkit-</li>
+                    <li>-moz-</li>
+                    <li>-o-</li>
+                    <li>-ms-</li>
+                </ul>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>접두어</th>
+                        <td>설명</td>
+                    </tr>
+                    <tr>
+                        <th><strong>-webkit-</strong>border-radius: 10px;</th>
+                        <td>사파리, 크롬 전용</td>
+                    </tr>
+                    <tr>
+                        <th><strong>-moz-</strong>border-radius: 10px</th>
+                        <td>파이어폭스 전용</td>
+                    </tr>
+                    <tr>
+                        <th><strong>-o-</strong>border-radius: 10px;</th>
+                        <td>오페라 전용</td>
+                    </tr>
+                    <tr>
+                        <th><strong>-ms-</strong>border-radius: 10px;</th>
+                        <td>인터넷 익스플로러 전용</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

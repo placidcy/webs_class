@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+
+    <style>
+        @import url(css/NexonLv1Gothic.css);
+        @import url(css/monokai-sublime.min.css);
+        @import url(css/custom.css);
+
+        /* slider */
+        .slider__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 480px;
+        }
+
+        .slider__img .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+        }
+
+        .slider:nth-child(1)::before {
+            content: '이미지1';
+        }
+
+        .slider:nth-child(2)::before {
+            content: '이미지2';
+        }
+
+        .slider:nth-child(3)::before {
+            content: '이미지3';
+        }
+
+        .slider:nth-child(4)::before {
+            content: '이미지4';
+        }
+
+        .slider:nth-child(5)::before {
+            content: '이미지5';
+        }
+
+        .slider:nth-child(1) {
+            z-index: 5;
+        }
+
+        .slider:nth-child(2) {
+            z-index: 4;
+        }
+
+        .slider:nth-child(3) {
+            z-index: 3;
+        }
+
+        .slider:nth-child(4) {
+            z-index: 2;
+        }
+
+        .slider:nth-child(5) {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- mainContent -->
+    <main>
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="img/img01.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="img/img02.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="img/img03.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="img/img04.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="img/img05.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- info -->
+    <div class="info">
+        <div class="title">
+            <h1><a href="sliderEffect.html">JavaScript Slider Effect01</a></h1>
+            <p>이미지 슬라이드 - 페이드 효과</p>
+        </div>
+
+        <div class="number">
+            <ul>
+                <li class="active"><a href="sliderEffect01.html">1</a></li>
+                <li><a href="sliderEffect02.html">2</a></li>
+                <li><a href="sliderEffect03.html">3</a></li>
+                <li><a href="sliderEffect04.html">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+            </ul>
+        </div>
+
+        <div class="source">
+            <button class="source-btn">소스 보기</button>
+            <div id="modal">
+                <div class="modal-wrap">
+                    <div class="modal-cont">
+                        <div class="code-view">
+                            <!-- aria-hidden="true" : view-header 부분은 단순 디자인 용으로 표시하지 않는다는 뜻 -->
+                            <div class="view-header" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="view-title">
+                                <ul>
+                                    <li><a href="#">HTML</a></li>
+                                    <li><a href="#">CSS</a></li>
+                                    <li><a href="#">Javascript</a></li>
+                                </ul>
+                            </div>
+                            <div class="view-cont">
+                                <div>
+<pre><code class="language-html">
+    &lt;section id="sliderType01">
+        &lt;div class="slider__wrap">
+            &lt;div class="slider__img">
+                &lt;div class="slider">&lt;img src="img/img01.jpg" alt="이미지1">&lt;/div>
+                &lt;div class="slider">&lt;img src="img/img02.jpg" alt="이미지2">&lt;/div>
+                &lt;div class="slider">&lt;img src="img/img03.jpg" alt="이미지3">&lt;/div>
+                &lt;div class="slider">&lt;img src="img/img04.jpg" alt="이미지4">&lt;/div>
+                &lt;div class="slider">&lt;img src="img/img05.jpg" alt="이미지5">&lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-html">
+    #modal.show .modal-wrap {
+        animation: zoomOut 0.5s 1s ease forwards; /* 0.5s(애니메이션 지속 시간) 0.5s(딜레이) */
+    }
+    
+    #modal.show.hide .modal-wrap {
+        animation: zoomIn 0.5s ease forwards; /* 0.5s(애니메이션 지속 시간) 0.5s(딜레이) */
+    } 
+    
+    @keyframes foldOut {
+        0% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+    
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+    
+        100% {
+            transform: scaleX(1) scaleY(1)
+        }
+    }
+    
+    @keyframes foldIn {
+        0% {
+            transform: scaleX(1) scaleY(1)
+        }
+        
+        50% {
+            transform: scaleX(1) scaleY(0.005)
+        }
+        
+        100% {
+            transform: scaleX(0) scaleY(0.005)
+        }
+    }
+    
+    @keyframes zoomOut {
+        0% {
+            transform : scale(0);
+        }
+    
+        100% {
+            transform : scale(1);
+        }
+    }
+    
+    @keyframes zoomIn {
+        0% {
+            transform : scale(1);
+        }
+    
+        100% {
+            transform : scale(0);
+        }
+    }
+
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-html">
+    const sliderWrap = document.querySelector(".slider__wrap");     // 이미지의 전체 영역
+    const sliderImg = document.querySelector(".slider__img");       // 보이지는 이미지 영역
+    const slider = document.querySelectorAll(".slider");            // 각각의 이미지
+
+    let currentIndex = 0; // 현재 보이는 이미지
+    let sliderCount = slider.length; // 이미지 개수
+
+    setInterval(() => {
+        let nextIndex = (currentIndex + 1) % 5; // 1, 2, 3, 4, 0 값을 반복하기 위해(이미지를 인덱스 순서대로 보여주기 위함) 5로 나눈 나머지 값을 이용
+        console.log(nextIndex);
+
+        slider[currentIndex].style.opacity = "0"; // 첫번째 이미지를 보이지 않게 opcacity에 0 대입
+        slider[nextIndex].style.opacity = "1";    // 두번째 이미지를 보이게 opcacity에 1 대입
+
+        currentIndex = nextIndex;                 // 현재 이미지에 다음 이미지의 인덱스 값을 대입(다음 이미지를 보여주기 위해 nextindex 값을 currentindex값에 추가)
+        
+        slider.forEach(slider => {
+            slider.style.transition = "all 0.3s"; // 이미지가 변경되는 시간을 0.3초 지연
+        });
+
+        //2초가 지나면 
+        // 첫번째 이미지의 opacity 값은 0
+        // 두번째 이미지의 opacity 값은 1
+
+        //2초가 지나면 
+        // 첫번째 이미지의 opacity 값은 0
+        // 두번째 이미지의 opacity 값은 0
+        // 세번째 이미지의 opacity 값은 1
+
+        //2초가 지나면 
+        // 첫번째 이미지의 opacity 값은 0
+        // 두번째 이미지의 opacity 값은 0
+        // 세번째 이미지의 opacity 값은 0
+        // 네번째 이미지의 opacity 값은 1
+    }, 2000); // 함수를 여러번 실행시키는 함수
+    </script>
+
+   
+</code></pre>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="modal-close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/highlight.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+    <!-- script -->
+    <script>
+        highlight();
+        modal();
+        tabMenu();
+
+        // slider 01
+        const sliderWrap = document.querySelector(".slider__wrap");     // 이미지의 전체 영역
+        const sliderImg = document.querySelector(".slider__img");       // 보이지는 이미지 영역
+        const slider = document.querySelectorAll(".slider");            // 각각의 이미지
+
+        let currentIndex = 0; // 현재 보이는 이미지
+        let sliderCount = slider.length; // 이미지 개수
+
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % 5; // 1, 2, 3, 4, 0 값을 반복하기 위해(이미지를 인덱스 순서대로 보여주기 위함) 5로 나눈 나머지 값을 이용
+            console.log(nextIndex);
+
+            slider[currentIndex].style.opacity = "0"; // 첫번째 이미지를 보이지 않게 opcacity에 0 대입
+            slider[nextIndex].style.opacity = "1";    // 두번째 이미지를 보이게 opcacity에 1 대입
+
+            currentIndex = nextIndex;                 // 현재 이미지에 다음 이미지의 인덱스 값을 대입(다음 이미지를 보여주기 위해 nextindex 값을 currentindex값에 추가)
+            
+            slider.forEach(slider => {
+                slider.style.transition = "all 0.3s"; // 이미지가 변경되는 시간을 0.3초 지연
+            });
+
+            //2초가 지나면 
+            // 첫번째 이미지의 opacity 값은 0
+            // 두번째 이미지의 opacity 값은 1
+
+            //2초가 지나면 
+            // 첫번째 이미지의 opacity 값은 0
+            // 두번째 이미지의 opacity 값은 0
+            // 세번째 이미지의 opacity 값은 1
+
+            //2초가 지나면 
+            // 첫번째 이미지의 opacity 값은 0
+            // 두번째 이미지의 opacity 값은 0
+            // 세번째 이미지의 opacity 값은 0
+            // 네번째 이미지의 opacity 값은 1
+        }, 2000); // 함수를 여러번 실행시키는 함수
+    </script>
+
+    <!-- <script> -->
+    <!-- //     const modal = function () {
+    //         $(".source-btn").click(() => {
+    //             $("#modal").addClass("show");
+    //         });
+
+    //         $(".modal-close").click(() => {
+    //             $("#modal").removeClass("show");
+    //         });
+    //     }
+
+    //     modal() -->
+    <!-- </script> -->
+</body>
+
+</html>

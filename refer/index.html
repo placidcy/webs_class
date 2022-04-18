@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML / CSS 레퍼런스 북</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png">
+
+    <style>
+        @font-face {
+            font-family: 'Jalnan';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/goodchoice/Jalnan.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24SsurroundAir';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24SsurroundAir/Cafe24SsurroundAir.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cafe24Syongsyong';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Syongsyong/Cafe24Syongsyong.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 100%;
+            height: 18vh;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+        }
+        body {
+            background: #FFDBE5;
+            width: 100%;
+            height: 18vh;
+            overflow: hidden;
+        }
+        .sea {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background: linear-gradient(to bottom, #FCC3CA 10%, #DFC8FA);
+            z-index: 10;
+            /*보여지는 요소의 우선 순위 값*/
+        }
+        .text {
+            position: absolute;
+            left: 50%;
+            /*현재 텍스트의 위치를 기준으로 왼쪽으로 50% 범위만큼 설정*/
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /*요소를 가운데로 정렬*/
+            text-align: center;
+            z-index: 30;
+        }
+        .text h1{
+            font-family: 'Jalnan';
+            font-size: 6vw;
+            color: #D36B69;
+            font-weight: normal;
+            /* text-shadow:
+                3px 3px #fff,
+                -3px -3px #fff,
+                3px -3px #fff,
+                -3px 3px #fff; */
+
+            -webkit-text-stroke: 2px #fff;
+            /*벤더 프리픽스*/
+        }
+        .text h1 a {
+            font-family: 'Cafe24Syongsyong';
+            font-size: 10vw;
+            line-height: 1.2;
+            color: #EB6567;
+            font-weight: normal;
+            font-style: italic;
+            position: relative;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .text h1 strong {
+            color: #E16365;
+        }
+        .text h1 em {
+            font-style: normal;
+            color: #fff;
+            -webkit-text-stroke: 2px #6C4C4D;
+        }
+        .text h2 a {
+            font-family: 'Cafe24Syongsyong';
+            font-size: 80px;
+            color: #fff;
+            font-weight: normal;
+            position: relative;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .text h2 a:hover {
+            color: #EB6567;
+        }
+        .text .subTitle {
+            font-family: 'Cafe24SsurroundAir';
+            background: #EB6567;
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 60px 10px 60px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 30px;
+            box-shadow: 3px 5px 0 0 #6C4C4D;
+            position: relative;
+        }
+        .text .subTitle::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background: #6C4C4D;
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            margin-top: -5px;
+        }
+        .text .subTitle::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background: #6C4C4D;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            margin-top: -5px;
+        }
+        .ship {
+            width: 300px;
+            position: absolute;
+            left: 0;
+            bottom: 10vh;
+            z-index: 17;
+            animation-name: move;
+            animation-duration: 150s;
+            animation-timing-function: linear;
+            /* 일정한 속도로 움직이게 하는 설정 */
+            animation-iteration-count: infinite;
+            /* 애니메이션 실행 반복 */
+        }
+        @keyframes move {
+            0% {
+                left: -10%;
+            }
+
+            100% {
+                left: 110%;
+            }
+        }
+        .love {
+            width: 250px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            z-index: 20;
+        }
+        .love::after {
+            content: "오늘 공부할까?";
+            position: absolute;
+            right: -10vw;
+            top: 0;
+            font-family: 'Cafe24Syongsyong';
+            color: #EB6567;
+            font-size: 30px;
+            transform: rotate(10deg);
+        }
+        .duck1 {
+            width: 30px;
+            position: absolute;
+            right: 15vw;
+            bottom: 20vh;
+            z-index: 16;
+            animation: duckMove1 100s infinite linear;
+        }
+        @keyframes duckMove1 {
+            0% {left: 60vw;}
+            100% {left: -10vw;}
+        }
+        .duck2 {
+            width: 30px;
+            position: absolute;
+            right: 8vw;
+            bottom: 20vh;
+            z-index: 16;
+            animation: duckMove2 100s infinite linear;
+        }
+        @keyframes duckMove2 {
+            0% {left: 70vw;}
+            100% {left: -10vw;}
+        }
+        .balloon {
+            width: 70px;
+            position: absolute;
+            left: 25vw;
+            right: 5vw;
+            animation: move4 5s infinite linear;
+        }
+        @keyframes move4 {
+            0% {top: 10vh;}
+            50% {top: 12vh;}
+            100% {top: 10vh;}
+        }
+        .cloud1 {
+            width: 100px;
+            position: absolute;
+            left: 10vw;
+            top: 5vh;
+            animation: move1 90s infinite linear;
+        }
+        @keyframes move1 {
+            0% {left: 10vw;}
+            100% {left: 30vw;}
+        }
+        .cloud2 {
+            width: 100px;
+            position: absolute;
+            left: 50vw;
+            top: 20vh;
+            animation: move2 90s infinite linear;
+            transform: rotateY(180deg);
+        }
+        @keyframes move2 {
+            0% {left: 50vw;}
+            100% {left: 100vw}
+        }
+        .cloud3 {
+            width: 100px;
+            position: absolute;
+            left: 45vw;
+            top: 15vh;
+            transform: rotateY(180deg);
+            animation: move3 90s infinite linear;
+        }
+        @keyframes move3 {
+            0% {right: 45vw;}
+            100% {right: -10vw;}
+        }
+        .hearts>.particle {
+            opacity: 0;
+            position: absolute;
+            background-color: #cc2a5d;
+            animation: hearts 3s ease-in infinite;
+        }
+        .hearts>.particle:before,
+        .hearts>.particle:after {
+            position: absolute;
+            content: "";
+            border-radius: 100px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: #cc2a5d;
+        }
+        .hearts>.particle:before {
+            transform: translateX(-50%);
+        }
+        .hearts>.particle:after {
+            transform: translateY(-50%);
+        }
+        @keyframes hearts {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0%) rotate(45deg);
+            }
+
+            20% {
+                opacity: 0.6;
+                transform: translate(0, -20%) rotateY(100deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(0, -1000%) rotate(45deg);
+            }
+        }
+        @media (max-width: 800px) {
+            .text .subTitle {
+                font-size: 20px;
+            }
+
+            .text h2 a {
+                font-size: 40px;
+            }
+
+            .text h1 a {
+                white-space: nowrap;
+                font-size: 70px;
+            }
+
+            .cloud1 .ship {
+                display: none;
+            }
+
+            .duck1, .duck2{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="sea"></div>
+        <div class="text hearts">
+            <span class="subTitle">HTML/CSS</span>
+            <h1><a href="../index.html">레퍼런스 북</a></h1>
+            <h2>
+                <a href="HTML.html">HTML</a>
+                <a href="css.html">CSS</a>
+            </h2>
+        </div>
+
+        <div class="ship">
+            <img src="assets/img/ship.png" alt="배">
+        </div>
+        <div class="love">
+            <img src="assets/img/love.png" alt="사람">
+        </div>
+        <div class="duck1">
+            <img src="assets/img/duck1.png" alt="오리1">
+        </div>
+        <div class="duck2">
+            <img src="assets/img/duck2.png" alt="오리2">
+        </div>
+        <div class="balloon">
+            <img src="assets/img/balloon.png" alt="열기구">
+        </div>
+        <div class="cloud1">
+            <img src="assets/img/cloud.png" alt="구름1">
+        </div>
+        <div class="cloud2">
+            <img src="assets/img/cloud.png" alt="구름2">
+        </div>
+        <div class="cloud3">
+            <img src="assets/img/cloud.png" alt="구름3">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+        jQuery.rnd = function(m,n) {
+            m = parseInt(m);
+            n = parseInt(n);
+            return Math.floor( Math.random() * (n - m + 1) ) + m;
+        }
+        function hearts() {
+            $.each($(".hearts"), function () {
+                var heartcount = ($(this).width() / 50) * 1;
+                for (var i = 0; i <= heartcount; i++) {
+                    var size = ($.rnd(60, 120) / 5);
+                    $(this).append('<span class="particle" style="top:' + $.rnd(20, 80) + '%; left:' + $.rnd(0,
+                        95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($
+                        .rnd(0, 30) / 10) + 's;"></span>');
+                }
+            });
+        }
+        hearts();
+    </script>
+</body>
+
+</html>

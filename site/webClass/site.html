@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+        }
+
+        /* test */
+        #header {
+            width: 1920px;
+            height: 109px;
+            background-color: #C2F6C1;
+        }
+        #header .header_content {
+            width: 1200px;
+            height: 109px;
+            background-color: #6ECC6C;
+            margin: 0 auto;
+        }
+        #banner {
+            width: 1920px;
+            height: 893px;
+            background-color: #F89292;
+        }
+        #banner .banner_content {
+            width: 1200px;
+            height: 893px;
+            background-color: #AD7B7B;
+            margin: 0 auto;
+        }
+        #contents .cont1 {
+            width: 1920px;
+            height: 640px;
+            background-color: #B99E9E;
+        }
+        #contents .cont1 .cont1_content {
+            width: 1200px;
+            height: 640px;
+            background-color: #9EA9B9;
+            margin: 0 auto;
+        }
+        #contents .cont2 {
+            width: 1920px;
+            height: 3250px;
+            background-color: #9D7777;
+        }
+        #contents .cont2 .cont2_content {
+            width: 1200px;
+            height: 3250px;
+            background-color: #6A3434;
+            margin: 0 auto;
+        }
+        #contents .cont3 {
+            width: 1920px;
+            height: 1076px;
+        }
+        .cont3_content .c1 {
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+        }
+        .cont3_content .c2 {
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+        }
+        .cont3_content .c3 {
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+        }
+        #contents .cont3 .cont3_content {
+            width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .cont3 .cont3_content .cont3_title {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 30px;
+            text-align: left;
+            margin-top: 115px;
+            margin-bottom: 105px;
+        }
+        .cont3 .cont3_content .picture1 {
+            width: 300px;
+            height: 400px;
+            background: url(img/samsung1.jpg) no-repeat;
+            margin-right: 120px;
+        }
+        .cont3 .cont3_content .picture2 {
+            width: 300px;
+            height: 400px;
+            background: url(img/apple1.jpg) no-repeat;
+            margin-right: 120px;
+        }
+        .cont3 .cont3_content .picture3 {
+            width: 300px;
+            height: 400px;
+            background: url(img/asus1.jpg) no-repeat;
+        }
+        .cont3_content .c1 .samsungText {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 14px;
+        }
+        .cont3_content .c1 .samsungText2 {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 15px;
+            font-weight: 200;
+        }
+        .cont3_content .c2 .appleText {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 14px;
+        }
+        .cont3_content .c2 .appleText2 {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 15px;
+            font-weight: 200;
+        }
+        .cont3_content .c3 .asusText {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 14px;
+        }
+        .cont3_content .c3 .asusText2 {
+            font-family: 'NEXONLv1Gothic';
+            font-size: 15px;
+            font-weight: 200px;
+        }
+        #test_footer {
+            width: 1920px;
+            height: 399px;
+            background-color: #f16565;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <p class="ir_so">헤더 영역</p>
+            <div class="header_content"></div>
+        </header>
+
+        <section id="banner">
+            <p class="ir_so">베너 영역</p>
+            <div class="banner_content"></div>
+        </section>
+
+        <section id="contents">
+            <p class="ir_so">전체 컨텐츠 영역</p>
+            <article class="cont1">
+                <p class="ir_so">첫번째 컨텐츠 영역</p>
+                <div class="cont1_content"></div>
+            </article>
+
+            <article class="cont2">
+                <p class="ir_so">두번째 컨텐츠 영역</p>
+                <div class="cont2_content"></div>
+            </article>
+
+            <article class="cont3">
+                <div class="cont3_content">
+                    <p class="ir_so">세번째 컨텐츠 영역</p>
+                    <h2 class="cont3_title">SELECT your smartphone</h2>
+                    <div>
+                        <div class="c1">
+                            <div class="picture1"></div>
+                            <p class="samsungText">SAMSUNG</p>
+                            <p class="samsungText2">Galaxy</p>
+                        </div>
+                        <div class="c2">
+                            <div class="picture2"></div>
+                            <p class="appleText">APPLE</p>
+                            <p class="appleText2">Iphone</p>
+                        </div>
+                        <div class="c3">
+                            <div class="picture3"></div>
+                            <p class="asusText">ASUS</p>
+                            <p class="asusText2">rog</p>
+                        </div>
+                    </div>
+            </article>
+        </section>
+        <p class="ir_so">푸터 영역</p>
+        <footer id="test_footer"></footer>
+    </div>
+
+</body>
+
+</html>

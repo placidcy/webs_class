@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Reference</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/css.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/css.png">
+    <link rel="icon" href="../assets/face/css.png" sizes="128x128">
+    
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>김지섭</strong>
+    </header>
+
+    <main id="contents">
+        <h2><a href=css.html>CSS <em>색상</em></h2></a> 
+
+        <div class="menu">
+            <ul>
+                <li><a href="css.html">속성</a></li>
+                <li><a href="cssRefer01.html">기초 문법</a></li>
+                <li><a href="cssRefer02.html">Block/Inline</a></li>
+                <li><a href="cssRefer03.html">CSS 단위</a></li>
+                <li class="active"><a href="cssRefer04.html">CSS 색상</a></li>
+                <li><a href="cssRefer05.html">id/class 차이점</a></li>
+                <li><a href="cssRefer06.html">float 속성 영역 깨짐 현상</a></li>
+                <li><a href="cssRefer07.html">벤더 프리픽스</a></li>
+                <li><a href="cssRefer08.html">웹 사이트에서 이미지를 표현 하는 방법</a></li>
+                <li><a href="cssRefer09.html">IR 효과</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>CSS 색상</h3>
+
+                <h3>색상 이름으로 표현</h3>
+                <p>
+                    red / green / yellow / black 등 영어로 된 이름으로 표현한다
+                </p>
+
+                <div class="code">
+                <pre>
+&lt;style&gt;
+        .blue {
+            color:blue;
+        }
+&lt;/style&gt;
+                </pre></div>
+
+                    <h3>RGB 색상 값으로 표현</h3>
+                    <p>
+                        빨간색(Red), 녹색(Green), 파란색(blue)을 혼합해서 색을 표현한다
+                    </p>
+    
+                    <div class="code">
+                    <pre>
+&lt;style&gt;
+        .blue {
+            color: rgb(0,0,255);          // 빨간색(0), 녹색(0), 파란색(255)
+        }
+
+        .silver {
+            color: rgb(192,192,192);
+        }
+&lt;/style&gt;
+                    </pre></div>
+
+                        <h3>16진수 색상값으로 표현</h3>
+                        <p>
+                            RGB 색상값을 16진수로 변환한 값, RGB의 기본색(Red, Green, Blue)은 각각 00~FF까지의 범위값을 가진다
+                        </p>
+        
+                        <div class="code">
+                            <pre>
+&lt;style&gt;
+            .blue {
+                color:#0000FF;
+            }
+&lt;/style&gt;
+                        </pre></div>
+
+            <h3>RGBA 색상값으로 표현</h3>
+            <p>
+                RGB 색상값에 알파값을 더한 색상값이다<br>
+                알파값은 색상의 투명도를 나타낸다<br>
+                투명 상태값은 0.0(완전투명) ~ 1.0(불투명) 사이의 값을 가진다
+            </p>
+
+            <div class="code">
+                <pre>
+&lt;style&gt;
+.Title{
+    background-color: rgba(0,255,255,0);      // 알파값 0 추가
+}
+&lt;/style&gt;
+            </pre></div>
+    </div>
+</div>
+        </div>
+        <!-- //refer -->
+
+    </main>
+
+    <!-- script 불러오기-->
+    <script src="assets/js/prism.js"></script>
+</body>
+</html>

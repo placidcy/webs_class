@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallx</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+            font-family: 'NexonLv1Gothic';
+        }
+
+        /* common */
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            /* z-index: 1000; */
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+
+        body {
+            height: 20000px;
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: rgba(29, 29, 29, 0.4);
+            color: rgb(255, 255, 255);
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            z-index: 1;
+        }
+
+        /* section01 */
+        #section1 .section1__bg {
+            width: 70%;
+            height: 15vh;
+        }
+
+        .section1_text1 {
+            color: rgb(255, 255, 255);
+            font-size: 7vw;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .section1_text2 {
+            color: rgb(255, 255, 255);
+            font-size: 7vw;
+            transform: translate(-50%, -50%) scale(1);
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .section1_text3 {
+            color: rgb(255, 255, 255);
+            font-size: 7vw;
+            white-space: nowrap;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* section2 */
+        .section2_bg {
+            width: 100%;
+            height: 100vh;
+            background: rgb(0, 0, 0);
+        }
+
+        .section2_text1 {
+            color: rgb(122, 122, 122);
+            font-size: 4vw;
+            white-space: nowrap;
+        }
+
+        .section2_img01 {
+            width: 57vw;
+        }
+
+        .section2_img01 .section2_img_site {
+            position: absolute;
+            left: 50%;
+            top: 1.5vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 5vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+
+        .section2_img01 .site_img a {
+            position: absolute;
+            left: 93%;
+            top: 85%;
+            transform: translate(-50%, 50%);
+            width: 90px;
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 2.6;
+            color: #111;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 100px;
+        }
+
+        /* img02 */
+        .section2_img02 {
+            width: 57vw;
+        }
+
+        .section2_img02 .section2_img_site {
+            position: absolute;
+            left: 50%;
+            top: 1.5vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 5vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+
+        /* img03 */
+        .section2_img03 {
+            width: 57vw;
+        }
+
+        .section2_img03 .section2_img_site {
+            position: absolute;
+            left: 50%;
+            top: 1.5vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 5vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+
+        /* img03 */
+        .section2_img04 {
+            width: 57vw;
+        }
+
+        .section2_img04 .section2_img_site {
+            position: absolute;
+            left: 50%;
+            top: 1.5vw;
+            transform: translate(-50%);
+            width: 55vw;
+            height: calc(100% - 5vw);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;
+        }
+
+        /* common */
+
+        .site_img {
+            position: absolute;
+        }
+
+        .section2_img_site a {
+            position: absolute;
+            left: 93%;
+            top: 85%;
+            transform: translate(-50%, 50%);
+            width: 90px;
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 2.6;
+            color: #111;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="scrollTop">0</div>
+    <div id="contents">
+        <!-- section01 -->
+        <section id="section1" data-8500="display: block;" data-8501="display: none;">
+            <div class="section1__bg">
+                <img class="fixed" src="img/img1.jpg" alt="이미지" data-0="width: 70%; height: 17vh"
+                    data-1000="width: 100%; height: 17vh" data-2000="width: 100%; height: 50vh"
+                    data-7000="width: 100%; height: 50vh" data-8000="width: 100%; height: 0"></img>
+            </div>
+
+            <div class="section1_text1 fixed" data-1100="transform : translate(-50%, -50%) scale(0); top:50%"
+                data-2000="transform : translate(-50%, -50%) scale(1); top:50%"
+                data-3000="transform : translate(-50%, -50%) scale(1); top:50%"
+                data-4000="transform : translate(-50%, -50%) scale(1); top:-10%">
+                안녕하세요</div>
+
+            <div class="section1_text2 fixed" data-3000="transform : translate(-50%, -50%) scale(1); top:120%"
+                data-4000="transform : translate(-50%, -50%) scale(1); top:50%"
+                data-4500="transform : translate(-50%, -50%) scale(1); top:-110%">
+                포트폴리오 사이트입니다</div>
+
+            <div class="section1_text3 fixed" data-4500="transform : translate(-50%, -50%) scale(1); left:-100%"
+                data-5000="transform : translate(-50%, -50%) scale(1); left:50%">
+                사이트를 보여드리겠습니다</div>
+        </section>
+
+        <!-- section02 -->
+        <section id="section2" data-8700="display: none;" data-8701="display: block;">
+            <div class="section2_bg fixed" data-9000="width: 0; height: 0vh; border-radius: 500px"
+                data-10000="width: 100%; height: 100vh; border-radius: 0%"></div>
+
+            <div class="section2_text1 fixed" data-8500="transform : translate(-50%, -50%) scale(0.5); top:50%"
+                data-11000="transform : translate(-50%, -50%) scale(1); top:50%"
+                data-12000="transform : translate(-50%, -50%) scale(1); top:15%">
+                I've been working these sites</div>
+
+            <div class="section2_img01 fixed" data-11000="top: 200%" data-12000="top: 65%">
+                <img src="img/MacbookImage.jpg" alt="이미지">
+                <div class="section2_img_site">
+                    <div class="site_img" data-12500="top: 0%" data-14000="top: -400%">
+                        <img src="img/website.jpg" alt="사이트01">
+                    </div>
+                    <a href="../site/webClass/index.html">view</a>
+                </div>
+            </div>
+
+            <div class="section2_img02 fixed" data-15500="top: 200%" data-16000="top: 65%">
+                <img src="img/MacbookImage.jpg" alt="이미지">
+                <div class="section2_img_site">
+                    <div class="site_img" data-16500="top: 0%" data-18000="top: -400%">
+                        <img src="img/website.jpg" alt="사이트02">
+                    </div>
+                    <a href="../site/webClass/index.html">view</a>
+                </div>
+            </div>
+
+            <div class="section2_img03 fixed" data-18500="top: 200%" data-19500="top: 65%">
+                <img src="img/MacbookImage.jpg" alt="이미지">
+                <div class="section2_img_site">
+                    <div class="site_img" data-20000="top: 0%" data-21500="top: -400%">
+                        <img src="img/website.jpg" alt="사이트03">
+                    </div>
+                    <a href="../site/webClass/index.html">view</a>
+                </div>
+            </div>
+
+            <div class="section2_img04 fixed" data-22000="top: 200%" data-22500="top: 65%">
+                <img src="img/MacbookImage.jpg" alt="이미지">
+                <div class="section2_img_site">
+                    <div class="site_img" data-23000="top: 0%" data-24500="top: -400%">
+                        <img src="img/website.jpg" alt="사이트04">
+                    </div>
+                    <a href="../site/webClass/index.html">view</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+        <section id="section6"></section>
+    </div>
+
+    <script src="js/skrollr.min.js"></script>
+    <script>
+        function scroll() {
+            var s = skrollr.init(); // skrollr 초기화
+
+            let scrollTop = window.pageYOffset || document.documentElement.offsetTop || window.screenY;
+            document.querySelector(".scrollTop").innerText = scrollTop;
+
+            requestAnimationFrame(scroll);
+        }
+
+        scroll();
+    </script>
+</body>
+
+</html>

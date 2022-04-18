@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top; /*이미지의 여백 제거*/
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/img02.jpg);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+body.img01 {
+    background-image: url(../img/img05.jpg);
+}
+
+body.img02 {
+    background-image: url(../img/img06.jpg);
+}
+
+body.img03 {
+    background-image: url(../img/img07.jpg);
+}
+
+body.img04 {
+    background-image: url(../img/img08.jpg);
+}
+
+body.img05 {
+    background-image: url(../img/img09.jpg);
+}
+
+body.img06 {
+    background-image: url(../img/img10.jpg);
+}
+
+body.img07 {
+    background-image: url(../img/img04.jpg);
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 0.4);
+    z-index: -1;
+}
+
+/* info */
+.title {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.title h1 {
+    font-size: 34px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.title p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.number {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.number li {
+    display: inline;
+}
+
+.number li a {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.number li a:hover,
+.number li.active a {
+    background: #fff;
+    color: #111;
+}
+
+.source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.source button {
+    border: 1px groove #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background: transparent;
+    font-family: 'NexonLv1Gothic';
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.source button:hover {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.source .source-btn {}
+
+.source-btn .hide {
+
+}
+
+.attr {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* modal */
+#modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(15, 15, 15, 0.5);
+    z-index: 1000;
+    transform: scale(0);
+}
+
+#modal.show {
+    animation: foldOut 1s ease forwards;
+    /* forwards -> animation-fill-mode: backwards; */
+}
+
+#modal.show.hide {
+    animation: foldIn 1s 0.3s ease backwards;
+    /* forwards -> animation-fill-mode: backwards; */
+}
+
+.modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    transform : scale(0);
+}
+
+#modal.show .modal-wrap {
+    animation: zoomOut 0.5s 1s ease forwards; /* 0.5s(애니메이션 지속 시간) 0.5s(딜레이) */
+}
+
+#modal.show.hide .modal-wrap {
+    animation: zoomIn 0.5s ease forwards; /* 0.5s(애니메이션 지속 시간) 0.5s(딜레이) */
+} 
+
+@keyframes foldOut {
+    0% {
+        transform: scaleX(0) scaleY(0.005)
+    }
+
+    50% {
+        transform: scaleX(1) scaleY(0.005)
+    }
+
+    100% {
+        transform: scaleX(1) scaleY(1)
+    }
+}
+
+@keyframes foldIn {
+    0% {
+        transform: scaleX(1) scaleY(1)
+    }
+    
+    50% {
+        transform: scaleX(1) scaleY(0.005)
+    }
+    
+    100% {
+        transform: scaleX(0) scaleY(0.005)
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform : scale(0);
+    }
+
+    100% {
+        transform : scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform : scale(1);
+    }
+
+    100% {
+        transform : scale(0);
+    }
+}
+
+.modal-close {
+    margin-top: 10px;
+}
+
+.modal-cont {
+    opacity: 1;
+    position: relative;
+}
+
+.code-view {
+    width: 60vw;
+    min-height: 60vh;
+    max-height: 60vh;
+    background: #fff;
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    overflow: scroll; /* 코드가 길어지면 스크롤이 생기게 (x, y축)*/
+    overflow-x: hidden;
+    position: relative;
+}
+
+.view-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 32px;
+    padding: 7px 0 7px 10px;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 5px 5px 0 0 ;
+}
+
+.view-header>span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.view-header>span:nth-child(1) {
+    background-color: #f56565;
+}
+
+.view-header>span:nth-child(2) {
+    background-color: #f6e05e;
+}
+
+.view-header>span:nth-child(3) {
+    background-color: #4EBB7B;
+}
+
+.view-title {
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 9px 0 7px;
+    height: 37px;
+    margin: 0;
+}
+
+.view-title ul {}
+
+.view-title li {
+    display: inline;
+}
+
+.view-title li a {
+    color: rgb(150, 150, 150);
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 15px 8px 15px;
+    margin: 10px 10px;
+}
+
+.view-title li.active a {
+    color: #000;
+    background: #70a9ff;
+}
+
+.view-cont {
+    background-color: #e8e8e8;
+    height: 100%;
+    padding-top: 65px;
+}
+
+.view-cont > div {
+    display: none;
+}
+
+.view-cont > div:first-child {
+    display: block;
+}
+
+.view-cont pre code.hljs {
+    line-height: 1.6;
+    padding: 20px;
+}

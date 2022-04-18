@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        body {
+            background-color: #e8fde6;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #AFD5AB;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #aeffb2;
+            display: flex;
+        }
+        #contents {
+            width: 1200px;
+            height: 780px;
+            display: flex;
+        }
+        #contents .content {
+            width: 700px;
+            height: 780px;
+            background-color: #419239;
+        }
+        #contents .content .sub1 {
+            width: 700px;
+            height: 390px;
+            background-color: #3e7439;
+
+        }
+        #contents .content .sub2 {
+            width: 700px;
+            height: 390px;
+            background-color: #1f5a19;
+        }
+        #contents .aside1 {
+            width: 250px;
+            height: 780px;
+            background-color: #AFD5AB;
+        }
+        #contents .aside2 {
+            width: 250px;
+            height: 780px;
+            background-color: #AFD5AB;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #173614;
+        }        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <section id="contents">
+            <aside class="aside1"></aside>
+            <aside class="content">
+                <article class="sub1"></article>
+                <article class="sub2"></article>
+            </aside>
+            <aside class="aside2"></aside>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>

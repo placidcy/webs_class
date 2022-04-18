@@ -1,0 +1,889 @@
+/* 전체 레이아웃 */
+#wrap {
+    height: 2000px;
+}
+
+.gray {
+    background: #f5f5f5;
+}
+
+.white {
+    background: #fff !important;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* float의 영역 깨짐 오류(height 값을 인식하지 않는다) */
+/*
+   1. 부모 영역에게 overflow: hidden; 사용(특정 메뉴의 화면 잘림 현상)
+   2. 깨지는 영역에 clear: both; 사용 (어떤 아이디나 클래스명, 태그에 적용할지 알수 없다)
+   3. 가상 영역 속성 clearfix 사용
+*/
+
+/* flex 사용 */
+/* #wrap {}
+
+#header {
+    display: flex;
+    padding-bottom: 1px solid #111;
+    min-width: 1200px;
+    justify-content : space-around;
+}
+
+#header .logo {
+    flex : 0 0 20%;
+    /* flex : 0 0 20% ---> grow 0, shrink 0, basis 20%*/
+/* } */
+
+/* #header .logo a {
+    font-size: 30px;
+    padding: 12px 18px;
+    display: inline-block;
+    
+}
+#header .menu {
+    flex : 0 0 60%;
+    text-align: center;
+}
+
+#header .menu li {
+    display: inline;
+}
+#header .menu li a {
+    padding: 20px 30px;
+    display: inline-block;
+}
+
+#header .member {
+    flex : 0 0 60%;
+    text-align: right;
+    padding: 9px 22px;
+    border: 1px solid #111;
+    border-radius: 50px;
+} */
+
+/* grid 사용 */
+#header {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    min-width: 1200px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#header .logo a {
+    font-size: 30px;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+#header .logo em {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#header .menu {
+    text-align: center;
+}
+
+#header .menu li {
+    display: inline;
+}
+
+#header .menu li a {
+    padding: 20px 30px;
+    display: inline-block;
+    position: relative;
+}
+
+#header .menu li a:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+    transition: background 0.4s;
+}
+
+#header .member {
+    text-align: right;
+    padding: 10px 18px;
+}
+
+#header .member a {
+    display: inline-block;
+    padding: 9px 22px;
+    border: 1px solid #111;
+    border-radius: 50px;
+}
+
+#header .member a:hover {
+    background: #000;
+    color: #fff;
+    transition: background 0.4s;
+}
+
+/* #banner .img_type { */
+    /* width: 100%;
+    height: 800px;
+
+    background: url(../img/background01.jpg) no-repeat center / cover; */
+    /* background-image: url(../img/background01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+/* } */
+
+
+/* swiper */
+.swiper {
+    width: 100%;
+    height: 600px;
+}
+
+.swiper {
+    position: relative;
+    white-space: nowrap;
+}
+
+.swiper-img {
+    background: url(../img/background01.jpg) no-repeat center / cover;
+    height: 600px;
+}
+
+.swiper .desc {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 100px 0;
+    color: #fff;
+    font-family: 'NexonLv1Gothic';
+}
+
+.swiper .desc span{
+    font-size: 18px;
+}
+
+.swiper .desc h4{
+    font-size: 110px;
+    font-weight: 300;
+    margin-left: -8px;
+}
+
+.swiper .desc p{
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.swiper .desc .btn a {
+    font-size: 16px;
+    padding: 11px 50px;
+    display: inline-block;
+}
+
+.swiper .desc .btn .white {
+    background: #fff;
+    color: #000;
+}
+
+.swiper .desc .btn .black {
+    background: #000;
+    color: #fff;
+}
+
+.swiper-arrow a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 27px;
+    height: 56px;
+    background: url(../img/bg_svg.svg);
+}
+
+.swiper .left {
+    left: 10px;
+    background-position: 0 -50px;
+}
+
+.swiper .right {
+    right: 10px;
+    background-position: -23px -50px;
+}
+
+.swiper-dot {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+}
+
+.swiper-dot a {
+    width: 16px;
+    height: 16px;
+    background: url(../img/bg_svg.svg);
+    background-position: -88px -50px;
+    display: inline-block;
+    margin: 2px;
+}
+
+.swiper-dot .dot {
+    background-position: -70px -50px;
+}
+
+.swiper-dot .dot.active{
+    background-position: -50px -50px;
+}
+
+.swiper-dot .play{
+    background-position: -88px -50px;
+}
+
+.swiper-dot .stop{
+    background-position: -110px -50px;
+ 
+}
+
+.swiper-slide.s1{
+    background: url(../img/background01.jpg) no-repeat center / cover;
+}
+
+.swiper-slide.s2 {
+    background: url(../img/background01.jpg) no-repeat center / cover;
+}
+
+.swiper-slide.s3 {
+    background: url(../img/background01.jpg) no-repeat center / cover;
+}
+
+.swiper-slide .desc .btn .black{
+    background: #000;
+    color: #fff;
+}
+
+.swiper-button-prev {
+    width: 27px;
+    height: 56px;
+    background: url(../img/bg_svg.svg);
+    background-position: 0 -50px;
+}
+
+.swiper-button-prev::after {
+    font-size: 0 !important;
+}
+
+.swiper-button-next {
+    width: 27px;
+    height: 56px;
+    background: url(../img/bg_svg.svg);
+    background-position: -23px -50px;
+}
+
+.swiper-button-next::after {
+    font-size: 0 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 14px !important;
+    height: 14px !important;
+    background: #fff !important;
+}
+
+
+/* 배너*/
+/* 웹 사이트에서 이미지를 표현 하는 방법 
+
+1. HTML 태그를 이용하는 방법 : img 태그(의미가 있는 이미지 ex)로고, 메뉴) / alt 태그로 대체 문자를 사용한다
+2. CSS 속성을 이용하는 방법 : background 속성(의미가 없는 이미지 ex)배경, 색 표현) / ir 효과(대체 문자 기능을 css로 표현한 기능)
+3. 이미지 스프라이트 : background 속성, ir효과를 사용한다(아이콘을 하나의 공간에 합친다)
+*/
+
+/* 이미지 텍스트 유형 */
+/* 유형 1 (imgText_type01)*/
+.imgText_type01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+
+.imgText_type01 .text {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+}
+
+.imgText_type01 .text .text-title {
+    font-family: 'GmarketSans';
+    font-size: 50px;
+    font-weight: 500;
+    margin: 70px 0 45px -4px;
+}
+
+.imgText_type01 .text .text-desc {
+    font-family: 'NEXONLv1Gothic';
+    font-size: 18px;
+    color: #888;
+}
+
+.imgText_type01 .text .text-more {
+    font-family: 'NEXONLv1Gothic';
+    font-size: 18px;
+    color: #af3029;
+    margin-bottom: 55px;
+}
+
+.imgText_type01 .text .text-more a {
+    color: #af3029;
+}
+
+.imgText_type01 .text .text-more svg {
+    vertical-align: 2px;
+}
+
+.imgText_type01 .img1 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-image: url(../img/img_text_bg1.jpg);
+}
+
+.imgText_type01 .img2 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    background-image: url(../img/img_text_bg2.jpg);
+}
+
+@media(-webkit-min-device-pixel-ratio: 1.5) {
+    .imgText_type01 .img1 {
+        background-image: url(../img/img_text_bg1@2x.jpg);
+    }
+
+    .imgText_type01 .img2 {
+        background-image: url(../img/img_text_bg2@2x.jpg);
+    }
+}
+
+@media(-webkit-min-device-pixel-ratio: 2.5) {
+    .imgText_type01 .img1 {
+        background-image: url(../img/img_text_bg1@3x.png);
+    }
+
+    .imgText_type01 .img2 {
+        background-image: url(../img/img_text_bg2@3x.jpg);
+    }
+}
+
+/* 이미지/텍스트 유형 imgText_type02*/
+.imgText_type02 {
+    background: #f5f5f5;
+    overflow: hidden;
+    padding: 150px 0;
+    min-width: 1200px;
+}
+
+.imgText_type02 .left {
+    float: left;
+    width: 48.5%;
+    height: 535px;
+    background: url(../img/img_text_bg3.jpg) no-repeat center center;
+    background-size: cover;
+    margin-right: 1.5%;
+}
+
+.imgText_type02 .right {
+    float: left;
+    width: 48.5%;
+    height: 535px;
+    margin-left: 1.5%;
+}
+
+.imgText_type02 .right .sub {
+    margin-top: 43px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    display: inline-block;
+    color: #7c7c7c;
+    border-bottom: 1px solid #7c7c7c;
+}
+
+.imgText_type02 .right .title {
+    margin-top: 15px;
+    margin-left: -5px;
+    margin-bottom: 38px;
+    font-family: 'GmarketSans';
+    font-size: 50px;
+    font-weight: 500;
+    white-space: norwrap;
+    color: black;
+}
+
+.imgText_type02 .right .desc {
+    margin-top: 38px;
+    margin-bottom: 38px;
+    font-family: 'GmarketSans';
+    font-size: 24px;
+    font-weight: 300;
+    white-space: nowrap;
+    color: black;
+}
+
+.imgText_type02 .right .more .view {
+    font-family: 'GmarketSans';
+    font-size: 24px;
+    font-weight: 300;
+    background: #000;
+    padding: 9px 46px;
+    color: #fff;
+}
+
+/* 이미지 유형 01 (img_type01) */
+.img_type01 {
+    padding: 150px 0;
+}
+
+.img_type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.img_type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+}
+
+.img_type01 .img_wrap {
+    display: flex;
+    justify-content: space-between;
+    /* overflow: hidden; */
+}
+
+.img_type01 .img_wrap .left {
+    width: 590px;
+    height: 360px;
+    background: url(../img/fox1.jpg) no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.img_type01 .img_wrap .left .left_cont {
+    position: absolute;
+    left: 20px;
+    bottom: -100px;
+    transition: bottom 0.33s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_type01 .img_wrap .left:hover .left_cont {
+    bottom : 20px;
+}
+
+.img_type01 .img_wrap .right {
+    width: 590px;
+    height: 360px;
+    background: url(../img/fox2.jpg) no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.img_type01 .img_wrap .right .right_cont {
+    position: absolute;
+    left: 20px;
+    bottom: -120px;
+    transition: bottom 0.33s cubic-bezier(0.07, 0.71, 0.26, 0.99);
+}
+
+.img_type01 .img_wrap .right:hover .right_cont {
+    bottom: 20px;
+}
+
+.img_type01 .img_wrap h4 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+} 
+
+.img_type01 .img_wrap p {
+    font-size: 14px;
+    color: #fff;
+    padding-right: 200px;
+    margin-bottom: 15px;
+}
+
+.img_type01 .img_wrap a {
+    background: #646363;
+    padding: 10px 20px;
+    color: #fff;
+    display: inline-block;
+}
+
+.img_type01 .right .right_cont a {
+    background: none;
+    padding: 0;
+    color: #fff;
+    text-decoration: underline;
+    text-align: left;
+}
+
+/* .img_type01 .img_wrap .right_cont a {
+    background: none;
+    text-decoration: underline;
+    margin-left: -20px;
+}
+
+.img_type01 .img_wrap .right_cont .right_contBox {
+    width: 520px;
+    height: 143px;
+    background-color: rgba(0, 0, 0, 0.2);
+} */
+
+/* 이미지 유형 02 (img_type02) */
+.img_type02 {
+    padding: 150px 0;
+}
+
+.img_type02 h3 {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.img_type02 h3 em {
+    font-size: 20px;
+    color:#777;
+    vertical-align: -4px;
+}
+
+.img_type02 .img-wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_type02 .img-wrap li {
+    width: 387px;
+    height: 387px;
+    background-size: 100%;
+    position: relative;
+    perspective: 800px;    /*원근법 설정*/
+}
+
+.img_type02 .img-wrap li:after {
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: rotateX(-90deg);
+}
+
+.img_type02 .img-wrap li:hover::after {
+    opacity: 0.8;
+    transform: rotateX(0deg);
+}
+
+.img_type02 .img-wrap li span {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 36px);
+    color: #000;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.img_type02 .img-wrap li span em {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.img_type02 .img-wrap li span a{
+    display: block;
+    background: #000;
+    border-radius: 40px;
+    font-weight: 300;
+    margin-top: 5px;
+    padding: 7px 10px 5px 15px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.img_type02 .img-wrap li:hover span {
+    top: 50%;
+}
+
+.img_type02 .img-wrap li:hover span em{
+    color: #000;
+}
+
+.img_type02 .img-wrap li:hover span a{
+    opacity: 1;
+}
+
+.img_type02 .img-wrap li:nth-child(1) {
+    background-image: url(../img/rockimage02.jpg);
+}
+
+.img_type02 .img-wrap li:nth-child(2) {
+    background-image: url(../img/rockimage01.jpg);
+}
+
+.img_type02 .img-wrap li:nth-child(3) {
+    background-image: url(../img/rockimage03.jpg);
+}
+
+/* banner_type01 */
+.banner_type01 {
+    background: url(../img/bannerImg.jpg) center center no-repeat;
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+    background-size: over;
+}
+
+.banner_type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    font-family: 'GmarketSans';
+    color: #fff;
+    margin: 0 32px 65.3px 31px;
+}
+
+.banner_type01 p {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: 'GmarketSans';
+    color: #fff;
+    line-height: 1.54;
+    margin : 65.3px 0 74px;
+}
+
+.banner_type01 a {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'GmarketSans';
+    color: #fff;
+    text-decoration: underline #fff;
+}
+
+/* footer */
+#footer {
+    padding: 100px 0;
+    background: #f5f5f5;
+    font-family: 'GmarketSans';
+}
+
+#footer .footer-menu{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(205, 205, 205);
+    margin-bottom: 50px;
+}
+
+#footer h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.footer-menu > div ul li a{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgb(96, 96, 96);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.footer-menu > div ul li a:hover {
+    color:rgb(0, 0, 0);
+}
+
+.footer-menu > div ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.footer-menu > div ul li a:hover::before {
+    transform: scaleX(1);
+    color: #000;
+}
+
+.footer-rights {
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icons a {
+    width: 30px;
+    height: 30px;
+    margin: 4px 6px;
+    display: inline-block;
+    background: url(../img/bg_svgImg.svg);
+}
+
+.icons div:nth-child(2) a {
+    background-position: -50px 0;
+}
+.icons div:nth-child(3) a {
+    background-position: -100px 0;
+}
+.icons div:nth-child(4) a {
+    background-position: -150px 0;
+}
+
+/* 회원가입(로그인) */
+.join-type {
+    padding: 200px 0;
+}
+
+.member-form {
+    max-width: 665px;
+    border: 1px solid #DEDEDE;
+    background: #fff;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.member-form .accountTitle {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.member-form .list li{
+    font-size: 14px;
+    line-height: 160%;
+    position: relative;
+    padding-left: 10px;
+}
+
+.member-form .list li::before {
+    content: '';
+    background-color: #000;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.member-form .guide {
+    background-color: #F5F5F5;
+    width: 540px;
+    height: 189px;
+    line-height: 160%;
+}
+
+.member-form .guideTitle{
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+.member-form .guide li:first-child{
+    padding-top: 20px;
+}
+
+.member-form .guide li{
+    font-size: 14px;
+    line-height: 160%;
+    position: relative;
+    padding-left: 25px;
+}
+
+.member-form .guide li::before{
+    content: '';
+    background-color: #000;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+
+.member-form h4 {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: #f5f5f5;
+}
+
+.join-box label{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.join-box input {
+    border: 1px solid #dfdfdf;
+    width: 100%;
+    padding: 15px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+.join-submit {
+    font-size: 16px;
+    background: #eee;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.join-submit:hover {
+    /* 0 0 0 2px #222 , x = 0, y = 0  */
+    box-shadow: inset 0 0 0 2px #222;
+    background: #fff;
+}
+
+.login-submit {
+    font-size: 16px;
+    background: #eee;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.login-submit:hover {
+    box-shadow: inset 0 0 0 2px #222;
+    background: #fff;
+}

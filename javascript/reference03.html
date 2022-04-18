@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+
+    <script src="assets/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">JavaScript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li class="active"><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+            <h2>데이터 타입(자료형)</h2>
+            <p>
+                변수에는 여러가지 유형이 들어갈 수 있습니다
+                프로그램 언어에 있어서 가장 기본적인 요소이며, 데이터 타입이라고 합니다
+                데이터 타입에는 숫자, 문자열, 논리값, 특수값, 심벌, 객체,
+                함수 등을 표현 할 수 있습니다
+            </p>
+
+            <h3>숫자(Number)</h3>
+            <p>
+                정수(0~9), 소수(0.xxxx) 등 숫자를 나타내는 자료형
+                Number 함수를 사용하면 문자형 데이터를 숫자형으로 바꿀 수 있다
+            </p>
+
+            <div class="code">
+<pre>
+var num1 = 1; &nbsp&nbsp&nbsp // 숫자 1이 저장된 숫자형
+var num2 = 1.5; &nbsp&nbsp&nbsp // 소수 1.5가 저장된 숫자형
+var num3 = Number("5"); &nbsp&nbsp&nbsp // 문자 5를 숫자 5로 변환
+</pre>
+            </div>
+
+            <h3>문자열(String)</h3>
+            <p>
+                한 문자나 한 줄의 글 등 전체적인 문자를 표현하는 자료형<br>
+                문장의 시작과 끝에 작은 따옴표(' ')나 큰 따옴표(" ")를 추가해야 한다
+            </p>
+
+            <div class="code">
+<pre>
+var str = 'javascript';
+</pre>
+            </div>
+
+
+            <h3>논리값(Boolean)</h3>
+            <p>
+                참(true), 거짓(false)을 표현하는 자료형<br>
+                두가지의 데이터를 비교할때 사용한다
+            </p>
+
+            <div class="code">
+<pre>
+var bool = 5 >= 10;  // false값이 저장된다
+</pre>
+            </div>
+
+            <h3>특수값(null)</h3>
+            <p>
+                저장된 값을 비울때 사용한다
+            </p>
+
+            <div class="code">
+<pre>
+var num = 1;
+num = null;
+
+document.write(num); // null 값이출력된다
+</pre>
+            </div>
+
+            <h3>특수값(undefined)</h3>
+            <p>
+                선언은 했지만 값이 저장되지 않은 변수일때 undefined값이 저장된다
+            </p>
+
+            <div class="code">
+<pre>
+var num; //undefined 값이 출력된다
+</pre>
+            </div>
+
+            <h3>심벌(symbol)</h3>
+            <p>
+                유일한 식별자를 만들기 위한 자료형, 이름 충돌을 막을 때 사용된다
+
+                Symbol 키워드를 통해 선언할 수 있고 Symbol.for() 함수로 생성하면 같은 속성의 값을 생성할 수 있다
+                new 연산자를 사용할 수 없다
+            </p>
+
+            <div class="code">
+<pre>
+sym = Symbol(1);
+sym2 = Symbol(1);
+
+document.write(sym == sym2);                  // 값은 같지만 false 값이 출력된다
+
+sym3 = Symbol.for("javascript");
+sym4 = Symbol.for("javascript");
+
+document.write(sym3 == sym4);                  // true 값이 출력된다
+</pre>
+            </div>
+
+
+            <h3>객체(Object)</h3>
+            <p>
+                키(key)와 값(value)으로 구성되어 저장된 프로퍼티(property : 속성)<br>
+                Object 키워드로 선언하고 중괄호 {}를 사용한다<br>
+                키에는 문자형, 값에는 모든 자료형을 저장할 수 있다는 특징이 있고 배열의 기능도 가지고 있다<br>
+            </p>
+
+            <div class="code">
+<pre>
+const obj = {num: 10, str: javascript}; // 키(num) : 값(10)
+// 키(str) : 값(javascript)
+
+const obj2 = new Object();
+obj2.a = 100; // 객체의 a 요소에 접근해 100 값을 저장
+obj2.b = 200; // 객체의 b 요소에 접근해 200 값을 저장
+
+obj2[0] = 10; // 대괄호를 사용해 객체의 첫번째 요소에 접근해 10 값을 저장
+obj2[1] = 20; // 대괄호를 사용해 객체의 두번째 요소에 접근해 20 값을 저장
+</pre>
+            </div>
+
+            <h3>배열(Array)</h3>
+            <p>
+                여러 자료형의 데이터를 저장하기 위한 자료형
+                Array 키워드로 선언하고 대괄호 []를 사용한다
+            </p>
+
+            <div class="code">
+<pre>
+const arr = new Array();
+
+arr[0] = 10; // 첫번째 공간[0]에 10 값을 저장
+arr[1] = 20; // 두번째 공간[1]에 20 값을 저장
+</pre>
+            </div>
+
+            <h3>함수(function)</h3>
+            <p>
+                특정한 목적의 기능을 수행한다<br>
+                function 키워드를 사용해서 구현하고 매개변수라는 함수를 실행하기 위해 대입해야 하는 값들이 들어있다<br>
+                목적에 따라서 매개변수 없이 함수를 구현할 수도 있다<br>
+                함수의 기능에 따라서 반환할 값이 필요할때 return 키워드를 사용한다<br><br>
+
+                * return 키워드 : 값을 반환하고 함수 실행을 종료하거나 반환값이 없이 사용할때 함수 실행을 중단하고<br>
+                함수가 호출된 시점으로 되돌린다
+            </p>
+
+            <div class="code">
+<pre>
+function add(x, y) // x, y 변수는 add 함수를 실행하기 위해 저장되는 매개변수
+{
+    return x+y; // return 키워드는 값을 반환하고 함수를 종료시킨다
+}
+
+document.write(add(5, 5)); // 10이 출력된다
+
+var num = add(5, 5); // 반환값이 있을 때 매개변수를 대입해서 함수 이름 형식으로 반환값 10을 num에 저장한다
+</pre>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

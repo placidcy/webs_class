@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap {
+            margin: 0 auto;
+            width: 1200px;
+            display: grid;
+
+            grid-template-areas:
+                "header header"
+                "aside cont1"
+                "aside cont2"
+                "aside cont3"
+                "footer footer"
+            ;
+
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 250px 250px 250px 100px;
+        }
+
+        #header {
+            grid-area: header;
+            background: rgb(174, 229, 255);
+        }
+
+        .aside {
+            grid-area: aside;
+            background: rgb(151, 222, 255);
+        }
+
+        .cont1 {
+            grid-area: cont1;
+            background: rgb(119, 206, 247);
+        }
+
+        .cont2 {
+            grid-area: cont2;
+            background: rgb(96, 202, 252);
+        }
+
+        .cont3 {
+            grid-area: cont3;
+            background: rgb(65, 187, 243)
+        }
+
+        #footer {
+            grid-area: footer;
+            background: rgb(28, 157, 216)
+        }
+
+        @media (max-width: 1200px) {
+            #wrap {
+                grid-template-areas: 
+                "header header"
+                "aside cont1"
+                "aside cont2"
+                "cont3 cont3"
+                "footer footer";
+            }
+        }
+
+        @media (max-width: 768px) {
+            #wrap {
+                grid-template-areas: 
+                "header header"
+                "aside aside"
+                "cont1 cont2"
+                "cont3 cont3"
+                "footer footer";
+
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 150px 150px 250px 250px 100px;
+            }
+        }
+
+        @media (max-width : 500px) {
+            #wrap {
+                grid-template-areas: 
+                "header"
+                "aside"
+                "cont1"
+                "cont2"
+                "cont3"
+                "footer";
+
+                grid-template-columns: 100%;
+                grid-template-rows: 150px 150px 250px 0 250px 100px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside class="aside"></aside>
+
+        <div class="cont1"></div>
+        <div class="cont2"></div>
+        <div class="cont3"></div>
+
+        <footer id="footer"></footer>
+    </div>
+</body>
+
+</html>
