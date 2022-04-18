@@ -1,5 +1,5 @@
 메인 페이지
-https://placidcy.github.io/webs_class/
+https://placidcy.github.io/webs_class/index.html
 
 자바 스크립트
 https://placidcy.github.io/webs_class/javascript/index.html
