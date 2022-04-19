@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="background.css">
+
+    <style>
+        @font-face {
+            font-family: 'LABDigital';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        #wrap {
+            margin: 0 auto;
+            height: 100%;
+            font-family: "LABDigital";
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: transparent;
+        }
+
+        .header {
+            width: 100%;
+            height: 35px;
+            overflow: hidden;
+        }
+
+        .header .title {
+            color: rgb(230, 231, 247);
+            font-weight: 600;
+            font-size: 21px;
+            padding-left: 30px;
+        }
+        
+        .header .time {
+            font-size: 21px;
+            float: right;
+        }
+
+        /* .nav .instargram {
+            background: url("/assets/img/instargram.svg") no-repeat;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            margin-right: -5px;
+        }
+
+        .nav .logo {
+            background: url("/assets/img/linkLogo.svg") no-repeat;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav ul li {
+            margin: 0 10px;
+        }
+
+        .nav ul .time {
+            font-weight: 600;
+            font-size: 20px;
+        } */
+
+        .main .mainMenu {
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            margin-left: 20px;
+        }
+
+        .mainMenu .img {
+            width: 80px;
+            text-align: center;
+        }
+
+        .mainMenu .img div {
+            margin-top: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .mainMenu .img .button1 {
+            width: 80px;
+            height: 80px;
+            background: url("../assets/img/guitar-light.jpg") no-repeat;
+        }
+
+        .mainMenu .img .button2 {
+            width: 80px;
+            height: 80px;
+            background: url("../assets/img/man-light.jpg") no-repeat;
+        }
+
+        .mainMenu .img .button3 {
+            width: 80px;
+            height: 80px;
+            background: url("../assets/img/personalcomputer-light.jpg") no-repeat;
+        }
+
+        .mainMenu .img p{
+            display: inline;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: rgb(169, 255, 215);
+        }
+
+        .mainMenu iframe {
+            float: right;
+        }
+
+        .musicPlayer {
+            position: absolute;
+            top: 150px;
+            right: -500px;
+            width: 360px;
+            height: 650px;
+            transition: all 0.4s;
+            border-radius: 19px;
+        }
+
+        .musicPlayer.show {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <h1 class="title">Game Site</h1>
+            <span class="time">시간</span>
+        </header>
+
+        <section class="main">
+            <div class="mainMenu">
+                <div class="img">
+                    <div class="button1"><a href="/javascript/musicPlayer/index.html"></a></div>
+                    <p>MUSIC</p>
+                </div>
+
+                <div class="img">
+                    <div class="button2"><a href="/javascript/memoryGame/index.html"></a></div>
+                    <p>MEMORY GAME</p>
+                </div>
+
+                <div class="img">
+                    <div class="button3"><a href="#"></a></div>
+                    <p>TYPING GAME</p>
+                </div>
+            </div>
+
+            <iframe class="musicPlayer" src="/javascript/musicPlayer/index.html"></iframe>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+        // 해당하는 요소를 드래그해서 옮기는 기능
+        $(".button1").draggable();
+        $(".button2").draggable();
+        $(".button3").draggable();
+
+        $(".button1").click(function(){
+            $(".musicPlayer").toggleClass("show");
+        });
+
+        function printCurrentTime() {
+            let clockClass = document.querySelector(".header .time");
+            let date = new Date();
+            let currentTime = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
+            clockClass.innerHTML = currentTime;
+        }
+        
+        setInterval(printCurrentTime, 1000);
+    </script>
+</body>
+
+</html>
