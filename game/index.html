@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="assets/css/bg.css">
 
     <style>
         @font-face {
@@ -142,6 +142,20 @@
         .musicPlayer.show {
             right: 10px;
         }
+
+        .memoryBox {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+                0 6px 10px 0 rgba(0, 0, 0, 0.17);
+
+            opacity: 1;
+            width: 600px;
+            height: 700px;
+        }
     </style>
 </head>
 
@@ -155,22 +169,24 @@
         <section class="main">
             <div class="mainMenu">
                 <div class="img">
-                    <div class="button1"><a href="/javascript/musicPlayer/index.html"></a></div>
+                    <div class="button1"><a href="musicPlayer/index.html"></a></div>
                     <p>MUSIC</p>
                 </div>
 
                 <div class="img">
-                    <div class="button2"><a href="/javascript/memoryGame/index.html"></a></div>
+                    <div class="button2"><a href="memoryGame/index.html"></a></div>
                     <p>MEMORY GAME</p>
                 </div>
 
                 <div class="img">
-                    <div class="button3"><a href="#"></a></div>
+                    <div class="button3"><a href="typingGame/index.html"></a></div>
                     <p>TYPING GAME</p>
                 </div>
             </div>
 
-            <iframe class="musicPlayer" src="/javascript/musicPlayer/index.html"></iframe>
+            <iframe class="memoryBox" src="/game/memoryGame/index2.html"></iframe>
+
+            <iframe class="musicPlayer" src="musicPlayer/index.html"></iframe>
         </section>
     </div>
 
