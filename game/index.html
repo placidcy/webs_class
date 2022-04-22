@@ -140,9 +140,13 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
 
-            opacity: 1;
+            opacity: 0;
             width: 600px;
             height: 700px;
+        }
+
+        .memoryBox.show {
+            opacity: 1;
         }
     </style>
 </head>
@@ -157,12 +161,12 @@
         <section class="main">
             <div class="mainMenu">
                 <div class="img">
-                    <a href="memoryGame/index.html"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a></a>
+                    <a href="musicPlayer/index.html"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a></a>
                     <p>MUSIC</p>
                 </div>
 
                 <div class="img">
-                    <a href="memoryGame/index.html"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
+                    <a href="memoryGame/index2.html"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
                     <p>MEMORY GAME</p>
                  </div>
 
@@ -190,6 +194,8 @@
         // 해당하는 요소를 드래그해서 옮기는 기능
         $(".button1").draggable();
         $(".button2").draggable();
+
+        $(".button2").toggleClass("show");
         $(".button3").draggable();
 
         $(".button1").click(function(){
