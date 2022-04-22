@@ -100,22 +100,10 @@
             cursor: pointer;
         }
 
-        .mainMenu .img .button1 {
-            width: 80px;
-            height: 80px;
+        .mainMenu .img img {
+            border-radius: 50%;
+            margin-top: 30px;
             background: url("../assets/img/guitar-light.jpg") no-repeat;
-        }
-
-        .mainMenu .img .button2 {
-            width: 80px;
-            height: 80px;
-            background: url("../assets/img/man-light.jpg") no-repeat;
-        }
-
-        .mainMenu .img .button3 {
-            width: 80px;
-            height: 80px;
-            background: url("../assets/img/personalcomputer-light.jpg") no-repeat;
         }
 
         .mainMenu .img p{
@@ -169,22 +157,27 @@
         <section class="main">
             <div class="mainMenu">
                 <div class="img">
-                    <div class="button1"><a href="musicPlayer/index.html"></a></div>
+                    <a href="memoryGame/index.html"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a></a>
                     <p>MUSIC</p>
                 </div>
 
                 <div class="img">
-                    <div class="button2"><a href="memoryGame/index.html"></a></div>
+                    <a href="memoryGame/index.html"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
                     <p>MEMORY GAME</p>
+                 </div>
+
+                <div class="img">
+                    <a href="typingGame/index.html"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px" height="80px"></a>
+                    <p>TYPING GAME</p>
                 </div>
 
                 <div class="img">
-                    <div class="button3"><a href="typingGame/index.html"></a></div>
-                    <p>TYPING GAME</p>
+                    <a href="https://placidcy.netlify.app"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지4" width="80px" height="80px"></a>
+                    <p>REACT</p>
                 </div>
             </div>
 
-            <iframe class="memoryBox" src="/game/memoryGame/index2.html"></iframe>
+            <!-- <iframe class="memoryBox" src="/game/memoryGame/index2.html"></iframe> -->
 
             <iframe class="musicPlayer" src="musicPlayer/index.html"></iframe>
         </section>
@@ -203,14 +196,15 @@
             $(".musicPlayer").toggleClass("show");
         });
 
-        function printCurrentTime() {
+        function showCurrentTime() {
             let clockClass = document.querySelector(".header .time");
             let date = new Date();
             let currentTime = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
             clockClass.innerHTML = currentTime;
+            console.log(clockClass.innerHTML);
         }
-        
-        setInterval(printCurrentTime, 1000);
+
+        setInterval(showCurrentTime, 1000);
     </script>
 </body>
 
