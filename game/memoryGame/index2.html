@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,23 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Poppins", "NexonMaplestory";
         }
+
         body {
             background: #007BFF;
         }
+
         button {
             border: 0;
             cursor: pointer;
             transition: all 0.3s;
         }
+
         button:active {
             opacity: 0.8;
         }
+
         .start__btn,
         .info__box,
         .card__wrap,
@@ -37,8 +42,8 @@
             top: 50%;
             transform: translate(-50%, -50%) scale(0.8);
             border-radius: 5px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
-                        0 6px 10px 0 rgba(0,0,0,0.17);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+                0 6px 10px 0 rgba(0, 0, 0, 0.17);
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s ease-in-out;
@@ -54,32 +59,38 @@
             pointer-events: auto;
             transform: translate(-50%, -50%) scale(1);
         }
+
         .start__btn button {
             background: #fff;
             padding: .8rem 3rem;
             border-radius: 5px;
             font-size: 1.3em
         }
+
         .info__box {
             width: 500px;
             background: #fff;
             border-radius: 5px;
             font-size: 1.3em;
         }
+
         .info__box .title {
             border-bottom: 1px solid #ccc;
             padding: .8rem 2rem;
             font-size: 1.3em;
             text-align: center;
         }
+
         .info__box .list ol {
             padding: 1.3rem 3rem;
         }
+
         .info__box .buttons {
             border-top: 1px solid #ccc;
             padding: .8rem 2rem;
             text-align: center;
         }
+
         .info__box .buttons button {
             background: #007BFF;
             color: #fff;
@@ -89,60 +100,140 @@
             border: 1px solid #007BFF;
             margin: 0 0.2em;
         }
+
         .info__box .buttons button:first-child {
             background: #fff;
             border: 1px solid #007BFF;
             color: #007BFF
         }
+
         .card__wrap {
             width: 600px;
             height: 600px;
             background: #fff;
         }
+
         .card__wrap li {
             list-style: none;
         }
+
         .card__inner {
             padding: 20px;
             width: 100%;
             height: 100%;
         }
-        img{width: 100%; vertical-align: top;}
-        
-        .cards{display: flex; flex-wrap: wrap; justify-content: space-around; align-content: space-around; width: 100%; height: 100%;}
-        .cards li{width: calc(100% / 4 - 20px); height: calc(100% / 4 - 20px); perspective: 1000px; transform-style: preserve-3d; position: relative;}
-        .cards li .view{position: absolute; padding: 10%; background: skyblue; transition: transform 0.25s linear; backface-visibility: hidden; user-select: none; pointer-events: none;}
-        .cards li .front{transform: rotateY(0deg);}
-        .cards li .back{transform: rotateY(180deg);}
-        /* .cards li.flip{user-select: none;} */
-        .cards li.flip .front{transform: rotateY(180deg);}
-        .cards li.flip .back{transform: rotateY(0deg);}
-        .cards li.shake{animation: shake 0.35s ease-in-out;}
-        @keyframes shake{0%{transform: translateX(0);} 20%{transform: translateX(-13px);} 40%{transform: translateX(13px);} 60%{transform: translateX(-8px);} 80%{transform: translateX(8px);} 100%{transform: translateX(0);}}
 
-        .fail, .result__box {
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cards li {
+            width: calc(100% / 4 - 20px);
+            height: calc(100% / 4 - 20px);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .cards li .view {
+            position: absolute;
+            padding: 10%;
+            background: skyblue;
+            transition: transform 0.25s linear;
+            backface-visibility: hidden;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .cards li .front {
+            transform: rotateY(0deg);
+        }
+
+        .cards li .back {
+            transform: rotateY(180deg);
+        }
+
+        /* .cards li.flip{user-select: none;} */
+        .cards li.flip .front {
+            transform: rotateY(180deg);
+        }
+
+        .cards li.flip .back {
+            transform: rotateY(0deg);
+        }
+
+        .cards li.shake {
+            animation: shake 0.35s ease-in-out;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-13px);
+            }
+
+            40% {
+                transform: translateX(13px);
+            }
+
+            60% {
+                transform: translateX(-8px);
+            }
+
+            80% {
+                transform: translateX(8px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .fail,
+        .result__box {
             width: 500px;
             background: #fff;
             border-radius: 5px;
             font-size: 1.3em;
             z-index: 100;
         }
-        .fail .title, .result__box .title {
+
+        .fail .title,
+        .result__box .title {
             border-bottom: 1px solid #ccc;
             padding: .6rem 2rem;
             text-align: center;
             font-size: 1.4em
         }
-        .fail .score, .result__box .score {
+
+        .fail .score,
+        .result__box .score {
             padding: 2rem;
             height: 300px;
         }
-        .fail .buttons, .result__box .buttons {
+
+        .fail .buttons,
+        .result__box .buttons {
             border-top: 1px solid #ccc;
             padding: .8rem 2rem;
             text-align: center;
         }
-        .fail .buttons button, .result__box .buttons button {
+
+        .fail .buttons button,
+        .result__box .buttons button {
             background: #007BFF;
             color: #fff;
             padding: .4rem 2rem;
@@ -152,18 +243,59 @@
             margin: 0 0.2em;
             display: inline-block;
         }
-        .fail .buttons button:first-child, .result__box .buttons button:first-child {
+
+        .fail .buttons button:first-child,
+        .result__box .buttons button:first-child {
             background: #fff;
             border: 1px solid #007BFF;
             color: #007BFF
         }
-        .card__sound{position: fixed; right: 50px; top: -4px; cursor: pointer;}
-        .card__sound button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
-        .card__start{position: absolute; left: 20px; top: 20px; cursor: pointer;}
-        .card__start button{line-height: 40px; background: #fff; width: 40px; height: 40px; border-radius: 50%; text-align: center; border: 0;  color: #007bff;}
-        .remain {z-index: 9999; position: fixed; top: 5px; left: 30px;}
+
+        .card__sound {
+            position: fixed;
+            right: 50px;
+            top: -4px;
+            cursor: pointer;
+        }
+
+        .card__sound button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            border: 0;
+            color: #007bff;
+        }
+
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        .card__start button {
+            line-height: 40px;
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            border: 0;
+            color: #007bff;
+        }
+
+        .remain {
+            z-index: 9999;
+            position: fixed;
+            top: 5px;
+            left: 30px;
+        }
     </style>
 </head>
+
 <body>
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
     <!-- 시작버튼 -->
@@ -411,14 +543,14 @@
         resultBoxRestart.onclick = () => {
             remain.innerText = "현재 남은 기회 : 5";
             resultBox.classList.remove("active");
-            lifeCurrent=0;
+            lifeCurrent = 0;
             setTimeout(() => {
                 cardWrap.classList.add("active");
             }, 800);
             setTimeout(() => {
                 shuffledCard();
             }, 1200);
-            
+
         }
 
         failBoxStart.onclick = () => {
@@ -429,18 +561,19 @@
             setTimeout(() => {
                 shuffledCard();
             }, 1200);
-            
+
         }
         //카드 클릭
         cards.forEach(card => {
             //card.classList.add("flip")
             card.addEventListener("click", flipCard);
         });
-        function flipCard(e){
+
+        function flipCard(e) {
             let clickedCard = e.target;
-            if(clickedCard !== cardOne && !disableDeck){
+            if (clickedCard !== cardOne && !disableDeck) {
                 clickedCard.classList.add("flip");
-                if(!cardOne){
+                if (!cardOne) {
                     return cardOne = clickedCard;
                 }
                 cardTwo = clickedCard;
@@ -452,11 +585,11 @@
         }
 
         //카드 확인하기
-        function matchCards(img1, img2){
-            if(img1 == img2){
+        function matchCards(img1, img2) {
+            if (img1 == img2) {
                 matchedCard++;
                 //완성했을 때
-                if(matchedCard == 8){
+                if (matchedCard == 8) {
                     setTimeout(() => {
                         cardWrap.classList.remove("active");
                         resultBox.classList.add("active");
@@ -464,16 +597,16 @@
                             el.classList.remove("flip");
                         })
                     }, 1000)
-                } 
+                }
                 cardOne.removeEventListener("click", flipCard);
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
                 disableDeck = false;
                 soundMatch.play();
             } else {
-                
+
                 lifeCurrent++;
-                if(lifeCurrent == 5){
+                if (lifeCurrent == 5) {
                     failBox.classList.add("active");
                     cardWrap.classList.remove("active");
                 }
@@ -490,25 +623,26 @@
                 soundNoMatch.play();
             }
             remain.innerText = "현재 남은 기회 : " + (answer - lifeCurrent);
-            if(answer - lifeCurrent == 5){
+            if (answer - lifeCurrent == 5) {
                 score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 좀 치시네요?";
-            } else if(answer - lifeCurrent == 4){
+            } else if (answer - lifeCurrent == 4) {
                 score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 잘 했어요!!";
-            } else if(answer - lifeCurrent == 3){
+            } else if (answer - lifeCurrent == 3) {
                 score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 아주 잘 했어요!!";
-            } else if(answer - lifeCurrent == 2){
+            } else if (answer - lifeCurrent == 2) {
                 score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 조금만 분발하세요.";
-            } else if(answer - lifeCurrent == 1){
+            } else if (answer - lifeCurrent == 1) {
                 score.innerText = "5점 만점 중 당신의 점수는 " + (answer - lifeCurrent) + "점 입니다. 좋지 않은 성적이예요.";
             }
-            
+
         }
 
-        function shuffledCard(){
-            cardOne, cardTwo = "";
+        function shuffledCard() {
+            cardOne,
+            cardTwo = "";
             disableDeck = false;
             matchedCard = 0;
-            let arr = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+            let arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
             //let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
             cards.forEach((card, index) => {
                 card.addEventListener("click", flipCard);
@@ -542,4 +676,5 @@
         // });
     </script>
 </body>
+
 </html>
