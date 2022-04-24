@@ -46,7 +46,7 @@
             font-size: 21px;
             padding-left: 30px;
         }
-        
+
         .header .time {
             font-size: 21px;
             float: right;
@@ -89,24 +89,24 @@
             margin-left: 20px;
         }
 
-        .mainMenu .img {
+        .mainMenu .btn {
             width: 80px;
             text-align: center;
         }
 
-        .mainMenu .img div {
+        .mainMenu .btn div {
             margin-top: 40px;
             border-radius: 50%;
             cursor: pointer;
         }
 
-        .mainMenu .img img {
+        .mainMenu .btn img {
             border-radius: 50%;
             margin-top: 30px;
             background: url("../assets/img/guitar-light.jpg") no-repeat;
         }
 
-        .mainMenu .img p{
+        .mainMenu .btn p {
             display: inline;
             font-size: 20px;
             font-weight: 600;
@@ -119,34 +119,57 @@
 
         .musicPlayer {
             position: absolute;
-            top: 150px;
             right: -500px;
-            width: 360px;
-            height: 650px;
+            top: 10px;
+            width: 400px;
+            height: 700px;
             transition: all 0.4s;
-            border-radius: 19px;
         }
 
         .musicPlayer.show {
             right: 10px;
         }
 
-        .memoryBox {
+        .memoryGame {
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 5px;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: -200%;
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-
-            opacity: 0;
-            width: 600px;
-            height: 700px;
+            transition: all 1s;
         }
 
-        .memoryBox.show {
-            opacity: 1;
+        .memoryGame.show {
+            right: 1%;
+        }
+
+        .typingGame {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: -300%;
+            margin: auto;
+            width: 1000px;
+            height: 600px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+                0 6px 10px 0 rgba(0, 0, 0, 0.17);
+            transition: all 1s;
+        }
+
+        .typingGame.show {
+            right: 1%;
         }
     </style>
 </head>
@@ -160,46 +183,60 @@
 
         <section class="main">
             <div class="mainMenu">
-                <div class="img">
-                    <a href="musicPlayer/index.html"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a></a>
+                <div class="button1 btn">
+                    <a href=""><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a>
                     <p>MUSIC</p>
                 </div>
 
-                <div class="img">
-                    <a href="memoryGame/index2.html"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
+                <div class="button2 btn">
+                    <a href=""><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
                     <p>MEMORY GAME</p>
-                 </div>
+                </div>
 
-                <div class="img">
-                    <a href="typingGame/index.html"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px" height="80px"></a>
+                <div class="button3 btn">
+                    <a href=""><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px"
+                            height="80px"></a>
                     <p>TYPING GAME</p>
                 </div>
 
-                <div class="img">
-                    <a href="https://placidcy.netlify.app"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지4" width="80px" height="80px"></a>
+                <div class="button4 btn">
+                    <a href="https://placidcy.netlify.app"><img src="../assets/img/personalcomputer-light.jpg"
+                            alt="버튼 이미지4" width="80px" height="80px"></a>
                     <p>REACT</p>
+                </div>
+
+                <div class="button5 btn">
+                    <a href="http://placidness.dothome.co.kr/php/pages/main.php"><img
+                            src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지4" width="80px" height="80px"></a>
+                    <p>PHP</p>
                 </div>
             </div>
 
-            <!-- <iframe class="memoryBox" src="/game/memoryGame/index2.html"></iframe> -->
-
-            <iframe class="musicPlayer" src="musicPlayer/index.html"></iframe>
+            <div class="musicPlayer"><iframe src="musicPlayer/index.html" frameborder="0"></iframe></div>
+            <div class="memoryGame"><iframe src="memoryGame/index2.html" frameborder="0"></iframe></div>
+            <div class="typingGame"><iframe src="typingGame/index.html" frameborder="0"></iframe></div>
         </section>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    
+
     <script>
         // 해당하는 요소를 드래그해서 옮기는 기능
-        $(".button1").draggable();
-        $(".button2").draggable();
+        // $(".button1").draggable();
+        // $(".button2").draggable();
+        // $(".button3").draggable();
 
-        $(".button2").toggleClass("show");
-        $(".button3").draggable();
-
-        $(".button1").click(function(){
+        $(".button1").click(function () {
             $(".musicPlayer").toggleClass("show");
+        });
+
+        $(".button2").click(function () {
+            $(".memoryGame").toggleClass("show");
+        });
+
+        $(".button3").click(function () {
+            $(".typingGame").toggleClass("show");
         });
 
         function showCurrentTime() {
