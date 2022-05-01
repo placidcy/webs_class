@@ -1,537 +1,582 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link href='../assets/css/StarBackground.css' rel='stylesheet' type='text/css'>
+
+  <style>
+     @font-face {
+            font-family: 'LABDigital';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+            font-display: swap;
       }
 
-      body {
-        height: 100vh;
-        overflow: hidden;
-      }
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      li {
-        list-style: none;
-      }
+    body {
+      height: 100vh;
+      overflow: hidden;
 
-      .start__btn,
-      .info__box,
-      .result__box {
-        display: none;
-      }
+    }
 
-      .tetris__inner {
-        width: 250px;
-        margin: 100px auto;
-      }
+    li {
+      list-style: none;
+    }
 
-      .tetris__inner > ul {
-        border: 3px solid #ccc;
-      }
+    .start__btn,
+    .info__box,
+    .result__box {
+      display: none;
+    }
 
-      .tetris__inner > ul > li {
-        width: 100%;
-        height: 25px;
-      }
+    .tetris__inner {
+      width: 250px;
+      margin: 100px auto;
+    }
 
-      .tetris__inner > ul > li > ul {
-        display: flex;
-      }
+    .tetris__inner>ul {
+      border: 3px solid #ccc;
+    }
 
-      .tetris__inner > ul > li > ul > li {
-        width: 25px;
-        height: 25px;
-        border: 1px solid rgb(77, 255, 214);
-        box-sizing: border-box;
-      }
+    .tetris__inner>ul>li {
+      width: 100%;
+      height: 25px;
+    }
 
-      .Tmino {
-        border: 5px #a042a2 0.5em !important;
-        background-color: #952d95;
-        box-sizing: border-box;
-      }
+    .tetris__inner>ul>li>ul {
+      display: flex;
+    }
 
-      .Imino {
-        border: 5px #e4f791 0.5em !important;
-        background-color: #e4f791;
-        box-sizing: border-box;
-      }
+    .tetris__inner>ul>li>ul>li {
+      width: 25px;
+      height: 25px;
+      border: 1px solid rgb(77, 255, 214);
+      box-sizing: border-box;
+    }
 
-      .Omino {
-        border: 5px #5452c7 0.5em !important;
-        background-color: #5452c7;
-        box-sizing: border-box;
-      }
+    .Tmino {
+      border: 5px #a042a2 0.5em !important;
+      background-color: #952d95;
+      box-sizing: border-box;
+    }
 
-      .Zmino {
-        border: 5px #26f56b 0.5em !important;
-        background-color: #26f56b;
-        box-sizing: border-box;
-      }
+    .Imino {
+      border: 5px #e4f791 0.5em !important;
+      background-color: #e4f791;
+      box-sizing: border-box;
+    }
 
-      .Smino {
-        border: 5px #f34343 0.5em !important;
-        background-color: #f34343;
-        box-sizing: border-box;
-      }
+    .Omino {
+      border: 5px #5452c7 0.5em !important;
+      background-color: #5452c7;
+      box-sizing: border-box;
+    }
 
-      .Jmino {
-        border: 5px #6ef2f7 0.5em !important;
-        background-color: #6ef2f7;
-        box-sizing: border-box;
-      }
+    .Zmino {
+      border: 5px #26f56b 0.5em !important;
+      background-color: #26f56b;
+      box-sizing: border-box;
+    }
 
-      .Lmino {
-        border: 5px #42a247 0.5em !important;
-        background-color: #42a247;
-        box-sizing: border-box;
-      }
+    .Smino {
+      border: 5px #f34343 0.5em !important;
+      background-color: #f34343;
+      box-sizing: border-box;
+    }
 
-      .tetris__wrap {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 테트리스 박스 -->
-    <div class="tetris__box">
-      <div class="score">0</div>
-      <div class="tetris__inner">
-        <ul></ul>
-      </div>
+    .Jmino {
+      border: 5px #6ef2f7 0.5em !important;
+      background-color: #6ef2f7;
+      box-sizing: border-box;
+    }
+
+    .Lmino {
+      border: 5px #42a247 0.5em !important;
+      background-color: #42a247;
+      box-sizing: border-box;
+    }
+
+    .tetris__wrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .score {
+      font-family: LABDigital;
+      color: white;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 테트리스 박스 -->
+  <div class="tetris__box">
+    <div class="score">SCORE : 0</div>
+    <div class="tetris__inner">
+      <ul></ul>
     </div>
+  </div>
 
-    <!-- 시작버튼 -->
-    <div class="start__btn active">
-      <button>Start</button>
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+  <div id='title'></div>
+
+  <!-- 시작버튼 -->
+  <div class="start__btn active">
+    <button>Start</button>
+  </div>
+
+  <!-- 규칙 박스 -->
+  <div class="info__box">
+    <div class="title">규칙</div>
+    <div class="list">
+      <ol>
+        <li>규칙 1 : ???</li>
+      </ol>
     </div>
-
-    <!-- 규칙 박스 -->
-    <div class="info__box">
-      <div class="title">규칙</div>
-      <div class="list">
-        <ol>
-          <li>규칙 1 : ???</li>
-        </ol>
-      </div>
-      <div class="buttons">
-        <button class="stop">그만하기</button>
-        <button class="start">도전하기</button>
-      </div>
+    <div class="buttons">
+      <button class="stop">그만하기</button>
+      <button class="start">도전하기</button>
     </div>
+  </div>
 
-    <!-- 결과 박스 -->
-    <div class="result__box">
-      <div class="title">게임을 성공하였습니다.</div>
-      <div class="score">
-        <span>점수 : 00</span>
-      </div>
-      <div class="buttons">
-        <button class="stop">그만하기</button>
-        <button class="restart">다시 도전하기</button>
-      </div>
+  <!-- 결과 박스 -->
+  <div class="result__box">
+    <div class="title">게임을 성공하였습니다.</div>
+    <div class="score">
+      <span>점수 : 00</span>
     </div>
+    <div class="buttons">
+      <button class="stop">그만하기</button>
+      <button class="restart">다시 도전하기</button>
+    </div>
+  </div>
 
-    <script>
-      const tetrisInner = document.querySelector(".tetris__inner > ul");
-      const tetrisScore = document.querySelector(".tetris__box .score");
+  <script>
+    const tetrisInner = document.querySelector(".tetris__inner > ul");
+    const tetrisScore = document.querySelector(".tetris__box .score");
 
-      const game_rows = 20;
-      const game_cols = 10;
+    const game_rows = 30;
+    const game_cols = 10;
 
-      let gameScore = 0;
-      let gameDuration = 500;
-      let gameInterval = 0;
-      let gameMovingItem = 0;
+    let gameScore = 0;
+    let gameDuration = 500;
+    let gameInterval = 0;
+    let gameMovingItem = 0;
 
-      const blocks = {
-        Tmino: [
-          [
-            [2, 1],
-            [0, 1],
-            [1, 0],
-            [1, 1],
-          ],
-          [
-            [1, 2],
-            [0, 1],
-            [1, 0],
-            [1, 1],
-          ],
-          [
-            [1, 2],
-            [0, 1],
-            [2, 1],
-            [1, 1],
-          ],
-          [
-            [2, 1],
-            [1, 2],
-            [1, 0],
-            [1, 1],
-          ],
+    const blocks = {
+      Tmino: [
+        [
+          [2, 1],
+          [0, 1],
+          [1, 0],
+          [1, 1],
         ],
-        Imino: [
-          [
-            [0, 0],
-            [1, 0],
-            [2, 0],
-            [3, 0],
-          ],
-          [
-            [0, 0],
-            [0, 1],
-            [0, 2],
-            [0, 3],
-          ],
-          [
-            [0, 0],
-            [1, 0],
-            [2, 0],
-            [3, 0],
-          ],
-          [
-            [0, 0],
-            [0, 1],
-            [0, 2],
-            [0, 3],
-          ],
+        [
+          [1, 2],
+          [0, 1],
+          [1, 0],
+          [1, 1],
         ],
-        Omino: [
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [0, 1],
-          ],
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [0, 1],
-          ],
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [0, 1],
-          ],
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [0, 1],
-          ],
+        [
+          [1, 2],
+          [0, 1],
+          [2, 1],
+          [1, 1],
         ],
-        Zmino: [
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [2, 1],
-          ],
-          [
-            [1, 0],
-            [1, 1],
-            [0, 1],
-            [0, 2],
-          ],
-          [
-            [0, 0],
-            [1, 0],
-            [1, 1],
-            [2, 1],
-          ],
-          [
-            [1, 0],
-            [1, 1],
-            [0, 1],
-            [0, 2],
-          ],
+        [
+          [2, 1],
+          [1, 2],
+          [1, 0],
+          [1, 1],
         ],
-        Smino: [
-          [
-            [0, 1],
-            [1, 1],
-            [1, 0],
-            [2, 0],
-          ],
-          [
-            [1, 0],
-            [1, 1],
-            [2, 1],
-            [2, 2],
-          ],
-          [
-            [0, 1],
-            [1, 1],
-            [1, 0],
-            [2, 0],
-          ],
-          [
-            [1, 0],
-            [1, 1],
-            [2, 1],
-            [2, 2],
-          ],
+      ],
+      Imino: [
+        [
+          [0, 0],
+          [1, 0],
+          [2, 0],
+          [3, 0],
         ],
-        Jmino: [
-          [
-            [1, 0],
-            [1, 1],
-            [1, 2],
-            [0, 2],
-          ],
-          [
-            [0, 1],
-            [0, 2],
-            [1, 2],
-            [2, 2],
-          ],
-          [
-            [0, 2],
-            [1, 2],
-            [0, 3],
-            [0, 4],
-          ],
-          [
-            [1, 2],
-            [1, 1],
-            [0, 1],
-            [-1, 1],
-          ],
+        [
+          [0, 0],
+          [0, 1],
+          [0, 2],
+          [0, 3],
         ],
-        Lmino: [
-          [
-            [0, 0],
-            [0, 1],
-            [0, 2],
-            [1, 2],
-          ],
-          [
-            [0, 2],
-            [0, 3],
-            [1, 2],
-            [2, 2],
-          ],
-          [
-            [-1, 2],
-            [0, 2],
-            [0, 3],
-            [0, 4],
-          ],
-          [
-            [0, 1],
-            [0, 2],
-            [-1, 2],
-            [-2, 2],
-          ],
+        [
+          [0, 0],
+          [1, 0],
+          [2, 0],
+          [3, 0],
         ],
+        [
+          [0, 0],
+          [0, 1],
+          [0, 2],
+          [0, 3],
+        ],
+      ],
+      Omino: [
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [0, 1],
+        ],
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [0, 1],
+        ],
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [0, 1],
+        ],
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [0, 1],
+        ],
+      ],
+      Zmino: [
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [2, 1],
+        ],
+        [
+          [1, 0],
+          [1, 1],
+          [0, 1],
+          [0, 2],
+        ],
+        [
+          [0, 0],
+          [1, 0],
+          [1, 1],
+          [2, 1],
+        ],
+        [
+          [1, 0],
+          [1, 1],
+          [0, 1],
+          [0, 2],
+        ],
+      ],
+      Smino: [
+        [
+          [0, 1],
+          [1, 1],
+          [1, 0],
+          [2, 0],
+        ],
+        [
+          [1, 0],
+          [1, 1],
+          [2, 1],
+          [2, 2],
+        ],
+        [
+          [0, 1],
+          [1, 1],
+          [1, 0],
+          [2, 0],
+        ],
+        [
+          [1, 0],
+          [1, 1],
+          [2, 1],
+          [2, 2],
+        ],
+      ],
+      Jmino: [
+        [
+          [1, 0],
+          [1, 1],
+          [1, 2],
+          [0, 2],
+        ],
+        [
+          [0, 1],
+          [0, 2],
+          [1, 2],
+          [2, 2],
+        ],
+        [
+          [0, 2],
+          [1, 2],
+          [0, 3],
+          [0, 4],
+        ],
+        [
+          [1, 2],
+          [1, 1],
+          [0, 1],
+          [-1, 1],
+        ],
+      ],
+      Lmino: [
+        [
+          [0, 0],
+          [0, 1],
+          [0, 2],
+          [1, 2],
+        ],
+        [
+          [0, 2],
+          [0, 3],
+          [1, 2],
+          [2, 2],
+        ],
+        [
+          [-1, 2],
+          [0, 2],
+          [0, 3],
+          [0, 4],
+        ],
+        [
+          [0, 1],
+          [0, 2],
+          [-1, 2],
+          [-2, 2],
+        ],
+      ],
+    };
+
+    const movingItem = {
+      type: "Lmino", // 랜덤으로 대입
+      direction: 0,
+      top: 0,
+      left: 3,
+    };
+
+    init();
+
+    // 시작 함수
+    function init() {
+      gameMovingItem = {
+        ...movingItem
       };
+      // li 태그를 20개 생성
 
-      const movingItem = {
-        type: "Lmino", // 랜덤으로 대입
-        direction: 0,
-        top: 0,
-        left: 3,
-      };
-
-      init();
-
-      // 시작 함수
-      function init() {
-        gameMovingItem = { ...movingItem };
-        // li 태그를 20개 생성
-
-        for (let i = 0; i < game_rows; i++) {
-          tetrisLine();
-        }
-
-        generateNewBlock();
+      for (let i = 0; i < game_rows; i++) {
+        tetrisLine();
       }
 
-      // 블록 생성 함수
-      function tetrisLine() {
-        const ul = document.createElement("ul");
-        const li = document.createElement("li");
+      generateNewBlock();
+    }
 
-        // li 태그 안에 또다른 li 태그 10개 생성
-        for (let j = 0; j < game_cols; j++) {
-          const blank = document.createElement("li");
-          ul.prepend(blank);
-        }
+    // 블록 생성 함수
+    function tetrisLine() {
+      const ul = document.createElement("ul");
+      const li = document.createElement("li");
 
-        li.prepend(ul);
-        tetrisInner.prepend(li);
+      // li 태그 안에 또다른 li 태그 10개 생성
+      for (let j = 0; j < game_cols; j++) {
+        const blank = document.createElement("li");
+        ul.prepend(blank);
       }
 
-      // 블록 출력하기
-      function renderBlocks(moveType = " ") {
-        const { type, direction, top, left } = gameMovingItem;
-        const movingBlocks = document.querySelectorAll(".moving");
-        movingBlocks.forEach((moving) => {
-          moving.classList.remove(type, "moving");
-        });
+      li.prepend(ul);
+      tetrisInner.prepend(li);
+    }
 
-        blocks[type][direction].some((block) => {
-          const x = block[0] + left;
-          const y = block[1] + top;
+    // 블록 출력하기
+    function renderBlocks(moveType = " ") {
+      const {
+        type,
+        direction,
+        top,
+        left
+      } = gameMovingItem;
+      const movingBlocks = document.querySelectorAll(".moving");
+      movingBlocks.forEach((moving) => {
+        moving.classList.remove(type, "moving");
+      });
 
-          const target = tetrisInner.childNodes[y]
-            ? tetrisInner.childNodes[y].childNodes[0].childNodes[x]
-            : null;
-          const isAvailable = checkEmpty(target);
+      blocks[type][direction].some((block) => {
+        const x = block[0] + left;
+        const y = block[1] + top;
 
-          if (isAvailable == true) {
-            target.classList.add(type, "moving");
-          } else {
-            gameMovingItem = { ...movingItem };
+        const target = tetrisInner.childNodes[y] ?
+          tetrisInner.childNodes[y].childNodes[0].childNodes[x] :
+          null;
+        const isAvailable = checkEmpty(target);
 
-            if (moveType === "retry") {
-              clearInterval(gameInterval);
-              gameOver();
-            }
-            setTimeout(() => {
-              renderBlocks("retry");
+        if (isAvailable == true) {
+          target.classList.add(type, "moving");
+        } else {
+          gameMovingItem = {
+            ...movingItem
+          };
 
-              if (moveType === "top") {
-                seizeBlock();
-              }
-            }, 0);
-
-            return true;
+          if (moveType === "retry") {
+            clearInterval(gameInterval);
+            gameOver();
           }
-        });
+          setTimeout(() => {
+            renderBlocks("retry");
 
-        movingItem.left = left;
-        movingItem.top = top;
-        movingItem.direction = direction;
-      }
-
-      // 블록이 가장 아래쪽 범위에서 빠져나오는지 확인하는 함수
-      function seizeBlock() {
-        const movingBlocks = document.querySelectorAll(".moving");
-        movingBlocks.forEach((moving) => {
-          moving.classList.remove("moving");
-          moving.classList.add("seized");
-        });
-        checkMatch();
-      }
-
-      // 각 블록들의 칸들이 한줄에 모두 위치해 있을때 처리
-      function checkMatch() {
-        const childNodes = tetrisInner.childNodes;
-        childNodes.forEach((child) => {
-          let matched = true;
-          child.children[0].childNodes.forEach((li) => {
-            if (!li.classList.contains("seized")) {
-              matched = false;
+            if (moveType === "top") {
+              seizeBlock();
             }
-          });
+          }, 0);
 
-          if (matched) {
-            child.remove();
-            tetrisLine();
-            gameScore++;
-            tetrisScore.innerText = gameScore;
-          }
-        });
-
-        generateNewBlock();
-      }
-
-      // 새 블록 생성
-      function generateNewBlock() {
-        clearInterval(gameInterval);
-
-        gameInterval = setInterval(() => {
-          moveBlock("top", 1);
-        }, gameDuration);
-
-        const blockArray = Object.entries(blocks);
-        const randomIndex = Math.floor(Math.random() * blockArray.length);
-        movingItem.type = blockArray[randomIndex][0];
-        movingItem.top = 0;
-        movingItem.left = 3;
-        movingItem.direction = 0;
-
-        gameMovingItem = { ...movingItem };
-        renderBlocks();
-      }
-
-      function checkEmpty(target) {
-        if (!target || target.classList.contains("seized")) {
-          return false;
-        }
-
-        return true;
-      }
-
-      // 블록 움직이기
-      function moveBlock(moveType, amount) {
-        gameMovingItem[moveType] += amount;
-        renderBlocks(moveType);
-      }
-
-      // 모양 변경하기
-      function changeDirection() {
-        const direction = gameMovingItem.direction;
-        direction === 3
-          ? (gameMovingItem.direction = 0)
-          : (gameMovingItem.direction += 1);
-        renderBlocks();
-      }
-
-      //스페이스바 입력
-      function dropBlock() {
-        clearInterval(gameInterval);
-
-        gameInterval = setInterval(() => {
-          moveBlock("top", 1);
-        }, 10);
-      }
-
-      function gameOver() {
-        // 게임이 끝날때
-        console.log("game over");
-      }
-
-      // 키보드를 눌렀을때
-      document.addEventListener("keydown", (e) => {
-        switch (e.keyCode) {
-          case 39: // 오른쪽 이동
-            moveBlock("left", 1);
-            break;
-
-          case 37: // 왼쪽 이동
-            moveBlock("left", -1);
-            break;
-
-          case 40: // 아래쪽 이동
-            moveBlock("top", 1);
-            break;
-
-          case 38: // 윗쪽 방향키 입력
-            changeDirection();
-            break;
-
-          case 32: // 스페이스바 입력
-            dropBlock();
-            break;
-
-          default:
-            break;
+          return true;
         }
       });
-    </script>
-  </body>
+
+      movingItem.left = left;
+      movingItem.top = top;
+      movingItem.direction = direction;
+    }
+
+    // 블록이 가장 아래쪽 범위에서 빠져나오는지 확인하는 함수
+    function seizeBlock() {
+      const movingBlocks = document.querySelectorAll(".moving");
+      movingBlocks.forEach((moving) => {
+        moving.classList.remove("moving");
+        moving.classList.add("seized");
+      });
+      checkMatch();
+    }
+
+    // 각 블록들의 칸들이 한줄에 모두 위치해 있을때 처리
+    function checkMatch() {
+      const childNodes = tetrisInner.childNodes;
+      childNodes.forEach((child) => {
+        let matched = true;
+        child.children[0].childNodes.forEach((li) => {
+          if (!li.classList.contains("seized")) {
+            matched = false;
+          }
+        });
+
+        if (matched) {
+          child.remove();
+          tetrisLine();
+          gameScore++;
+          tetrisScore.innerText = gameScore;
+        }
+      });
+
+      generateNewBlock();
+    }
+
+    // 새 블록 생성
+    function generateNewBlock() {
+      clearInterval(gameInterval);
+
+      gameInterval = setInterval(() => {
+        moveBlock("top", 1);
+      }, gameDuration);
+
+      const blockArray = Object.entries(blocks);
+      const randomIndex = Math.floor(Math.random() * blockArray.length);
+      movingItem.type = blockArray[randomIndex][0];
+      movingItem.top = 0;
+      movingItem.left = 3;
+      movingItem.direction = 0;
+
+      gameMovingItem = {
+        ...movingItem
+      };
+      renderBlocks();
+    }
+
+    function checkEmpty(target) {
+      if (!target || target.classList.contains("seized")) {
+        return false;
+      }
+
+      return true;
+    }
+
+    // 블록 움직이기
+    function moveBlock(moveType, amount) {
+      gameMovingItem[moveType] += amount;
+      renderBlocks(moveType);
+    }
+
+    // 모양 변경하기
+    function changeDirection() {
+      const direction = gameMovingItem.direction;
+      direction === 3 ?
+        (gameMovingItem.direction = 0) :
+        (gameMovingItem.direction += 1);
+      renderBlocks();
+    }
+
+    //스페이스바 입력
+    function dropBlock() {
+      clearInterval(gameInterval);
+
+      gameInterval = setInterval(() => {
+        moveBlock("top", 1);
+      }, 10);
+    }
+
+    function gameOver() {
+      // 게임이 끝날때
+      if (gameScore == 30) {
+        console.log("game end");
+        alert("game end");
+      }
+    }
+
+    // 키보드를 눌렀을때
+    document.addEventListener("keydown", (e) => {
+      switch (e.keyCode) {
+        case 39: // 오른쪽 이동
+          moveBlock("left", 1);
+          break;
+
+        case 37: // 왼쪽 이동
+          moveBlock("left", -1);
+          break;
+
+        case 40: // 아래쪽 이동
+          moveBlock("top", 1);
+          break;
+
+        case 38: // 윗쪽 방향키 입력
+          changeDirection();
+          break;
+
+        case 32: // 스페이스바 입력
+          dropBlock();
+          break;
+
+        default:
+          break;
+      }
+    });
+  </script>
+</body>
+
 </html>
