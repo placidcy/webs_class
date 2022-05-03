@@ -237,29 +237,34 @@
   <script src="js/gsap.min.js"></script>
   <script>
     const parallaxCont = document.getElementById("parallax__cont");
+    const contentItem = document.querySelector(".content__item");
 
-    // 페럴랙스 이미지 박스 전체의 가로 길이
-    const parallaxWidth = parallaxCont.offsetWidth;
-
-    // body 영역의 높이값 -> 이미지 박스 전체의 가로 길이
-    document.body.style.height = parallaxWidth + "px";
-
+    
     // 스크롤 할때 Left: scrollTop값을 추가
     function scroll() {
-      let scrollTop =
-        window.pageYOffset ||
-        window.scrollY ||
-        document.documentElement.scrollTop;
+      // 페럴랙스 이미지 박스 전체의 가로 길이
+      const parallaxWidth = parallaxCont.offsetWidth;
+      // body 영역의 높이값 -> 이미지 박스 전체의 가로 길이
+      document.body.style.height = parallaxWidth + "px";
+      let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-      document.querySelector(".scrollTop span").innerText = scrollTop;
+      // 섹션 박스
+      // 전체 너비 값 - 현재 너비 값 or 높이값
+      let viewWidth = parallaxWidth - window.innerWidth;
+      let viewHeight = parallaxWidth - window.innerHeight;
+      let goLeft = scrollTop * (viewWidth / viewHeight);
 
-      gsap.to(parallaxCont, {
-        left: -scrollTop,
-      });
+
+      document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+
+      gsap.to(parallaxCont, {left: -goLeft});
       requestAnimationFrame(scroll);
     }
 
     scroll();
+
+    // resize, scroll 이벤트를 같이 추가하면 웹사이트 속도가 느려짐
+    window.addEventListener("resize", scroll);
   </script>
 </body>
 

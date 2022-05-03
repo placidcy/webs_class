@@ -78,7 +78,7 @@
       left: 20px;
       bottom: 20px;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.4);
       color: #fff;
       padding: 10px 30px;
       border-radius: 50px;
@@ -147,9 +147,32 @@
       position: fixed;
       left: 0;
       top: 0;
-      width: 104vw;
+      width: 600vw;
       height: 100%;
       background-color: rgb(160, 102, 102);
+      display: flex;
+    }
+
+    #section4 .sec4 .item {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    #section4 .sec4 .item:nth-child(1) {
+      background-color: rgb(141, 194, 255);
+    }
+
+    #section4 .sec4 .item:nth-child(2) {
+      background-color: rgb(54, 209, 67);
+    }
+
+    #section4 .sec4 .item:nth-child(3) {
+      background-color: rgb(191, 86, 201);
+    }
+
+    #section4 .sec4 .item:nth-child(4) {
+      background-color: rgb(233, 50, 50);
     }
 
     #section5 {
@@ -165,6 +188,38 @@
     #section7 {
       background-color: #333;
       z-index: 7000;
+    }
+
+    #section7 .sec7 {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 600vw;
+      height: 100%;
+      background-color: rgb(160, 102, 102);
+      display: flex;
+    }
+
+    #section7 .sec7 .item {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    #section7 .sec7 .item:nth-child(1) {
+      background-color: rgb(255, 4, 4);
+    }
+
+    #section7 .sec7 .item:nth-child(2) {
+      background-color: rgb(255, 239, 16);
+    }
+
+    #section7 .sec7 .item:nth-child(3) {
+      background-color: rgb(202, 253, 62);
+    }
+
+    #section7 .sec7 .item:nth-child(4) {
+      background-color: rgb(81, 255, 174);
     }
 
     #section8 {
@@ -197,49 +252,57 @@
   </header>
   <!-- //parallax__title  -->
 
+  <!-- //section1 -->
   <main id="parallax__cont">
     <section id="section1" class="content__item">
       <span class="content__item__num">01</span>
     </section>
 
-    <!-- //section1 -->
+    <!-- //section2 -->
     <section id="section2" class="content__item">
       <span class="content__item__num">02</span>
     </section>
 
-    <!-- //section2 -->
+    <!-- //section3 -->
     <section id="section3" class="content__item">
       <span class="content__item__num">03</span>
     </section>
 
-    <!-- //section3 -->
+    <!-- //section4 -->
     <section id="section4" class="content__item">
       <div class="sec4">
-        <span class="content__item__num">04</span>
+        <div class="item"><span class="content__item__num">04-1</span></div>
+        <div class="item"><span class="content__item__num">04-2</span></div>
+        <div class="item"><span class="content__item__num">04-3</span></div>
+        <div class="item"><span class="content__item__num">04-4</span></div>
       </div>
     </section>
 
-    <!-- //section4 -->
+    <!-- //section5 -->
     <section id="section5" class="content__item">
       <span class="content__item__num">05</span>
     </section>
 
-    <!-- //section5 -->
+    <!-- //section6 -->
     <section id="section6" class="content__item">
       <span class="content__item__num">06</span>
     </section>
 
-    <!-- //section6 -->
+    <!-- //section7 -->
     <section id="section7" class="content__item">
-      <span class="content__item__num">07</span>
+      <div class="sec7">
+        <div class="item"><span class="content__item__num">07-1</span></div>
+        <div class="item"><span class="content__item__num">07-2</span></div>
+        <div class="item"><span class="content__item__num">07-3</span></div>
+      </div>
     </section>
 
-    <!-- //section7 -->
+    <!-- //section8 -->
     <section id="section8" class="content__item">
       <span class="content__item__num">08</span>
     </section>
 
-    <!-- //section8 -->
+    <!-- //section9 -->
     <section id="section9" class="content__item">
       <span class="content__item__num">09</span>
     </section>
@@ -259,8 +322,20 @@
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollTop;
 
       let offset = scrollTop - document.querySelector("#section4").offsetTop;
+      let section7_Offset = scrollTop - document.querySelector("#section7").offsetTop;
+
+      if (scrollTop >= document.querySelector("#section7").offsetTop) {
+        gsap.to(".sec7", {
+          left: -section7_Offset,
+          ease: "linear"
+        });
+      }
+
       if (scrollTop >= document.querySelector("#section4").offsetTop) {
-        gsap.to(".sec4", {left: -offset, ease: "linear"});
+        gsap.to(".sec4", {
+          left: -offset,
+          ease: "linear"
+        });
       }
 
       document.querySelector(".scrollTop span").innerText = scrollTop;
