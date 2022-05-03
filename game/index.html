@@ -2,23 +2,23 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="assets/css/bg.css">
+    <link rel="stylesheet" href="assets/css/bg.css" />
 
     <style>
         @font-face {
-            font-family: 'LABDigital';
+            font-family: "LABDigital";
             font-weight: normal;
             font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot");
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix") format("embedded-opentype"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2") format("woff2"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff") format("woff"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf") format("truetype");
             font-display: swap;
         }
 
@@ -121,11 +121,12 @@
             position: absolute;
             right: -700px;
             top: 10px;
-            width: 400px;
+            width: 380px;
             opacity: 0;
-            height: 700px;
+            height: 600px;
             overflow: hidden;
             transition: all 0.4s;
+            border-radius: 10px;
         }
 
         .musicPlayer.show {
@@ -178,6 +179,11 @@
             width: 100%;
             height: 100%;
         }
+
+        .mainMenu .btn a {
+            width: 60px;
+            height: 60px;
+        }
     </style>
 </head>
 
@@ -191,39 +197,41 @@
         <section class="main">
             <div class="mainMenu">
                 <div class="button1 btn">
-                    <a href=""><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px"></a>
+                    <a href="#"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px" /></a>
                     <p>MUSIC</p>
                 </div>
 
                 <div class="button2 btn">
-                    <a href=""><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px"></a>
+                    <a href="#"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px" /></a>
                     <p>MEMORY GAME</p>
                 </div>
 
                 <div class="button3 btn">
-                    <a href=""><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px"
-                            height="80px"></a>
+                    <a href="#"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px"
+                            height="80px" /></a>
                     <p>TYPING GAME</p>
                 </div>
 
                 <div class="button4 btn">
-                    <a href="https://placidcy.netlify.app"><img src="../assets/img/personalcomputer-light.jpg"
-                            alt="버튼 이미지5" width="80px" height="80px"></a>
+                    <a href="https://placidcy.netlify.app" target="_black"><img src="../assets/img/personalcomputer-light.jpg"
+                            alt="버튼 이미지5" width="80px" height="80px" /></a>
                     <p>REACT</p>
                 </div>
 
                 <div class="button5 btn">
-                    <a href="http://placidness.dothome.co.kr/php/pages/main.php"><img
-                            src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지6" width="80px" height="80px"></a>
+                    <a href="http://placidness.dothome.co.kr/php/pages/main.php" target="_black"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지6" width="80px" height="80px" /></a>
                     <p>PHP</p>
                 </div>
             </div>
 
-            <div class="musicBox"><iframe class="musicPlayer" src="musicPlayer/index.html" frameborder="0"></iframe>
+            <div class="musicBox">
+                <iframe class="musicPlayer" src="musicPlayer/index.html" frameborder="0"></iframe>
             </div>
-            <div class="memoryGameBox"><iframe class="memoryGame" src="memoryGame/index2.html" frameborder="0"></iframe>
+            <div class="memoryGameBox">
+                <iframe class="memoryGame" src="memoryGame/index2.html" frameborder="0"></iframe>
             </div>
-            <div class="typingGameBox"><iframe class="typingGame" src="typingGame/index.html" frameborder="0"></iframe>
+            <div class="typingGameBox">
+                <iframe class="typingGame" src="typingGame/index.html" frameborder="0"></iframe>
             </div>
         </section>
     </div>
@@ -252,7 +260,13 @@
         function showCurrentTime() {
             let clockClass = document.querySelector(".header .time");
             let date = new Date();
-            let currentTime = date.getHours() + "시" + date.getMinutes() + "분" + date.getSeconds() + "초";
+            let currentTime =
+                date.getHours() +
+                "시" +
+                date.getMinutes() +
+                "분" +
+                date.getSeconds() +
+                "초";
             clockClass.innerHTML = currentTime;
             console.log(clockClass.innerHTML);
         }
