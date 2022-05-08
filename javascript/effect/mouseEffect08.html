@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <style>
-        body {
-            background: rgba(161, 203, 255, 0.705);
+       body::before {
+            background: rgba(74, 86, 128, 0.87)
         }
-
         .mouse__wrap {
             display: flex;
             align-items: center;
@@ -26,6 +25,33 @@
             height: 100vh;
             overflow: hidden;
             /* cursor: none; */
+        }    
+        .mouse__text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            /* height: 100vh; */
+            overflow: hidden;
+        }
+        .mouse__text p {
+            font-size: 2vw;
+            margin-bottom: 2vw;
+        }
+        .mouse__img {
+            position: relative;
+        }
+        .mouse__img .img {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 400px;
+            opacity: 0;
+        }
+        .mouse__img .txt {
+            font-size: 3vw;
         }
     </style>
 </head>
