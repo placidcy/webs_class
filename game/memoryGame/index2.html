@@ -336,9 +336,8 @@
             <ol>
                 <li>당신에게는 기회가 <em>5번</em> 있습니다.(기회 1당 1점)</li>
                 <li>기회 다 소진하면, 틀릴때마다 1점 씩 감점됩니다.</li>
-                <li>60초가 넘어가면 1초 당 1점 감점됩니다.</li>
-                <li>60초 중 남은 시간은 1초 당 1점 가점됩니다.</li>
-                <li>점수는 <br>{(기회 점수) - (연속으로 맞춤 점수) + (시간 점수)}입니다.</li>
+                <li>점수가 -10점이 되거나 90초가 넘어가면 게임 종료됩니다</li>
+                <li>점수는 맞춘 횟수만큼 적용됩니다</li>
             </ol>
         </div>
         <div class="buttons">
@@ -349,9 +348,8 @@
 
     <!-- 점수 박스 -->
     <div id="scoreBox">
-        <div class="timer">남은 시간 : 60s</div>
-        <div class="chance">기회 점수 : </div>
-        <div class="conti">연속 점수 : </div>
+        <div class="timer">남은 시간 : 90s</div>
+        <div class="chance">점수 : </div>
     </div>
 
     <!-- 카드 박스 -->
@@ -523,8 +521,7 @@
 
         var countMinus = 5;
         var statusConti = false;
-        var countConti = 0;
-        var timeLeft = 60;
+        var timeLeft = 90;
         var interval;
 
         // 음악 이모티콘
@@ -540,11 +537,10 @@
             }
         })
 
-        function scoreUp(cm, cc) {
-            scoreChance.innerText = "기회 점수 : " + cm;
-            scoreConti.innerText = "연속 점수 : " + cc;
+        function scoreUp(cm) {
+            scoreChance.innerText = "점수 : " + cm;
         }
-        scoreUp(countMinus, countConti);
+        scoreUp(countMinus);
 
         function initTimer() {
             if (cardWrap.classList.contains("active")) {
@@ -596,6 +592,7 @@
                 shuffledCard();
             }, 500)
         }
+
         // 그만하기 버튼
         infoBoxStop.onclick = () => {
             infoBox.classList.remove("active");
@@ -631,8 +628,7 @@
         function matchCards(img1, img2) {
             if (img1 == img2) {
                 if (statusConti) {
-                    countConti++;
-                    scoreUp(countMinus, countConti);
+                    scoreUp(countMinus);
                 }
                 matchedCard++;
                 //완성했을 때
@@ -645,16 +641,10 @@
                             card.classList.remove("flip");
                         });
                         soundSuccess.play();
-                        gameScore.innerHTML = `당신의 점수는 ${countMinus + countConti + timeLeft+1}점 입니다.`;
+                        gameScore.innerHTML = `당신의 점수는 ${countMinus + timeLeft+1}점 입니다.`;
                         gameScore.innerHTML += "<br>";
-                        gameScore.innerHTML += `기회 점수 : ${countMinus}`;
+                        gameScore.innerHTML += `점수 : ${countMinus}`;
                         gameScore.innerHTML += "<br>";
-                        gameScore.innerHTML += `연속으로 맞춘 갯수 :  ${countConti}`;
-                        gameScore.innerHTML += "<br>";
-                        gameScore.innerHTML += `시간 점수 :  [60 - 걸린시간(${60-timeLeft-1})] -> ${timeLeft+1}`;
-                        gameScore.innerHTML += "<br>";
-                        gameScore.innerHTML +=
-                            `점수 계산 :  {${countMinus} + ${countConti} + ${timeLeft+1} = ${countMinus + countConti + timeLeft+1}}`;
 
                         cardWrap.classList.remove("active");
                         resultBox.classList.add("active");
@@ -669,7 +659,7 @@
             } else {
                 statusConti = false;
                 countMinus--;
-                scoreUp(countMinus, countConti);
+                scoreUp(countMinus);
                 setTimeout(() => {
                     cardOne.classList.add("shake");
                     cardTwo.classList.add("shake");
@@ -689,10 +679,9 @@
             cardTwo = "";
             disableDeck = true;
             matchedCard = 0;
-            countConti = 0;
             countMinus = 5;
             timeLeft = 90;
-            scoreUp(countMinus, countConti);
+            scoreUp(countMinus);
             scoreTimer.innerHTML = "남은시간 : " + timeLeft + "s";
             let arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
             let result = arr.sort(() => Math.random() > 0.5 ? 1 : -1);
@@ -706,7 +695,7 @@
                     card.classList.remove("flip");
                 }, 4000);
                 let imgTag = card.querySelector(".back img");
-                imgTag.src = `icon/icon${arr[index]}.jpg`;
+                imgTag.src = `icons/icon${arr[index]}.jpg`;
             })
             setTimeout(() => {
                 interval = setInterval(initTimer, 1000);
