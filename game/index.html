@@ -175,6 +175,25 @@
             opacity: 1;
         }
 
+        .tetrisBox {
+            position: absolute;
+            bottom: -500px;
+            margin: auto;
+            width: 600px;
+            height: 500px;
+            background: #fff;
+            opacity: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+                0 6px 10px 0 rgba(0, 0, 0, 0.17);
+            transition: all 1s;
+        }
+
+        .tetrisBox.show {
+            bottom: 1%;
+            opacity: 1;
+        }
+
         iframe {
             width: 100%;
             height: 100%;
@@ -213,15 +232,17 @@
                 </div>
 
                 <div class="button4 btn">
+                    <a href="#" target="_black"><img src="../assets/img/personalcomputer-light.jpg"
+                            alt="버튼 이미지4" width="80px" height="80px" /></a>
+                    <p>TETRIS</p>
+                </div>
+
+                <div class="button5 btn">
                     <a href="https://placidcy.netlify.app" target="_black"><img src="../assets/img/personalcomputer-light.jpg"
                             alt="버튼 이미지5" width="80px" height="80px" /></a>
                     <p>REACT</p>
                 </div>
 
-                <div class="button5 btn">
-                    <a href="http://placidness.dothome.co.kr/php/pages/main.php" target="_black"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지6" width="80px" height="80px" /></a>
-                    <p>PHP</p>
-                </div>
             </div>
 
             <div class="musicBox">
@@ -232,6 +253,9 @@
             </div>
             <div class="typingGameBox">
                 <iframe class="typingGame" src="typingGame/index.html" frameborder="0"></iframe>
+            </div>
+            <div class="tetrisBox">
+                <iframe class="tetrisGame" src="tetris/index.html" frameborder="0"></iframe>
             </div>
         </section>
     </div>
@@ -257,8 +281,12 @@
             $(".typingGameBox .typingGame").toggleClass("show");
         });
 
+        $(".button4").click(function () {
+            $(".tetrisBox .tetrisGame").toggleClass("show");
+        });
+
         function showCurrentTime() {
-            let clockClass = document.querySelector(".header .time");
+            let clockClass = document.querySelector(".time");
             let date = new Date();
             let currentTime =
                 date.getHours() +
