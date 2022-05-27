@@ -438,9 +438,11 @@
         event.preventDefault();
         document.querySelector(li.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
+          top: li.offsetTop
         });
       });
     });
+
     window.addEventListener("scroll", () => {
       //let scrollTop = window.pageYOffset; -> 위, 아래로 스크롤 될때의 px 단위값(자바스크립트 최근 버전)
       //let scrollTop = document.documentElement.scrollTop; -> 익스플로러
