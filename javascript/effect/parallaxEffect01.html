@@ -438,7 +438,7 @@
         event.preventDefault();
         document.querySelector(li.getAttribute("href")).scrollIntoView({
           behavior: "smooth",
-          top: li.offsetTop
+          block: "nearest"
         });
       });
     });
