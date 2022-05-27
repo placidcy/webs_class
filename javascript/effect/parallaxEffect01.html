@@ -435,7 +435,7 @@
 
     parallax_nav_Elements.forEach((li) => {
       li.addEventListener("click", (event) => {
-        event.preventDefault();
+
         document.querySelector(li.getAttribute("href")).scrollIntoView({
           behavior: "smooth"
         });
