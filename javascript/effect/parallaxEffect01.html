@@ -435,7 +435,7 @@
 
     parallax_nav_Elements.forEach((li) => {
       li.addEventListener("click", (event) => {
-
+        event.preventDefault();
         document.querySelector(li.getAttribute("href")).scrollIntoView({
           behavior: "smooth"
         });
@@ -458,11 +458,7 @@
             li.classList.remove("active");
           });
 
-          document
-            .querySelector(
-              "#parallax__nav ul li:nth-child(" + (index + 1) + ")"
-            )
-            .classList.add("active");
+          document.querySelector("#parallax__nav ul li:nth-child(" + (index + 1) + ")").classList.add("active");
         }
       });
 
