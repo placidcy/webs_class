@@ -429,16 +429,20 @@
     // modal();
     // tabMenu();
 
-    const parallax_nav_Elements = document.querySelectorAll(
-      "#parallax__nav li a"
-    );
+    const parallax_nav_Elements = document.querySelectorAll("#parallax__nav li a");
 
     parallax_nav_Elements.forEach((li) => {
       li.addEventListener("click", (event) => {
         event.preventDefault();
         document.querySelector(li.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
+
+        document.querySelectorAll("#parallax__nav li a").forEach(li => {
+          li.parentElement.classList.remove("active");
+        });
+
+        li.parentElement.classList.add("active");
       });
     });
 
