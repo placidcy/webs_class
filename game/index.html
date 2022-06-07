@@ -178,7 +178,7 @@
             <span class="time">시간</span>
         </header>
 
-        <section class="main">
+        <main class="main">
             <div class="mainMenu">
                 <div class="button1 btn">
                     <img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px" />
@@ -218,7 +218,7 @@
             <div class="tetrisBox">
                 <iframe class="tetrisGame" src="tetris/index.html" frameborder="0"></iframe>
             </div>
-        </section>
+        </main>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -232,19 +232,31 @@
 
         $(".button1").click(function () {
             $(".musicBox .musicPlayer").toggleClass("show");
+            $(".memoryGameBox .memoryGame").removeClass("show");
+            $(".typingGameBox .typingGame").removeClass("show");
+            $(".tetrisBox .tetrisGame").removeClass("show");
         });
 
         $(".button2").click(function () {
             $(".memoryGameBox .memoryGame").toggleClass("show");
+            $(".musicBox .musicPlayer").removeClass("show");
+            $(".typingGameBox .typingGame").removeClass("show");
+            $(".tetrisBox .tetrisGame").removeClass("show");
         });
 
         $(".button3").click(function () {
             $(".typingGameBox .typingGame").toggleClass("show");
+            $(".musicBox .musicPlayer").removeClass("show");
+            $(".memoryGameBox .memoryGame").removeClass("show");
+            $(".tetrisBox .tetrisGame").removeClass("show");
         });
 
         $(".button4").click(function () {
             //alert("클릭");
             $(".tetrisBox .tetrisGame").toggleClass("show");
+            $(".musicBox .musicPlayer").removeClass("show");
+            $(".typingGameBox .typingGame").removeClass("show");
+            $(".tetrisBox .tetrisGame").removeClass("show");
         });
 
         // 시간
