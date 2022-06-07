@@ -154,6 +154,8 @@
         }
 
         .tetrisBox.show {
+            position: absolute;
+            right: 50%;
             bottom: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.5s;
@@ -253,7 +255,7 @@
 
         $(".button4").click(function () {
             //alert("클릭");
-            $(".tetrisBox .tetrisGame").toggleClass("show");
+            $(".tetrisBox").toggleClass("show");
             $(".musicBox .musicPlayer").removeClass("show");
             $(".typingGameBox .typingGame").removeClass("show");
             $(".memoryGameBox .memoryGame").removeClass("show");
