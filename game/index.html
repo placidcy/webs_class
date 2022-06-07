@@ -25,7 +25,6 @@
         #wrap {
             margin: 0;
             padding: 0;
-            height: 100%;
             font-family: "LABDigital";
         }
 
@@ -36,23 +35,32 @@
         }
 
         .header {
-            position: fixed;
+            /* position: fixed;
             top: 0;
-            left: 0;
+            left: 0; */
             height: 35px;
-            overflow: hidden;
         }
 
         .header .title {
             color: rgb(230, 231, 247);
             font-weight: 600;
             font-size: 21px;
-            padding-left: 30px;
+            position: absolute;
+            top: 0;
+            left: 30px;
         }
 
         .header .time {
+            color: white;
             font-size: 21px;
-            float: right;
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .main {
+            position: relative;
         }
 
         .main .mainMenu {
@@ -65,10 +73,6 @@
         .mainMenu .btn {
             width: 80px;
             text-align: center;
-        }
-
-        .mainMenu .btn div {
-            margin-top: 40px;
             border-radius: 50%;
             cursor: pointer;
         }
@@ -86,10 +90,6 @@
             background-color: rgb(169, 255, 215);
         }
 
-        .mainMenu iframe {
-            float: right;
-        }
-
         .musicPlayer {
             position: absolute;
             right: -700px;
@@ -97,7 +97,6 @@
             width: 380px;
             height: 600px;
             overflow: hidden;
-            transition: all 0.5s;
             border-radius: 10px;
         }
 
@@ -117,11 +116,11 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-            transition: all 1s;
         }
 
         .memoryGame.show {
             right: 1%;
+            transition: all 0.5s;
         }
 
         .typingGame {
@@ -135,29 +134,29 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-            transition: all 0.5s;
         }
 
         .typingGame.show {
             right: 1%;
+            transition: all 0.5s;
         }
 
         .tetrisBox {
             position: absolute;
-            right: -1000px;
-            bottom: -50px;
+            right: 50%;
+            bottom: -1000px;
             width: 600px;
-            height: 500px;
+            height: 800px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-            transition: all 0.5s;
         }
 
         .tetrisBox.show {
-            bottom: 1%;
-            right: 1%;
+            bottom: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
         }
 
         iframe {
@@ -207,12 +206,15 @@
             <div class="musicBox">
                 <iframe class="musicPlayer" src="musicPlayer/index.html" frameborder="0"></iframe>
             </div>
+
             <div class="memoryGameBox">
                 <iframe class="memoryGame" src="memoryGame/index2.html" frameborder="0"></iframe>
             </div>
+
             <div class="typingGameBox">
                 <iframe class="typingGame" src="typingGame/index.html" frameborder="0"></iframe>
             </div>
+
             <div class="tetrisBox">
                 <iframe class="tetrisGame" src="tetris/index.html" frameborder="0"></iframe>
             </div>
@@ -241,9 +243,11 @@
         });
 
         $(".button4").click(function () {
+            //alert("클릭");
             $(".tetrisBox .tetrisGame").toggleClass("show");
         });
 
+        // 시간
         function showCurrentTime() {
             let clockClass = document.querySelector(".time");
             let date = new Date();
@@ -256,7 +260,6 @@
                 "초";
             clockClass.innerText = currentTime;
             setTimeout("showCurrentTime()", 1000);
-            console.log(clockClass.innerHTML);
         }
 
         window.onload = function() {
