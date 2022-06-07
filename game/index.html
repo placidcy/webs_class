@@ -23,19 +23,22 @@
         }
 
         #wrap {
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
             height: 100%;
             font-family: "LABDigital";
         }
 
         body {
-            width: 100%;
             height: 100vh;
             background-color: transparent;
+            overflow: hidden;
         }
 
         .header {
-            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
             height: 35px;
             overflow: hidden;
         }
@@ -51,36 +54,6 @@
             font-size: 21px;
             float: right;
         }
-
-        /* .nav .instargram {
-            background: url("/assets/img/instargram.svg") no-repeat;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            margin-right: -5px;
-        }
-
-        .nav .logo {
-            background: url("/assets/img/linkLogo.svg") no-repeat;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-        }
-
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .nav ul li {
-            margin: 0 10px;
-        }
-
-        .nav ul .time {
-            font-weight: 600;
-            font-size: 20px;
-        } */
 
         .main .mainMenu {
             display: flex;
@@ -122,28 +95,25 @@
             right: -700px;
             top: 10px;
             width: 380px;
-            opacity: 0;
             height: 600px;
             overflow: hidden;
-            transition: all 0.4s;
+            transition: all 0.5s;
             border-radius: 10px;
         }
 
         .musicPlayer.show {
             right: 10px;
-            transition: all 0.4s;
-            opacity: 1;
+            transition: all 0.5s;
         }
 
         .memoryGame {
             position: absolute;
             top: 10px;
-            right: -700px;
+            right: -3000px;
             margin: auto;
             width: 600px;
             height: 600px;
             background: #fff;
-            opacity: 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
@@ -152,46 +122,42 @@
 
         .memoryGame.show {
             right: 1%;
-            opacity: 1;
         }
 
         .typingGame {
             position: absolute;
             top: 10px;
-            right: -500px;
+            right: -3000px;
             margin: auto;
             width: 1000px;
             height: 600px;
             background: #fff;
-            opacity: 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-            transition: all 1s;
+            transition: all 0.5s;
         }
 
         .typingGame.show {
             right: 1%;
-            opacity: 1;
         }
 
         .tetrisBox {
             position: absolute;
-            bottom: -500px;
-            margin: auto;
+            right: -1000px;
+            bottom: -50px;
             width: 600px;
             height: 500px;
             background: #fff;
-            opacity: 0;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
                 0 6px 10px 0 rgba(0, 0, 0, 0.17);
-            transition: all 1s;
+            transition: all 0.5s;
         }
 
         .tetrisBox.show {
             bottom: 1%;
-            opacity: 1;
+            right: 1%;
         }
 
         iframe {
@@ -216,24 +182,24 @@
         <section class="main">
             <div class="mainMenu">
                 <div class="button1 btn">
-                    <a href="#"><img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px" /></a>
+                    <img src="../assets/img/guitar-light.jpg" alt="버튼 이미지1" width="80px" height="80px" />
                     <p>MUSIC</p>
                 </div>
 
                 <div class="button2 btn">
-                    <a href="#"><img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px" /></a>
+                    <img src="../assets/img/man-light.jpg" alt="버튼 이미지2" width="80px" height="80px" />
                     <p>MEMORY GAME</p>
                 </div>
 
                 <div class="button3 btn">
-                    <a href="#"><img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px"
-                            height="80px" /></a>
+                    <img src="../assets/img/personalcomputer-light.jpg" alt="버튼 이미지3" width="80px"
+                            height="80px" />
                     <p>TYPING GAME</p>
                 </div>
 
                 <div class="button4 btn">
-                    <a href="#" target="_black"><img src="../assets/img/personalcomputer-light.jpg"
-                            alt="버튼 이미지4" width="80px" height="80px" /></a>
+                    <img src="../assets/img/personalcomputer-light.jpg"
+                            alt="버튼 이미지4" width="80px" height="80px" />
                     <p>TETRIS</p>
                 </div>
             </div>
@@ -288,11 +254,14 @@
                 "분" +
                 date.getSeconds() +
                 "초";
-            clockClass.innerHTML = currentTime;
+            clockClass.innerText = currentTime;
+            setTimeout("showCurrentTime()", 1000);
             console.log(clockClass.innerHTML);
         }
 
-        setInterval(showCurrentTime, 1000);
+        window.onload = function() {
+            showCurrentTime();
+        };
     </script>
 </body>
 
